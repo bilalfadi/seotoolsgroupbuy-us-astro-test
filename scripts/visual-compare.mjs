@@ -1,4 +1,5 @@
 import { sitePaths } from './site-paths.mjs';
+import { redirects } from '../src/lib/route-fixes.js';
 import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync } from 'node:fs';
 const origin='https://seotoolsgroupbuy.us', preview='https://seotoolsgroupbuy-us-astro-test.bilalfadi11221333.workers.dev';
@@ -7,7 +8,7 @@ const pages=await sitePaths(origin);
 const screenshotPaths=new Set(['/','/all-tools/','/pricing/','/faq/','/blog/','/ahrefs-group-buy/','/semrush-group-buy/','/tool/ahrefs-group-buy']);
 const report=[];
 mkdirSync('visual-audit',{recursive:true});
-function normalizedLinks(links,base){return [...new Set(links.map(value=>{try{const u=new URL(value);const path=u.pathname.length>1?u.pathname.replace(/\\/+$/,''):u.pathname;if(u.hostname===new URL(base).hostname)return path+u.search+u.hash;return u.origin+path+u.search+u.hash}catch{return value}}))].sort()}
+function normalizedLinks(links,base){return [...new Set(links.map(value=>{try{const u=new URL(value);let path=u.pathname.length>1?u.pathname.replace(/\\/+$/,''):u.pathname;const legacy=path.replace(/^\\//,'');if(redirects[legacy])path='/'+redirects[legacy];if(u.hostname===new URL(base).hostname)return path+(path==='/'?'':'/')+u.search+u.hash;return u.origin+path+u.search+u.hash}catch{return value}}))].sort()}
 for(let index=0;index<pages.length;index++){
  const path=pages[index],pair={path};
  for(const [name,base] of [['origin',origin],['preview',preview]]){
