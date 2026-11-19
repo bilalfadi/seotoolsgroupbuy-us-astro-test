@@ -20,6 +20,10 @@ jobs:
           node-version: '22'
       - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
+      - name: Validate Playwright script syntax
+        run: |
+          node --check scripts/visual-compare.mjs
+          node --check scripts/mobile-functional-audit.mjs
       - name: Screenshot + sitemap + SEO comparison
         continue-on-error: true
         run: node scripts/visual-compare.mjs
