@@ -1,7 +1,29 @@
 {
-  "at": "2026-11-19T03:24:45.118Z",
+  "at": "2026-11-19T03:27:09.019Z",
   "test": "https://seotoolsgroupbuy-us-astro-test.bilalfadi11221333.workers.dev",
   "original": "https://seotoolsgroupbuy.us",
+  "assets": [
+    {
+      "path": "/media/wp-uploads/2026/11/stgb-site-icon-512-4.png",
+      "status": 200,
+      "type": "image/png"
+    },
+    {
+      "path": "/assets/css/product-detail.css",
+      "status": 200,
+      "type": "text/css"
+    },
+    {
+      "path": "/assets/css/blog-archive.css",
+      "status": 200,
+      "type": "text/css"
+    },
+    {
+      "path": "/assets/js/chatbox.js",
+      "status": 200,
+      "type": "text/javascript"
+    }
+  ],
   "checks": [
     {
       "path": "/",
