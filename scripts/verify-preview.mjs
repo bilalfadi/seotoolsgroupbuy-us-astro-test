@@ -1,6 +1,9 @@
 const test='https://seotoolsgroupbuy-us-astro-test.bilalfadi11221333.workers.dev';
 const original='https://seotoolsgroupbuy.us';
 const urls=['/','/ahrefs/','/semrush-group-buy/','/category/seo-tools-blog/','/shop/','/pricing-plans/','/contact/'];
+const assets=['/media/wp-uploads/2026/11/stgb-site-icon-512-4.png','/assets/css/product-detail.css','/assets/css/blog-archive.css','/assets/js/chatbox.js'];
+const assetResults=[];
+for(const p of assets){try{const r=await fetch(test+p);assetResults.push({path:p,status:r.status,type:r.headers.get('content-type')})}catch(e){assetResults.push({path:p,error:String(e)})}}
 const checks=[];
 for (const uri of urls){
  const item={path:uri,test:{},original:{}};
@@ -17,5 +20,5 @@ for (const uri of urls){
  checks.push(item);
 }
 const {mkdir,writeFile}=await import('node:fs/promises');
-await mkdir('reports',{recursive:true});await writeFile('reports/preview-smoke-check.json',JSON.stringify({at:new Date().toISOString(),test,original,checks},null,2));
-console.log(JSON.stringify(checks,null,2));
+await mkdir('reports',{recursive:true});await writeFile('reports/preview-smoke-check.json',JSON.stringify({at:new Date().toISOString(),test,original,assets:assetResults,checks},null,2));
+console.log(JSON.stringify({assets:assetResults,checks},null,2));
