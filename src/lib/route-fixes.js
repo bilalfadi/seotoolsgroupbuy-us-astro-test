@@ -5,6 +5,7 @@ const contentEntries = [...load('products'),...load('posts'),...load('pages')];
 const entries = new Set(contentEntries.map(x=>x.slug));
 const explicit = {
   'faq':'frequently-asked-questions-faqs-for-an-seo-group-buy',
+  'tools':'single-tools-list',
   'contact-us':'contact',
   'semrush':'semrush-group-buy',
   'screamingfrog':'screamingfrog-seo-spider-group-buy',
