@@ -2,31 +2,34 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import {load,url} from '../lib/content.js';
 const posts=[...load('posts')].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
-const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/&[^;]+;/g,' ').replace(/\s+/g,' ').trim();
+const fmt=(date)=>{const d=new Date(date);return Number.isNaN(d.getTime())?'':d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})};
 ---
-<SiteLayout title="Blogs - SEO Tips & Guides | SEO Tools Group Buy" description="Practical SEO tutorials, reviews, tool guides and comparisons." canonical="/category/seo-tools-blog/" type="archive">
-<section class="stgb-blog-archive-hero">
- <div class="stgb-blog-archive-hero__bg"></div><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--1"></div><div class="stgb-blog-archive-hero__dots"></div>
- <div class="stgb-container stgb-blog-archive-hero__inner">
-  <p class="stgb-blog-archive-hero__badge">Latest Insights &amp; Guides</p>
-  <h1 class="stgb-blog-archive-hero__title">Expert Playbooks for <span class="stgb-blog-archive-hero__title-accent">Premium Tools</span></h1>
-  <p class="stgb-blog-archive-hero__desc">We test every SEO and productivity stack before publishing. Get real screenshots, honest reviews, and practical buying advice.</p>
-  <div class="stgb-blog-archive-hero__stats"><span>Real Reviews</span><span>Tested Tools</span><span>Pro Tips</span></div>
-  <div class="stgb-blog-archive-hero__topics">
-   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">📈</span><h2 class="stgb-blog-archive-hero__topic-title">SEO Mastery</h2><p>Learn advanced SEO techniques</p></div>
-   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">🛠️</span><h2 class="stgb-blog-archive-hero__topic-title">Tool Guides</h2><p>Step-by-step walkthroughs</p></div>
-   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">💡</span><h2 class="stgb-blog-archive-hero__topic-title">Pro Tips</h2><p>Expert recommendations</p></div>
-   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">⚖️</span><h2 class="stgb-blog-archive-hero__topic-title">Comparisons</h2><p>Tool vs tool analysis</p></div>
-  </div>
- </div>
+<SiteLayout title="Blogs - SEO Tips & Guides | SEO Tools Group Buy" description="Expert SEO tools guides, reviews and practical tips." canonical="/category/seo-tools-blog/" type="archive">
+<section class="stgb-blog-archive-hero" aria-label="Blog">
+ <div class="stgb-blog-archive-hero__bg"><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--1"></div><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--2"></div><div class="stgb-blog-archive-hero__dots"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--1"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--2"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--3"></div></div>
+ <div class="stgb-container stgb-blog-archive-hero__inner"><div class="stgb-blog-archive-hero__grid"><div class="stgb-blog-archive-hero__copy">
+ <div class="stgb-blog-archive-hero__badge"><span class="stgb-blog-archive-hero__badge-dot"></span><span>Latest Insights &amp; Guides</span></div>
+ <h1 class="stgb-blog-archive-hero__title">Expert Playbooks for <span class="stgb-blog-archive-hero__title-accent">Premium Tools</span></h1>
+ <p class="stgb-blog-archive-hero__desc">We test every SEO and productivity stack before publishing. Get real screenshots, honest reviews, and practical buying advice.</p>
+ <div class="stgb-blog-archive-hero__stats"><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">★</span><span>Real Reviews</span></div><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">✓</span><span>Tested Tools</span></div><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">⚡</span><span>Pro Tips</span></div></div></div>
+ <div class="stgb-blog-archive-hero__topics">
+ {[
+ ['🔍','SEO Mastery','Learn advanced SEO techniques'],
+ ['🛠️','Tool Guides','Step-by-step walkthroughs'],
+ ['💡','Pro Tips','Expert recommendations'],
+ ['📊','Comparisons','Tool vs tool analysis']].map(t=><div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">{t[0]}</span><h2 class="stgb-blog-archive-hero__topic-title">{t[1]}</h2><p>{t[2]}</p></div>)}
+ </div></div></div>
+ <div class="stgb-blog-archive-hero__wave" aria-hidden="true"><svg viewBox="0 0 1440 120" fill="none"><path d="M0 60L48 65C96 70 192 80 288 85C384 90 480 90 576 82.5C672 75 768 60 864 52.5C960 45 1056 45 1152 52.5C1248 60 1344 75 1392 82.5L1440 90V120H0V60Z" fill="#f8fafc"/></svg></div>
 </section>
-<section class="stgb-container stgb-blog-archive-listing" style="padding:2.5rem 0 5rem">
- <div class="stgb-blog-archive-toolbar"><div class="stgb-blog-archive-toolbar__card"><strong>All Posts</strong><span>SEO Tools · Tutorials · Reviews · Tips &amp; Tricks</span></div></div>
- <div class="stgb-static-grid">
- {posts.map(p=><article class="stgb-static-card">
- {p.featuredImage&&<a href={url(p.slug)}><img src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy"/></a>}
- <h2><a href={url(p.slug)}>{p.title}</a></h2><p>{strip(p.excerpt||p.content).slice(0,170)}</p><a href={url(p.slug)}>Read Article →</a>
- </article>)}
- </div>
-</section>
+<section class="stgb-blog-archive-toolbar"><div class="stgb-container"><div class="stgb-blog-archive-toolbar__card">
+<label class="stgb-blog-archive-toolbar__search" for="stgb-blog-search"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="stgb-blog-search" type="search" placeholder="Search articles..." autocomplete="off"/></label>
+<div class="stgb-blog-archive-toolbar__cats" role="tablist" aria-label="Filter articles">{[['all','All Posts'],['seo','SEO Tools'],['tutorial','Tutorials'],['review','Reviews'],['tips','Tips & Tricks']].map(([key,label])=><button type="button" data-filter={key} class:list={[key==='all'&&'is-active']}>{label}</button>)}</div>
+</div></div></section>
+<div class="stgb-container"><div class="stgb-blog-archive-grid" id="stgb-blog-archive-grid">
+{posts.map(p=>{const plain=strip(p.excerpt||p.content);const cat=typeof p.categories==='string'?p.categories:'SEO Tools Blog';const filter=(p.title+' '+plain+' '+cat).toLowerCase();return <article class="stgb-blog-archive-card" data-title={p.title} data-excerpt={plain.slice(0,200)} data-tags={filter}>
+<a href={url(p.slug)} class="stgb-blog-archive-card__link"><div class="stgb-blog-archive-card__img">{p.featuredImage?<img src={p.featuredImage} loading="lazy" alt={p.featuredAlt||p.title}/>:<div class="stgb-blogs__featured-placeholder"></div>}</div><div class="stgb-blog-archive-card__body"><div class="stgb-blog-archive-card__meta"><span class="stgb-blog-archive-card__cat">SEO Tools Blog</span><span>{fmt(p.date)}</span></div><h2>{p.title}</h2><p class="stgb-blog-archive-card__excerpt">{plain.slice(0,165)}</p><div class="stgb-blog-archive-card__footer"><span>{Math.max(1,Math.ceil(strip(p.content).split(/\s+/).length/200))} min read</span><span class="stgb-blog-archive-card__more">Read article →</span></div></div></a>
+</article>})}
+<p class="stgb-blog-archive-empty is-hidden">No articles match your search yet.</p>
+</div></div>
 </SiteLayout>
