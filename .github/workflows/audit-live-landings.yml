@@ -1,0 +1,27 @@
+name: Audit live special landing CTAs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/audit-live-landings.mjs
+      - .github/workflows/audit-live-landings.yml
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/audit-live-landings.mjs
+      - name: Save source-of-truth href report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/live-landings-links.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit current Ahrefs and Semrush landing CTAs"
+            git push
+          fi
