@@ -1,0 +1,32 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import {load,url} from '../lib/content.js';
+const posts=[...load('posts')].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+---
+<SiteLayout title="Blogs - SEO Tips & Guides | SEO Tools Group Buy" description="Practical SEO tutorials, reviews, tool guides and comparisons." canonical="/category/seo-tools-blog/" type="archive">
+<section class="stgb-blog-archive-hero">
+ <div class="stgb-blog-archive-hero__bg"></div><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--1"></div><div class="stgb-blog-archive-hero__dots"></div>
+ <div class="stgb-container stgb-blog-archive-hero__inner">
+  <p class="stgb-blog-archive-hero__badge">Latest Insights &amp; Guides</p>
+  <h1 class="stgb-blog-archive-hero__title">Expert Playbooks for <span class="stgb-blog-archive-hero__title-accent">Premium Tools</span></h1>
+  <p class="stgb-blog-archive-hero__desc">We test every SEO and productivity stack before publishing. Get real screenshots, honest reviews, and practical buying advice.</p>
+  <div class="stgb-blog-archive-hero__stats"><span>Real Reviews</span><span>Tested Tools</span><span>Pro Tips</span></div>
+  <div class="stgb-blog-archive-hero__topics">
+   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">📈</span><h2 class="stgb-blog-archive-hero__topic-title">SEO Mastery</h2><p>Learn advanced SEO techniques</p></div>
+   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">🛠️</span><h2 class="stgb-blog-archive-hero__topic-title">Tool Guides</h2><p>Step-by-step walkthroughs</p></div>
+   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">💡</span><h2 class="stgb-blog-archive-hero__topic-title">Pro Tips</h2><p>Expert recommendations</p></div>
+   <div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">⚖️</span><h2 class="stgb-blog-archive-hero__topic-title">Comparisons</h2><p>Tool vs tool analysis</p></div>
+  </div>
+ </div>
+</section>
+<section class="stgb-container stgb-blog-archive-listing" style="padding:2.5rem 0 5rem">
+ <div class="stgb-blog-archive-toolbar"><div class="stgb-blog-archive-toolbar__card"><strong>All Posts</strong><span>SEO Tools · Tutorials · Reviews · Tips &amp; Tricks</span></div></div>
+ <div class="stgb-static-grid">
+ {posts.map(p=><article class="stgb-static-card">
+ {p.featuredImage&&<a href={url(p.slug)}><img src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy"/></a>}
+ <h2><a href={url(p.slug)}>{p.title}</a></h2><p>{strip(p.excerpt||p.content).slice(0,170)}</p><a href={url(p.slug)}>Read Article →</a>
+ </article>)}
+ </div>
+</section>
+</SiteLayout>
