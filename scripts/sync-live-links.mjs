@@ -16,8 +16,8 @@ try{
  if(!response.ok){rec.status='http-error';rec.error=String(response.status)}else{
  const html=await response.text();
  const allAnchors=parse(html);
- rec.diagnostics={htmlBytes:html.length,anchorCount:allAnchors.length,membershipAnchorCount:allAnchors.filter(x=>x.host==='members.seotoolsgroupbuy.us').length,title:(html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i)||[])[1]||'',sampleMemberLinks:allAnchors.filter(x=>x.host==='members.seotoolsgroupbuy.us').slice(0,3)};
- const buys=allAnchors.filter(x=>x.host==='members.seotoolsgroupbuy.us'&&/\b(buy\s*now|buy\s*today|purchase\s*now|subscribe\s*now|get\s*instant\s*access)\b/i.test(x.label));
+ rec.diagnostics={htmlBytes:html.length,anchorCount:allAnchors.length,checkoutAnchorCount:allAnchors.filter(x=>x.host==='seogroupsbuy.com').length,sampleCheckoutLinks:allAnchors.filter(x=>x.host==='seogroupsbuy.com').slice(0,5)};
+ const buys=allAnchors.filter(x=>x.host==='seogroupsbuy.com'&&x.href.includes('/users/cart/index/product/id/')&&/(buy\s*now|buy\s*today|purchase\s*now|subscribe\s*now|get\s*instant\s*access|order\s*now|subscribe|get\s*access)/i.test(x.label));
  const unique=[...new Set(buys.map(x=>x.href))];rec.candidates=unique;
  if(unique.length===1){rec.verified=unique[0];rec.status=normalize(item.externalUrl)===rec.verified?'matched':'mismatch';if(apply&&rec.status==='mismatch'){item.externalUrl=rec.verified;await writeFile(p,JSON.stringify(item,null,2)+'\n');rec.status='updated'}}
  else rec.status=unique.length>1?'ambiguous-multiple-ctas':'no-visible-verified-cta';
