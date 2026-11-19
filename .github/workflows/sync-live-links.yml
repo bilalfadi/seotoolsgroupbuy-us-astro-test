@@ -16,14 +16,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Audit exact live product links without modifying checkout destinations
-        run: node scripts/sync-live-links.mjs
-      - name: Commit audit report only to test repository
+      - name: Apply only uniquely verified full Buy Now URLs from current live product pages
+        run: node scripts/sync-live-links.mjs --apply
+      - name: Commit verified product changes and audit report to test repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/live-link-audit.json reports/live-link-audit.csv
+          git add content/products reports/live-link-audit.json reports/live-link-audit.csv
           if ! git diff --cached --quiet; then
-            git commit -m "Audit live checkout hrefs from original website (no auto updates)"
+            git commit -m "Sync live checkout hrefs validated against unique product Buy Now buttons"
             git push
           fi
