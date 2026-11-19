@@ -1,6 +1,4 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import {load,url} from '../../lib/content.js';
-const posts=load('posts').sort((a,b)=>b.date.localeCompare(a.date));
+import BlogArchive from '../../components/BlogArchive.astro';
 ---
-<SiteLayout title="SEO Tools Blog | SEO Tools Group Buy" canonical="/blog/"><section class="stgb-container stgb-shop-static"><h1>SEO Tools Blog</h1><div class="stgb-static-grid">{posts.map(p=><article class="stgb-static-card">{p.featuredImage&&<a href={url(p.slug)}><img src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy"/></a>}<h2><a href={url(p.slug)}>{p.title}</a></h2><p>{p.excerpt.replace(/<[^>]*>/g,' ').slice(0,160)}</p><a href={url(p.slug)}>Read Article →</a></article>)}</div></section></SiteLayout>
+<BlogArchive />
