@@ -8,7 +8,19 @@ const pages=await sitePaths(origin);
 const screenshotPaths=new Set(['/','/all-tools/','/pricing/','/faq/','/blog/','/ahrefs-group-buy/','/semrush-group-buy/','/tool/ahrefs-group-buy']);
 const report=[];
 mkdirSync('visual-audit',{recursive:true});
-function normalizedLinks(links,base){return [...new Set(links.map(value=>{try{const u=new URL(value);let path=u.pathname.length>1?u.pathname.replace(/\\/+$/,''):u.pathname;const legacy=path.replace(/^\\//,'');if(redirects[legacy])path='/'+redirects[legacy];if(u.hostname===new URL(base).hostname)return path+(path==='/'?'':'/')+u.search+u.hash;return u.origin+path+u.search+u.hash}catch{return value}}))].sort()}
+function normalizedLinks(links,base) {
+ const host=new URL(base).hostname;
+ return [...new Set(links.map(value=>{
+  try {
+   const u=new URL(value);
+   let path=u.pathname === '/' ? '/' : u.pathname.replace(/\/+$/, '');
+   const alias=path.replace(/^\//,'');
+   if(redirects[alias]) path='/'+redirects[alias];
+   path=path === '/' ? '/' : path+'/';
+   return u.hostname===host ? path+u.search+u.hash : u.origin+path+u.search+u.hash;
+  } catch { return value; }
+ }))].sort();
+}
 for(let index=0;index<pages.length;index++){
  const path=pages[index],pair={path};
  for(const [name,base] of [['origin',origin],['preview',preview]]){
@@ -16,7 +28,10 @@ for(let index=0;index<pages.length;index++){
   try{
    let response=await page.goto(base+path,{waitUntil:'networkidle',timeout:60000}).catch(()=>null);
    if(!response)response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:60000});
-   await page.waitForTimeout(900);\n   // Trigger native lazy-loaded images before measuring image health.\n   await page.evaluate(async()=>{const step=Math.max(500,window.innerHeight);for(let y=0;y<document.body.scrollHeight;y+=step){window.scrollTo(0,y);await new Promise(r=>setTimeout(r,120));}window.scrollTo(0,0);});\n   await page.waitForTimeout(500);
+   await page.waitForTimeout(900); 
+   // Trigger native lazy-loaded images before measuring image health.
+   await page.evaluate(async()=>{const step=Math.max(500,window.innerHeight);for(let y=0;y<document.body.scrollHeight;y+=step){window.scrollTo(0,y);await new Promise(r=>setTimeout(r,120));}window.scrollTo(0,0);});
+   await page.waitForTimeout(500);
    const data=await page.evaluate(()=>({
     title:document.title,
     description:document.querySelector('meta[name="description"]')?.content||'',
