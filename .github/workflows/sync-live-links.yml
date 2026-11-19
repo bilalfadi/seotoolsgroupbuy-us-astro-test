@@ -16,14 +16,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Read live URLs and update unambiguous product CTAs
-        run: node scripts/sync-live-links.mjs --apply
-      - name: Commit verified changes and audit report to test repository
+      - name: Audit exact live product links without modifying checkout destinations
+        run: node scripts/sync-live-links.mjs
+      - name: Commit audit report only to test repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/products reports/live-link-audit.json reports/live-link-audit.csv
+          git add reports/live-link-audit.json reports/live-link-audit.csv
           if ! git diff --cached --quiet; then
-            git commit -m "Sync verified full checkout URLs from original live website"
+            git commit -m "Audit live checkout hrefs from original website (no auto updates)"
             git push
           fi
