@@ -1,0 +1,17 @@
+{
+  "name": "seotoolsgroupbuy-us-astro-pagescms",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "verify": "node scripts/verify.mjs",
+    "audit": "node scripts/audit-migration.mjs",
+    "media": "node scripts/migrate-media.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.16.0"
+  }
+}

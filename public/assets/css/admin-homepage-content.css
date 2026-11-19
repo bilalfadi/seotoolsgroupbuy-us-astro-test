@@ -1,0 +1,88 @@
+/* Home page editor preview — match front-end sizing (WP editor blows up SVGs without theme CSS). */
+
+.editor-styles-wrapper .stgb-feature-svg,
+.editor-styles-wrapper .stgb-cat-svg,
+.block-editor-writing-flow .stgb-feature-svg,
+.block-editor-writing-flow .stgb-cat-svg,
+#postdivrich .stgb-feature-svg,
+#postdivrich .stgb-cat-svg,
+.mce-content-body .stgb-feature-svg,
+.mce-content-body .stgb-cat-svg {
+  width: 3rem !important;
+  height: 3rem !important;
+  max-width: 3rem !important;
+  max-height: 3rem !important;
+}
+
+.editor-styles-wrapper .stgb-features__icon-wrap,
+.editor-styles-wrapper .stgb-categories__icon,
+#postdivrich .stgb-features__icon-wrap,
+#postdivrich .stgb-categories__icon,
+.mce-content-body .stgb-features__icon-wrap,
+.mce-content-body .stgb-categories__icon {
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero stat icons — no width/height on SVG in HTML */
+.editor-styles-wrapper .s1-hero__stat-icon,
+#postdivrich .s1-hero__stat-icon,
+.mce-content-body .s1-hero__stat-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.5rem;
+}
+
+.editor-styles-wrapper .s1-hero__stat-icon svg,
+#postdivrich .s1-hero__stat-icon svg,
+.mce-content-body .s1-hero__stat-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 2rem !important;
+  max-height: 2rem !important;
+}
+
+/* Pricing flip-card checkmarks (pricing-flip.css not always loaded in editor) */
+.editor-styles-wrapper .s3-pricing__card-back-tool svg,
+#postdivrich .s3-pricing__card-back-tool svg,
+.mce-content-body .s3-pricing__card-back-tool svg {
+  width: 1rem !important;
+  height: 1rem !important;
+  max-width: 1rem !important;
+  max-height: 1rem !important;
+  flex-shrink: 0;
+}
+
+/* Blogs arrow */
+.editor-styles-wrapper .stgb-blogs__view-all-icon,
+#postdivrich .stgb-blogs__view-all-icon,
+.mce-content-body .stgb-blogs__view-all-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.editor-styles-wrapper .s1-hero,
+#postdivrich .s1-hero {
+  margin-top: 0;
+  padding-top: calc(5.75rem + 2rem);
+}
+
+.editor-styles-wrapper .s1-hero__inner,
+#postdivrich .s1-hero__inner {
+  margin-top: 0;
+}
+
+.editor-styles-wrapper .s2-tools,
+.editor-styles-wrapper .s3-pricing,
+.editor-styles-wrapper .s4-content,
+.editor-styles-wrapper .s5-faq,
+.editor-styles-wrapper .s6-support,
+.editor-styles-wrapper .stgb-features,
+.editor-styles-wrapper .stgb-categories,
+.editor-styles-wrapper .stgb-blogs {
+  max-width: 100%;
+  overflow: hidden;
+}

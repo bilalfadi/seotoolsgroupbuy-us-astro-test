@@ -1,0 +1,77 @@
+/* Single Tools List page — matches Next.js SingleToolsListClient */
+
+.stgb-tools-list-page { background: #fff; padding: 3rem 0 4rem; }
+.stgb-shop-main.stgb-tools-list-page { background: #fff; }
+.stgb-tools-list-page__inner { max-width: 72rem; }
+
+.stgb-tools-list-hero {
+	display: grid; grid-template-columns: 1fr; gap: 2rem;
+	background: linear-gradient(90deg, #fff7ed, #fff, #fff);
+	border: 1px solid #ffedd5; border-radius: 1rem; padding: 2rem 2.5rem; margin-bottom: 3rem;
+}
+@media(min-width:768px){ .stgb-tools-list-hero { grid-template-columns: 1.5fr 1fr; align-items: center; } }
+.stgb-tools-list-hero__eyebrow { color: #f97316; font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 .75rem; }
+.stgb-tools-list-hero__title { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; color: #111827; margin: 0 0 1rem; line-height: 1.2; }
+.stgb-tools-list-hero__desc { color: #4b5563; line-height: 1.6; margin: 0; max-width: 36rem; }
+.stgb-tools-list-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+.stgb-tools-list-stats div { background: #fff; border: 1px solid #ffedd5; border-radius: .75rem; padding: 1rem; text-align: center; box-shadow: 0 4px 12px rgba(15,23,42,.04); }
+.stgb-tools-list-stats strong { display: block; font-size: 1.5rem; color: #111827; }
+.stgb-tools-list-stats span { font-size: .65rem; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; }
+
+.stgb-tools-list-tabs {
+	display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem;
+	margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #e5e7eb;
+}
+.stgb-tools-list-tab {
+	padding: .75rem 1.5rem; border-radius: .5rem; font-weight: 600; text-decoration: none;
+	color: #4b5563; transition: all .2s;
+}
+.stgb-tools-list-tab:hover { background: #f3f4f6; color: #2563eb; }
+.stgb-tools-list-tab.is-active { background: #2563eb; color: #fff; box-shadow: 0 8px 20px rgba(37,99,235,.25); }
+
+.stgb-tools-list-grid {
+	display: grid !important; grid-template-columns: repeat(2,1fr); gap: 1.5rem;
+	list-style: none; margin: 0 0 3rem; padding: 0;
+}
+@media(min-width:640px){ .stgb-tools-list-grid { grid-template-columns: repeat(3,1fr); } }
+@media(min-width:1024px){ .stgb-tools-list-grid { grid-template-columns: repeat(4,1fr); } }
+.stgb-tools-list-grid .stgb-shop-card { margin: 0 !important; width: 100% !important; }
+
+.stgb-tools-list-empty {
+	text-align: center; padding: 3rem 1.5rem; color: #4b5563; background: #f8fafc;
+	border-radius: .75rem; border: 1px dashed #cbd5e1; margin-bottom: 2rem;
+}
+.stgb-tools-list-fallback { margin-bottom: 2rem; }
+
+.stgb-tools-list-support {
+	text-align: center; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 1rem; padding: 2.5rem 2rem;
+}
+.stgb-tools-list-support h2 { margin: 0 0 .5rem; font-size: 1.5rem; color: #111827; }
+.stgb-tools-list-support p { margin: 0 0 1.5rem; color: #4b5563; }
+.stgb-tools-list-support__btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+.stgb-tools-list-load-more-wrap {
+	text-align: center;
+	margin: -1.5rem 0 3rem;
+}
+
+.stgb-tools-list-load-more {
+	min-width: 14rem;
+	padding: 0.85rem 2rem;
+	font-size: 1rem;
+	font-weight: 700;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 10px 25px rgba(20, 184, 166, 0.25);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.stgb-tools-list-load-more:hover:not(:disabled) {
+	transform: translateY(-2px);
+	box-shadow: 0 14px 30px rgba(20, 184, 166, 0.35);
+}
+
+.stgb-tools-list-load-more:disabled {
+	opacity: 0.7;
+	cursor: wait;
+}

@@ -1,0 +1,6 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import {home} from '../lib/content.js';
+const page=home();
+---
+<SiteLayout title={page?.seoTitle||'SEO Tools Group Buy'} description={page?.seoDescription||page?.excerpt||'Affordable access to premium digital marketing tools'} type="home"><Fragment set:html={page?.content||'<h1>SEO Tools Group Buy</h1>'}/></SiteLayout>

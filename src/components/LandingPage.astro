@@ -1,0 +1,35 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import svgRegistry from '../lib/landing-icons.json';
+const {entry,landing}=Astro.props;
+const source=JSON.parse(fs.readFileSync(path.join(process.cwd(),'content/landings',landing+'.json'),'utf8'));
+const buyUrl=/^https?:\/\//.test(String(entry.externalUrl||''))?entry.externalUrl:'';
+const cta=(text,cls)=>buyUrl?`<a href="${buyUrl.replaceAll('"','&quot;')}" class="${cls}" target="_blank" rel="noopener noreferrer">${text}</a>`:`<span class="${cls}">${text}</span>`;
+const tokens={
+ buy_now_url:buyUrl,button_text:entry.buttonText||'Buy Now',img_uri:'/assets/images',
+ home_url:'/',login_url:'https://members.seotoolsgroupbuy.us/login',
+ site_url:'https://seotoolsgroupbuy.us/',logo_url:'/assets/images/seotoolsgroupbuy-logo.webp',
+ theme_uri:'',reviews_base:'/assets/images/reviews/',
+ buy_now_cta_primary_dark:cta(entry.buttonText||'Start Your Access Now','ahrefs-btn ahrefs-btn--primary-dark ahrefs-btn--lg'),
+ buy_now_cta_white:cta(entry.buttonText||'Buy Now',landing==='ahrefs'?'ahrefs-btn ahrefs-btn--white':'semrush-btn semrush-btn--white'),
+ buy_now_cta_primary_lg:cta(entry.buttonText||'Buy Now','semrush-btn semrush-btn--primary-lg'),
+ buy_now_cta_primary:cta('Get Started','semrush-btn semrush-btn--primary'),
+ buy_now_cta_steps:cta('Get Started Step-by-Step','semrush-btn semrush-btn--cta')
+};
+const icon=(key,cls)=>{
+ const raw=svgRegistry[landing]?.[key]||'';
+ if(!raw)return '';
+ if(landing==='ahrefs')return raw.replace('<svg ','<svg class="'+cls+'" aria-hidden="true" ');
+ return `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${raw}</svg>`;
+};
+const render=(html)=>String(html||'')
+ .replace(/\{\{icon:([^:|}]+)(?::([^}]+))?\}\}/g,(_m,key,cls)=>icon(key,cls||landing+'-icon'))
+ .replace(/\{\{([a-z0-9_]+)\}\}/g,(_m,key)=>tokens[key]??'');
+const html=source.sections.map(s=>s.key==='lightbox'?'':render(s.html)).join('');
+const lightbox=render(source.sections.find(s=>s.key==='lightbox')?.html||'');
+const heroStart=source.sections.findIndex(s=>s.key==='hero');
+const final=source.sections.findIndex(s=>s.key==='final-cta');
+const wrapped=source.sections.map((s,i)=>s.key==='lightbox'?'':(i===heroStart?`<main class="${landing}-main">`:'')+render(s.html)+(i===final?'</main>':'' )).join('')+lightbox;
+---
+<div class={landing+'-landing'} set:html={wrapped}/>

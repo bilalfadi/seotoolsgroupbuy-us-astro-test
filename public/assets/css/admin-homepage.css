@@ -1,0 +1,15 @@
+.stgb-hp-admin { max-width: 1200px; }
+.stgb-hp-tabs {
+  display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 1rem;
+  border-bottom: 1px solid #c3c4c7; padding-bottom: .5rem;
+}
+.stgb-hp-tab {
+  padding: .5rem 1rem; background: #f0f0f1; border-radius: 4px 4px 0 0;
+  text-decoration: none; color: #1d2327; font-weight: 500;
+}
+.stgb-hp-tab.is-active { background: #2271b1; color: #fff; }
+.stgb-hp-panel { display: none; background: #fff; padding: 1.5rem; border: 1px solid #c3c4c7; margin-bottom: 1rem; }
+.stgb-hp-panel.is-active { display: block; }
+.stgb-hp-repeater td { vertical-align: top; }
+.stgb-hp-repeater input[type="text"], .stgb-hp-repeater textarea { width: 100%; }
+.stgb-hp-reset-wrap { margin-top: .75rem; }

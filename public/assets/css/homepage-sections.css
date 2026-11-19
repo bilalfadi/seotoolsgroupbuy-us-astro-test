@@ -1,0 +1,126 @@
+/* All sections – one file. Paste in Elementor → Custom CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.s1-container,.s2-container,.s3-container,.s4-container,.s5-container,.s6-container{
+  width:100%;max-width:72rem;margin:0 auto;padding-left:1rem;padding-right:1rem;box-sizing:border-box;
+}
+@media(min-width:640px){.s1-container,.s2-container,.s3-container,.s4-container,.s5-container,.s6-container{padding-left:1.5rem;padding-right:1.5rem}}
+@media(min-width:1024px){.s1-container,.s2-container,.s3-container,.s4-container,.s5-container,.s6-container{padding-left:2rem;padding-right:2rem}}
+
+/* SECTION 1 HERO */
+.s1-hero{position:relative;overflow:hidden;width:100%;padding:3rem 0 3.5rem;background:#1e293b;color:#fff;font-family:"Poppins",sans-serif;box-sizing:border-box}
+.s1-hero__bubbles{position:absolute;inset:0;pointer-events:none;opacity:.25}
+.s1-hero__bubble{position:absolute;background:#fff;border-radius:9999px;animation:s1-f 6s ease-in-out infinite}
+.s1-hero__bubble--1{top:2.5rem;left:2.5rem;width:4.5rem;height:4.5rem}
+.s1-hero__bubble--2{top:8rem;right:5rem;width:3.5rem;height:3.5rem;animation-delay:2s}
+.s1-hero__bubble--3{bottom:5rem;left:25%;width:3rem;height:3rem;animation-delay:4s}
+@keyframes s1-f{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.s1-hero__grid{position:absolute;inset:0;opacity:.2;background-image:linear-gradient(0deg,transparent 24%,rgba(255,255,255,.2) 25%,rgba(255,255,255,.2) 26%,transparent 27%,transparent 74%,rgba(255,255,255,.2) 75%,rgba(255,255,255,.2) 76%,transparent 77%),linear-gradient(90deg,transparent 24%,rgba(255,255,255,.2) 25%,rgba(255,255,255,.2) 26%,transparent 27%,transparent 74%,rgba(255,255,255,.2) 75%,rgba(255,255,255,.2) 76%,transparent 77%);background-size:55px 55px;-webkit-mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,.8) 100%);mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,.8) 100%)}
+.s1-hero__container{position:relative;z-index:1}
+.s1-hero__inner{text-align:center;margin-top:3rem}
+@media(min-width:640px){.s1-hero__inner{margin-top:4rem}}
+@media(min-width:768px){.s1-hero__inner{margin-top:5rem}}
+.s1-hero__title{margin:0 0 1rem;font-size:1.875rem;font-weight:700;line-height:1.1;letter-spacing:-.04em;color:#f9fafb}
+@media(min-width:640px){.s1-hero__title{font-size:2.25rem;margin-bottom:1.5rem}}
+@media(min-width:768px){.s1-hero__title{font-size:3rem}}
+@media(min-width:1024px){.s1-hero__title{font-size:3.75rem}}
+.s1-hero__subtitle{font-size:1.125rem;color:#e5e7eb;margin-bottom:1.5rem;line-height:1.6}
+@media(min-width:640px){.s1-hero__subtitle{font-size:1.25rem;margin-bottom:2rem}}
+@media(min-width:768px){.s1-hero__subtitle{font-size:1.5rem}}
+.s1-hero__text{font-size:1rem;color:#9ca3af;margin-bottom:2rem;line-height:1.7}
+@media(min-width:640px){.s1-hero__text{font-size:1.125rem;margin-bottom:2.5rem}}
+.s1-hero__cta{display:flex;flex-direction:column;gap:.75rem;align-items:stretch;justify-content:center;margin-bottom:2.5rem}
+@media(min-width:640px){.s1-hero__cta{flex-direction:row;gap:1rem;margin-bottom:3rem}}
+.s1-hero__btn{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.75rem;border-radius:.5rem;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;transition:opacity .2s,background .2s,color .2s;width:100%;box-sizing:border-box}
+@media(min-width:640px){.s1-hero__btn{width:auto;padding:1rem 2rem;font-size:1.0625rem}}
+.s1-hero__btn--primary{background:#097969;color:#fff}
+.s1-hero__btn--primary:hover{opacity:.9}
+.s1-hero__btn--outline{background:transparent;color:#fff;border-color:#fff}
+.s1-hero__btn--outline:hover{background:#fff;color:#111827}
+.s1-hero__btn-icon{margin-left:.5rem}
+.s1-hero__btn-mobile{display:inline}.s1-hero__btn-desk{display:none}
+@media(min-width:640px){.s1-hero__btn-mobile{display:none}.s1-hero__btn-desk{display:inline}}
+.s1-hero__stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media(min-width:640px){.s1-hero__stats{grid-template-columns:repeat(4,1fr);gap:1.5rem}}
+.s1-hero__stat{text-align:center}
+.s1-hero__stat-icon{width:2rem;height:2rem;margin:0 auto .5rem;color:#facc15}
+.s1-hero__stat-icon svg{width:100%;height:100%;stroke:currentColor;stroke-width:2;fill:none}
+.s1-hero__stat-num{font-size:1.25rem;font-weight:700}
+@media(min-width:640px){.s1-hero__stat-num{font-size:1.5rem}}
+.s1-hero__stat-label{font-size:.875rem;color:#e5e7eb}
+@media(min-width:640px){.s1-hero__stat-label{font-size:1rem}}
+
+/* SECTION 2 TOOLS */
+.s2-tools{width:100%;padding:4rem 0;background:#fff;font-family:"Poppins",sans-serif;box-sizing:border-box}
+@media(min-width:640px){.s2-tools{padding:5rem 0}}
+.s2-tools__head{text-align:center;margin-bottom:2.5rem}
+.s2-tools__title{font-size:1.875rem;font-weight:700;color:#111827;margin-bottom:.75rem}
+@media(min-width:640px){.s2-tools__title{font-size:2.25rem}}
+.s2-tools__sub{font-size:1rem;color:#4b5563}
+.s2-tools__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(min-width:640px){.s2-tools__grid{grid-template-columns:repeat(6,1fr)}}
+@media(min-width:1024px){.s2-tools__grid{grid-template-columns:repeat(8,1fr)}}
+.s2-tools__card{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;border-radius:1rem;background:#fff;border:1px solid #f3f4f6;text-decoration:none;box-shadow:0 10px 20px rgba(15,23,42,.04);transition:box-shadow .15s,border-color .15s,transform .15s;aspect-ratio:1;box-sizing:border-box}
+.s2-tools__card:hover{border-color:#5eead4;box-shadow:0 18px 30px rgba(15,23,42,.12);transform:translateY(-2px)}
+.s2-tools__badge{width:2.75rem;height:2.75rem;border-radius:.9rem;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:#fff;margin-bottom:.4rem}
+.s2-tools__name{font-size:.8rem;text-align:center;color:#111827;font-weight:500;line-height:1.2}
+.s2-tools__card--cta{background:linear-gradient(135deg,#14b8a6,#0f766e);border-color:transparent;color:#fff}
+.s2-tools__card--cta:hover{transform:translateY(-2px)}
+.s2-tools__cta-top{font-size:1.5rem;font-weight:700}
+.s2-tools__cta-bottom{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
+
+/* SECTION 3 PRICING — flip styles in pricing-flip.css */
+
+/* SECTION 4 CONTENT */
+.s4-content{width:100%;padding:4rem 0;background:#fff;font-family:"Poppins",sans-serif;box-sizing:border-box}
+@media(min-width:640px){.s4-content{padding:5rem 0}}
+.s4-content__inner{max-width:56rem;margin:0 auto}
+.s4-content__pill{display:inline-flex;align-items:center;gap:.5rem;padding:.25rem .75rem;border-radius:9999px;background:#f0fdfa;border:1px solid #ccfbf1;font-size:.75rem;font-weight:600;color:#0f766e;margin-bottom:1rem}
+.s4-content__pill-dot{width:.375rem;height:.375rem;border-radius:9999px;background:#14b8a6}
+.s4-content__h2{font-size:1.875rem;font-weight:600;color:#0f172a;margin-bottom:1rem;line-height:1.2}
+@media(min-width:640px){.s4-content__h2{font-size:2.25rem}}
+.s4-content__p{font-size:1rem;line-height:1.75;color:#334155;margin-bottom:.75rem}
+@media(min-width:640px){.s4-content__p{font-size:1.125rem}}
+.s4-content__strong{font-weight:600;color:#0f766e}
+a.s4-content__strong{text-decoration:none}
+a.s4-content__strong:hover{text-decoration:underline}
+.s4-content__hr{border:0;border-top:1px solid #e2e8f0;margin:2rem 0}
+.s4-content__ul{list-style:none;padding:0;margin:0 0 1rem}
+.s4-content__ul li{font-size:1rem;line-height:1.75;color:#334155;margin-bottom:.5rem}
+.s4-content__ol{padding-left:1.5rem;margin:0 0 1rem}
+.s4-content__ol li{font-size:1rem;line-height:1.75;color:#334155;margin-bottom:.5rem}
+
+/* SECTION 5 FAQ */
+.s5-faq{width:100%;padding:4rem 0;background:linear-gradient(to bottom right,#0f172a,#334155);font-family:"Poppins",sans-serif;box-sizing:border-box}
+.s5-faq__head{text-align:center;margin-bottom:3rem}
+.s5-faq__title{font-size:2.25rem;font-weight:700;color:#fff;margin-bottom:1rem}
+.s5-faq__sub{font-size:1.25rem;color:#d1d5db}
+.s5-faq__sub a{color:#4ade80;text-decoration:none}
+.s5-faq__sub a:hover{text-decoration:underline}
+.s5-faq__list{max-width:56rem;margin:0 auto}
+.s5-faq__item{margin-bottom:1rem;border:1px solid #4b5563;border-radius:.5rem;overflow:hidden;background:#1f2937}
+.s5-faq__q{width:100%;padding:1rem 1.25rem;text-align:left;font-size:1rem;font-weight:500;color:#fff;background:#1f2937;border:none;cursor:pointer;font-family:inherit;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+summary.s5-faq__q::-webkit-details-marker{display:none}
+.s5-faq__q:hover{background:#374151}
+.s5-faq__q::after{content:"+";flex-shrink:0;font-size:1.25rem;color:#fff}
+.s5-faq__item[open]>.s5-faq__q::after,.s5-faq__item.is-open .s5-faq__q::after{content:"\2212"}
+.s5-faq__a{padding:1rem 1.25rem;font-size:.9375rem;color:#d1d5db;line-height:1.6;border-top:1px solid #4b5563}
+.s5-faq__item:not([open]):not(.is-open) .s5-faq__a{display:none}
+
+/* SECTION 6 SUPPORT */
+.s6-support{width:100%;padding:4rem 0;background:linear-gradient(to bottom right,#1e293b,#0f172a);font-family:"Poppins",sans-serif;box-sizing:border-box}
+.s6-support__head{text-align:center;margin-bottom:3rem}
+.s6-support__title{font-size:1.875rem;font-weight:700;color:#fff;margin-bottom:1rem}
+@media(min-width:768px){.s6-support__title{font-size:2.25rem}}
+.s6-support__sub{font-size:1.25rem;color:rgba(255,255,255,.9);max-width:48rem;margin:0 auto 2rem;line-height:1.7}
+.s6-support__links{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-bottom:2rem}
+.s6-support__links a{color:#fff;text-decoration:none;font-weight:500}
+.s6-support__links a:hover{color:#5eead4}
+.s6-support__grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1.5rem}
+@media(min-width:768px){.s6-support__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.s6-support__grid{grid-template-columns:repeat(3,1fr)}}
+.s6-support__card{display:block;padding:1rem 1.25rem;border-radius:.5rem;background:rgba(30,41,59,.8);border:1px solid #475569;text-decoration:none;color:#e2e8f0;transition:border-color .2s,transform .2s}
+.s6-support__card:hover{border-color:#5eead4;transform:translateY(-2px)}
+.s6-support__card-title{font-size:1rem;font-weight:600;color:#fff;margin:0 0 .25rem}
+.s6-support__card-desc{font-size:.875rem;color:#94a3b8;line-height:1.5}
+.s6-support__foot{text-align:center;font-size:.875rem;color:#64748b}

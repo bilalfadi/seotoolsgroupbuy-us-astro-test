@@ -1,0 +1,21 @@
+.stgb-pl-admin { max-width: 1200px; }
+.stgb-pl-landing-tabs {
+  display: flex; gap: .5rem; margin: 1rem 0;
+}
+.stgb-pl-landing-tab {
+  padding: .6rem 1.25rem; background: #f0f0f1; border-radius: 4px;
+  text-decoration: none; color: #1d2327; font-weight: 600;
+}
+.stgb-pl-landing-tab.is-active { background: #135e96; color: #fff; }
+.stgb-pl-tabs {
+  display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 1rem;
+  border-bottom: 1px solid #c3c4c7; padding-bottom: .5rem;
+}
+.stgb-pl-tab {
+  padding: .5rem 1rem; background: #f0f0f1; border-radius: 4px 4px 0 0;
+  text-decoration: none; color: #1d2327; font-weight: 500;
+}
+.stgb-pl-tab.is-active { background: #2271b1; color: #fff; }
+.stgb-pl-panel { display: none; background: #fff; padding: 1.5rem; border: 1px solid #c3c4c7; margin-bottom: 1rem; }
+.stgb-pl-panel.is-active { display: block; }
+.stgb-pl-reset-wrap { margin-top: .75rem; }

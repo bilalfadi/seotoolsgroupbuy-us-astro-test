@@ -1,0 +1,424 @@
+{
+  "generatedAt": "2026-11-19T00:54:20.941Z",
+  "contentCounts": {
+    "products": 176,
+    "posts": 11,
+    "pages": 17
+  },
+  "existingThemeAssets": 7,
+  "mediaFilesDownloaded": 1404,
+  "mediaReferenceUrls": 1503,
+  "attachmentsInManifest": 1407,
+  "unmatchedInternalPaths": [
+    {
+      "path": "vidiq-group-buy",
+      "references": 3,
+      "sourceFiles": [
+        "content/products/vidiq.json",
+        "content/pages/access-tools.json",
+        "content/pages/home.json"
+      ]
+    },
+    {
+      "path": "gamma-ai-group-buy",
+      "references": 3,
+      "sourceFiles": [
+        "content/pages/access-tools.json",
+        "content/pages/home.json"
+      ]
+    },
+    {
+      "path": "midjourney-group-buy",
+      "references": 3,
+      "sourceFiles": [
+        "content/pages/access-tools.json",
+        "content/pages/home.json"
+      ]
+    },
+    {
+      "path": "mangools-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/products/mangools.json",
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "hashtagforlikes-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "aiseo-ai-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "elevenlabs-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json",
+        "content/pages/home.json"
+      ]
+    },
+    {
+      "path": "spyhero-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "smodin-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "adheart-me-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "onlinetools-ai-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "ai-content-labs-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "picovico-group-buy",
+      "references": 2,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "murf-ai-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/products/murf-ai.json"
+      ]
+    },
+    {
+      "path": "contact-us",
+      "references": 1,
+      "sourceFiles": [
+        "content/products/semrush-group-buy.json"
+      ]
+    },
+    {
+      "path": "product-tag/buy-cheap-ahrefs",
+      "references": 1,
+      "sourceFiles": [
+        "content/posts/group-buy-vs-standard-subscriptions-for-seo-tools-which-is-right-for-you.json"
+      ]
+    },
+    {
+      "path": "product-tag/moz-pro-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/posts/group-buy-vs-standard-subscriptions-for-seo-tools-which-is-right-for-you.json"
+      ]
+    },
+    {
+      "path": "screaming-frog-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "brandoverflow-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "theoptimizer-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "topicmojo-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "blaster-online-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "deepflush-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "seoscout-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "seobility-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "keyword-eye-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "authority-labs-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "rank-key-top-seo-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "similarweb-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "lsigraph-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "tools-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "alexa-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "screamingfrog",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "pipio-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "nobuna-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "inkforall-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "helloscribe-ai-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "bramework-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "hyperwrite-ai-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "selleramp-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "placeit-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "audio-block-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "pixteller-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "lumen5-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "nichess-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "prowritingaid-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "advertsuite-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "texta-ai-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "peppertype-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "doodly-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "wrytly-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "play-ht-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "steven-ai-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "copygenius-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "lovo-ai-group-buy",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/access-tools.json"
+      ]
+    },
+    {
+      "path": "semrush",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/single-tools-list.json"
+      ]
+    },
+    {
+      "path": "seo-profiler",
+      "references": 1,
+      "sourceFiles": [
+        "content/pages/single-tools-list.json"
+      ]
+    }
+  ],
+  "notes": [
+    "A relative path not present in imported published content may point to a non-imported page, legacy/redirect slug or a taxonomic archive; check individually.",
+    "WordPress content export does not include all media bytes. Missing media must be downloaded on a network-enabled computer.",
+    "External Buy Now URLs were retained from product metadata and must be tested in the browser before production."
+  ]
+}

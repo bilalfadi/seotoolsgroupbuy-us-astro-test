@@ -1,0 +1,134 @@
+/* ============================================
+   SECTION 5: FAQ
+   Next.js FAQSection - Tailwind to vanilla CSS
+   Use with wp-section-5-faq.html
+   ============================================ */
+
+.s5-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+@media (min-width: 640px) {
+  .s5-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .s5-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.s5-faq {
+  width: 100%;
+  padding: 4rem 0;
+  background: linear-gradient(to bottom right, #020617, #334155);
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.s5-faq__head {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.s5-faq__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem 0;
+}
+
+.s5-faq__sub {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  margin: 0;
+}
+.s5-faq__sub a {
+  color: #4ade80;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.s5-faq__sub a:hover {
+  color: #86efac;
+}
+
+.s5-faq__list {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.s5-faq__item {
+  border: 1px solid #4b5563;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.s5-faq__item:last-child {
+  margin-bottom: 0;
+}
+
+.s5-faq__q {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #1f2937;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: inherit;
+  transition: background 0.2s;
+  list-style: none;
+}
+summary.s5-faq__q::-webkit-details-marker {
+  display: none;
+}
+.s5-faq__q:hover {
+  background: #374151;
+}
+.s5-faq__q::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  color: #fff;
+}
+.s5-faq__item[open] > .s5-faq__q::after,
+.s5-faq__item.is-open .s5-faq__q::after {
+  content: "\2212";
+}
+
+.s5-faq__a {
+  border-top: 1px solid #4b5563;
+  padding: 1rem 1.5rem;
+  background: #1f2937;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+/* Legacy div+button accordion */
+.s5-faq__item:not([open]) .s5-faq__a {
+  display: none;
+}
+.s5-faq__item.is-open .s5-faq__a,
+details.s5-faq__item[open] .s5-faq__a {
+  display: block;
+}

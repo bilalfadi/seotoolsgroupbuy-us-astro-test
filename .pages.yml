@@ -1,0 +1,78 @@
+media:
+  - name: uploads
+    label: Images
+    input: public/media
+    output: /media
+    categories: [image]
+content:
+  - name: products
+    label: Products
+    type: collection
+    path: content/products
+    format: json
+    filename: "{slug}.json"
+    view: { primary: title, fields: [title, slug, price] }
+    operations: { rename: false, delete: false }
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: featuredImage, type: string }
+      - { name: featuredAlt, type: string }
+      - { name: price, type: string }
+      - { name: regularPrice, type: string }
+      - { name: salePrice, type: string }
+      - { name: shortDescription, type: rich-text, options: { format: html, media: uploads } }
+      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: true } }
+      - { name: externalUrl, type: string }
+      - { name: seoTitle, type: string }
+      - { name: seoDescription, type: text }
+      - { name: focusKeyword, type: string }
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: content/posts
+    format: json
+    filename: "{slug}.json"
+    view: { primary: title, fields: [title, slug] }
+    operations: { rename: false, delete: false }
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: featuredImage, type: string }
+      - { name: excerpt, type: rich-text, options: { format: html, media: uploads } }
+      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: true } }
+      - { name: seoTitle, type: string }
+      - { name: seoDescription, type: text }
+      - { name: focusKeyword, type: string }
+  - name: pages
+    label: Website Pages
+    type: collection
+    path: content/pages
+    format: json
+    filename: "{slug}.json"
+    view: { primary: title, fields: [title, slug] }
+    operations: { rename: false, delete: false }
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: true } }
+      - { name: seoTitle, type: string }
+      - { name: seoDescription, type: text }
+
+  - name: landings
+    label: Ahrefs and Semrush Landing Sections
+    type: collection
+    path: content/landings
+    format: json
+    filename: "{landing}.json"
+    view: { primary: landing }
+    operations: { create: false, rename: false, delete: false }
+    fields:
+      - { name: landing, type: string, required: true }
+      - name: sections
+        label: Landing Sections
+        type: object
+        list: true
+        fields:
+          - { name: key, type: string }
+          - { name: html, type: text }

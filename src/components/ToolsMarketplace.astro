@@ -1,0 +1,29 @@
+---
+import {load,url} from '../lib/content.js';
+const products=load('products').sort((a,b)=>a.title.localeCompare(b.title));
+const tabs=[['All Tools','all'],['SEO Tools','seo'],['Content','content'],['Amazon','amazon'],['Design','design'],['AI Tools','ai']];
+const tab=p=>{
+  let cats=String(p.categories||'').toLowerCase(),name=String(p.title||'').toLowerCase();
+  if(cats.includes('seo'))return 'seo';
+  if(cats.includes('content'))return 'content';
+  if(cats.includes('amazon'))return 'amazon';
+  if(cats.includes('design'))return 'design';
+  if(cats.includes('ai'))return 'ai';
+  if(/ahrefs|semrush|moz|ubersuggest|majestic|backlink|keyword|seo/.test(name))return 'seo';
+  if(/amazon|helium|jungle|seller|ecomhunt|ebay|etsy/.test(name))return 'amazon';
+  if(/canva|envato|depositphotos|storyblocks|videoblocks|design|graphic|stock|animation/.test(name))return 'design';
+  if(/chatgpt|midjourney|gamma|elevenlabs|ai|claude|perplexity|copilot/.test(name))return 'ai';
+  if(/grammarly|quetext|copyscape|frase|content|writer/.test(name))return 'content';
+  return 'seo';
+};
+const formatPrice=p=>String(p.salePrice||p.price||'').replace(/^\$/,'');
+---
+<div class="stgb-tools-list-page" data-static-marketplace>
+ <div class="stgb-container stgb-tools-list-page__inner">
+  <div class="stgb-tools-list-hero stgb-reveal"><div class="stgb-tools-list-hero__text"><p class="stgb-tools-list-hero__eyebrow">Premium Tools Collection</p><h1 class="stgb-tools-list-hero__title">Access Every Premium Tool From One Dashboard</h1><p class="stgb-tools-list-hero__desc">Choose from SEO, content, design, Amazon, and AI tools — each available through instant group-buy access.</p></div><div class="stgb-tools-list-stats"><div><strong>90+</strong><span>Premium Tools</span></div><div><strong>Instant</strong><span>Access</span></div><div><strong>24/7</strong><span>Support</span></div></div></div>
+  <nav class="stgb-tools-list-tabs stgb-reveal" aria-label="Tool categories">{tabs.map(([label,id])=><a href={id==='all'?'?':'?tab='+id} data-static-tab={id} class:list={['stgb-tools-list-tab',id==='all'&&'is-active']}>{label}</a>)}</nav>
+  <div class="woocommerce stgb-tools-marketplace-grid-wrap"><ul class="products stgb-tools-list-grid stgb-product-card-grid" data-static-grid>{products.map(p=><li class="stgb-product-card-item product type-product" data-static-card data-tab={tab(p)}><a href={url(p.slug)} class="stgb-related-card stgb-product-card"><div class="stgb-related-card__inner">{Number(p.regularPrice)>Number(p.salePrice||p.price)&&Number(p.salePrice||p.price)>0&&<span class="stgb-related-card__badge">{Math.round((1-Number(p.salePrice||p.price)/Number(p.regularPrice))*100)}% OFF</span>}<div class="stgb-related-card__media">{p.featuredImage?<img class="stgb-related-card__img" src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy" decoding="async"/>:<div class="stgb-related-card__fallback">{p.title.substring(0,2)}</div>}</div><div class="stgb-related-card__divider"></div><div class="stgb-related-card__body"><span class="stgb-related-card__category">{tab(p).toUpperCase()} TOOLS</span><h3 class="stgb-related-card__name">{p.title}</h3><div class="stgb-related-card__pricing"><div class="stgb-related-card__price-wrap"><span class="stgb-related-card__price">{formatPrice(p)?'$'+formatPrice(p):'Contact us'}</span><span class="stgb-related-card__per">/mo</span></div>{Number(p.regularPrice)>Number(p.salePrice||p.price)&&<span class="stgb-related-card__old">${p.regularPrice}</span>}</div><span class="stgb-related-card__cta">View Details <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span></div></div></a></li>)}</ul>
+  <div class="stgb-tools-list-load-more-wrap" data-static-more-wrap><button type="button" class="stgb-btn stgb-btn--teal stgb-tools-list-load-more" data-static-more>Load More</button></div></div>
+  <div class="stgb-tools-list-support stgb-reveal"><h2>Need Help Choosing a Tool?</h2><p>Our team is available to help you find the right plan.</p><div class="stgb-tools-list-support__btns"><a href="https://wa.me/15205636362" class="stgb-btn stgb-btn--teal" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a><a href="/pricing-plans/" class="stgb-btn stgb-btn--orange">View Pricing Plans</a></div></div>
+ </div>
+</div>
