@@ -1,0 +1,27 @@
+name: Compare deployed preview and live HTML
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/verify-preview.mjs
+      - .github/workflows/verify-preview.yml
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/verify-preview.mjs
+      - name: Save verification report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/preview-smoke-check.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Verify deployed Astro preview versus WordPress URLs"
+            git push
+          fi
