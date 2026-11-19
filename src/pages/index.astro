@@ -1,6 +1,16 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import HomeBlogs from '../components/HomeBlogs.astro';
 import {home} from '../lib/content.js';
 const page=home();
+const markup=page?.content||'<h1>SEO Tools Group Buy</h1>';
+const shortcode='[stgb_home_blogs]';
+const pos=markup.indexOf(shortcode);
+const before=pos<0?markup:markup.slice(0,pos);
+const after=pos<0?'':markup.slice(pos+shortcode.length);
 ---
-<SiteLayout title={page?.seoTitle||'SEO Tools Group Buy'} description={page?.seoDescription||page?.excerpt||'Affordable access to premium digital marketing tools'} type="home"><Fragment set:html={page?.content||'<h1>SEO Tools Group Buy</h1>'}/></SiteLayout>
+<SiteLayout title={page?.seoTitle||'SEO Tools Group Buy'} description={page?.seoDescription||page?.excerpt||'Affordable access to premium digital marketing tools'} type="home">
+  <Fragment set:html={before} />
+  {pos>=0&&<HomeBlogs />}
+  {pos>=0&&<Fragment set:html={after}/>}
+</SiteLayout>
