@@ -1,0 +1,154 @@
+{
+  "dmca-policy": {
+    "bg": "stgb-page-bg--dmca",
+    "hero": "stgb-hero--red",
+    "wave": [
+      "#f8fafc",
+      "#fef2f2"
+    ],
+    "bar": "stgb-bar--red",
+    "prose": "stgb-prose--red",
+    "cta": "stgb-cta--red",
+    "badgeIcon": "⚖️",
+    "badge": "Copyright Protection",
+    "subtitle": "Digital Millennium Copyright Act compliance and takedown procedures.",
+    "cards": [
+      [
+        "📝",
+        "File a Claim",
+        "Submit DMCA takedown notice"
+      ],
+      [
+        "⚡",
+        "Fast Response",
+        "Quick review process"
+      ],
+      [
+        "🔄",
+        "Counter Notice",
+        "Dispute a takedown"
+      ]
+    ],
+    "noticeTitle": "Copyright Infringement",
+    "noticeText": "We respect intellectual property rights. If you believe your copyrighted work has been infringed, please follow our DMCA takedown procedure.",
+    "noticeClass": "stgb-notice--red",
+    "ctaTitle": "Submit a DMCA Notice",
+    "ctaText": "For copyright claims, please contact our designated DMCA agent with proper documentation.",
+    "ctaBtn": "Email DMCA Agent",
+    "ctaLink": "mailto:dmca@seotoolsgroupbuy.us"
+  },
+  "privacy-policy": {
+    "bg": "stgb-page-bg--privacy",
+    "hero": "stgb-hero--indigo",
+    "wave": [
+      "#f8fafc",
+      "#eef2ff"
+    ],
+    "bar": "stgb-bar--indigo",
+    "prose": "stgb-prose--indigo",
+    "cta": "stgb-cta--indigo",
+    "badgeIcon": "🔒",
+    "badge": "Data Protection",
+    "subtitle": "How we collect, use, and protect your personal information.",
+    "cards": [
+      [
+        "🔐",
+        "Secure Data",
+        "Your info is protected"
+      ],
+      [
+        "📋",
+        "Transparency",
+        "Clear privacy practices"
+      ],
+      [
+        "✅",
+        "Your Rights",
+        "Access & delete your data"
+      ]
+    ],
+    "noticeTitle": "Your Privacy Matters",
+    "noticeText": "This policy explains how we handle your personal information responsibly.",
+    "noticeClass": "stgb-notice--indigo",
+    "ctaTitle": "Questions About Your Data?",
+    "ctaText": "Contact us anytime for data access, deletion, or privacy concerns.",
+    "ctaBtn": "Contact Us",
+    "ctaLink": "/contact/"
+  },
+  "refund-policy": {
+    "bg": "stgb-page-bg--refund",
+    "hero": "stgb-hero--blue",
+    "wave": [
+      "#f8fafc",
+      "#eff6ff"
+    ],
+    "bar": "stgb-bar--blue",
+    "prose": "stgb-prose--blue",
+    "cta": "stgb-cta--blue",
+    "badgeIcon": "📋",
+    "badge": "Policy Document",
+    "subtitle": "Transparency is our priority. Learn about our refund process and eligibility criteria.",
+    "cards": [
+      [
+        "⏰",
+        "24-Hour Window",
+        "Request within 24 hours of purchase"
+      ],
+      [
+        "✅",
+        "Easy Process",
+        "Simple refund request via WhatsApp"
+      ],
+      [
+        "💳",
+        "Full Refund",
+        "100% money back if eligible"
+      ]
+    ],
+    "noticeTitle": "Important Notice",
+    "noticeText": "Please read our refund policy carefully before making a purchase. By subscribing, you agree to these terms.",
+    "noticeClass": "stgb-notice--blue",
+    "ctaTitle": "Need a Refund?",
+    "ctaText": "Contact our support team via WhatsApp within 24 hours of purchase.",
+    "ctaBtn": "Request Refund",
+    "ctaLink": "https://wa.me/15205636362"
+  },
+  "terms-conditions": {
+    "bg": "stgb-page-bg--terms",
+    "hero": "stgb-hero--amber",
+    "wave": [
+      "#f8fafc",
+      "#fffbeb"
+    ],
+    "bar": "stgb-bar--amber",
+    "prose": "stgb-prose--amber",
+    "cta": "stgb-cta--amber",
+    "badgeIcon": "📜",
+    "badge": "Legal Agreement",
+    "subtitle": "Please review our terms of service carefully before using our platform.",
+    "cards": [
+      [
+        "📋",
+        "Service Terms",
+        "Rules for using our platform"
+      ],
+      [
+        "👤",
+        "User Obligations",
+        "Your responsibilities"
+      ],
+      [
+        "⚖️",
+        "Fair Usage",
+        "Acceptable use policy"
+      ]
+    ],
+    "noticeTitle": "Agreement Required",
+    "noticeText": "By using our services, you agree to comply with these terms and conditions.",
+    "noticeClass": "stgb-notice--amber",
+    "ctaTitle": "Questions About Terms?",
+    "ctaText": "Our support team is happy to clarify any part of this agreement.",
+    "ctaBtn": "Contact Support",
+    "ctaLink": "/contact/"
+  }
+}
