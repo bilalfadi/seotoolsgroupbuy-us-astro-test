@@ -1,0 +1,28 @@
+---
+import themes from '../lib/policy-themes.json';
+const {entry}=Astro.props;
+const t=themes[entry.slug];
+---
+{t && <div class:list={['stgb-page-wrap',t.bg]}>
+  <section class="stgb-page-hero-section stgb-reveal">
+    <div class:list={['stgb-page-hero-bg',t.hero]}><div class="stgb-page-hero-blob stgb-page-hero-blob--1"></div><div class="stgb-page-hero-blob stgb-page-hero-blob--2"></div></div>
+    <div class="stgb-container stgb-page-hero-inner">
+      <div class="stgb-page-badge"><span class="stgb-page-badge__icon">{t.badgeIcon}</span><span>{t.badge}</span></div>
+      <h1 class="stgb-page-hero-title">{entry.title}</h1>
+      <p class="stgb-page-hero-subtitle">{t.subtitle}</p>
+    </div>
+    <div class="stgb-page-wave"><svg viewBox="0 0 1440 120" fill="none" aria-hidden="true"><path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill={`url(#${entry.slug}-wave)`}/><defs><linearGradient id={`${entry.slug}-wave`} x1="0" y1="0" x2="1440" y2="0"><stop stop-color={t.wave[0]}/><stop offset="1" stop-color={t.wave[1]}/></linearGradient></defs></svg></div>
+  </section>
+  <section class="stgb-page-cards-row stgb-reveal"><div class="stgb-container"><div class="stgb-page-cards-grid">
+  {t.cards.map(c=><div class="stgb-page-info-card"><span class="stgb-page-info-card__icon">{c[0]}</span><h3>{c[1]}</h3><p>{c[2]}</p></div>)}
+  </div></div></section>
+  <section class="stgb-page-policy-main stgb-reveal"><div class="stgb-container">
+    <div class="stgb-page-content-box"><div class:list={['stgb-page-content-box__bar',t.bar]}></div><div class="stgb-page-content-box__inner stgb-page-content-box__inner--wide">
+      <div class:list={['stgb-page-notice',t.noticeClass]}><span class="stgb-page-notice__icon">⚠️</span><div><h3>{t.noticeTitle}</h3><p>{t.noticeText}</p></div></div>
+      {entry.content?<div class:list={['prose-rich','stgb-page-prose',t.prose]} set:html={entry.content}/>:<p class="stgb-page-empty">Policy content loading...</p>}
+    </div></div>
+    <div class:list={['stgb-page-cta-block',t.cta,'stgb-reveal']}><div class="stgb-page-cta-block__glow"></div><div class="stgb-page-cta-block__inner">
+      <h3>{t.ctaTitle}</h3><p>{t.ctaText}</p><a href={t.ctaLink} class="stgb-page-cta-btn">{t.ctaBtn}</a>
+    </div></div>
+  </div></section>
+</div>}
