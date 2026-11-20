@@ -4,7 +4,10 @@ on:
   push:
     paths:
       - src/**
-      - content/landings/**
+      - content/**
+      - public/assets/js/**
+      - public/assets/css/**
+      - .pages.yml
       - .github/workflows/verify-astro-build.yml
 permissions:
   contents: read
