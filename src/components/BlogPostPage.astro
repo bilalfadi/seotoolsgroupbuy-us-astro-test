@@ -4,6 +4,9 @@ import authorSettings from '../../content/settings/blog-author.json';
 import {postCategoryName} from '../lib/catalog.js';
 const {entry}=Astro.props;
 const formatDate=(raw)=>{const d=new Date(raw);return Number.isNaN(d.getTime())?'':new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric'}).format(d)};
+const dateLine=entry.modified&&entry.date&&String(entry.modified).slice(0,10)!==String(entry.date).slice(0,10)
+  ? 'Updated on: '+formatDate(entry.modified)
+  : 'Published '+formatDate(entry.date);
 const firstCategory=postCategoryName(entry);
 const author=typeof entry.author==='string'&&entry.author.trim()?entry.author:entry.author?.name||authorSettings.name;
 const jobTitle=entry.authorJobTitle||authorSettings.jobTitle;
@@ -11,6 +14,6 @@ const organization=entry.authorOrganization||authorSettings.organization;
 const authorImage=entry.authorImage||authorSettings.image;
 ---
 <article class="stgb-post-article">
- <section class="stgb-post-hero" aria-label="Article header"><div class="stgb-container"><div class="stgb-post-hero__inner"><p class="stgb-post-hero__cat">{firstCategory}</p><h1 class="stgb-post-hero__title">{entry.title}</h1><div class="stgb-post-hero__meta"><span>{formatDate(entry.date)}</span><span class="stgb-post-hero__meta-sep" aria-hidden="true">•</span><span>By {author}</span></div><p class="stgb-post-hero__tagline">We test every group-buy seat, benchmark pricing weekly, and publish the findings so your team knows exactly what to expect.</p></div></div></section>
+ <section class="stgb-post-hero" aria-label="Article header"><div class="stgb-container"><div class="stgb-post-hero__inner"><p class="stgb-post-hero__cat">{firstCategory}</p><h1 class="stgb-post-hero__title">{entry.title}</h1><div class="stgb-post-hero__meta"><span>{dateLine}</span><span class="stgb-post-hero__meta-sep" aria-hidden="true">•</span><span>By {author}</span></div><p class="stgb-post-hero__tagline">We test every group-buy seat, benchmark pricing weekly, and publish the findings so your team knows exactly what to expect.</p></div></div></section>
  <section class="stgb-container stgb-post-detail-body" id="stgb-post-detail-section"><div class="stgb-post-layout" id="stgb-post-detail-content"><div class="stgb-post-content-shell"><div class="stgb-post-content prose-rich post-detail-content" set:html={entry.content}/></div><aside class="stgb-post-sidebar"><div class="stgb-author-card"><p class="stgb-author-card__label">About the author</p><div class="stgb-author-card__body">{authorImage&&<div class="stgb-author-card__avatar"><img src={authorImage} alt="" width="80" height="80" loading="lazy" decoding="async"/></div>}<div class="stgb-author-card__info"><p class="stgb-author-card__name">{author}</p><p class="stgb-author-card__role">{jobTitle} <span> · {organization}</span></p></div></div></div><a href="/category/seo-tools-blog/" class="stgb-post-sidebar__cta">Browse all blogs</a></aside></div></section>
 </article>
