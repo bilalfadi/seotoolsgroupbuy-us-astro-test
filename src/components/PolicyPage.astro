@@ -1,7 +1,14 @@
 ---
 import themes from '../lib/policy-themes.json';
+import policyLinks from '../../content/settings/policy-links.json';
+import {prepareEditorContentHeadings} from '../lib/legacy-render.js';
 const {entry}=Astro.props;
 const t=themes[entry.slug];
+const policyLinkKeys={'dmca-policy':'dmcaPolicy','privacy-policy':'privacyPolicy','refund-policy':'refundPolicy','terms-conditions':'termsConditions'};
+const rawPolicyLink=String(policyLinks[policyLinkKeys[entry.slug]]||'').trim();
+const safePolicyLink=/^\/(?!\/)[^\s]*$/.test(rawPolicyLink)||/^mailto:[^\s@]+@[^\s@]+\.[^\s@]+$/.test(rawPolicyLink)||/^https:\/\/[^\s]+$/i.test(rawPolicyLink);
+const ctaLink=safePolicyLink?rawPolicyLink:t.ctaLink;
+const policyContent=prepareEditorContentHeadings(entry.title,entry.content);
 ---
 {t && <div class:list={['stgb-page-wrap',t.bg]}>
   <section class="stgb-page-hero-section stgb-reveal">
@@ -19,10 +26,10 @@ const t=themes[entry.slug];
   <section class="stgb-page-policy-main stgb-reveal"><div class="stgb-container">
     <div class="stgb-page-content-box"><div class:list={['stgb-page-content-box__bar',t.bar]}></div><div class="stgb-page-content-box__inner stgb-page-content-box__inner--wide">
       <div class:list={['stgb-page-notice',t.noticeClass]}><span class="stgb-page-notice__icon">⚠️</span><div><h3>{t.noticeTitle}</h3><p>{t.noticeText}</p></div></div>
-      {entry.content?<div class:list={['prose-rich','stgb-page-prose',t.prose]} set:html={entry.content}/>:<p class="stgb-page-empty">Policy content loading...</p>}
+      {policyContent?<div class:list={['prose-rich','stgb-page-prose',t.prose]} set:html={policyContent}/>:<p class="stgb-page-empty">Policy content loading...</p>}
     </div></div>
     <div class:list={['stgb-page-cta-block',t.cta,'stgb-reveal']}><div class="stgb-page-cta-block__glow"></div><div class="stgb-page-cta-block__inner">
-      <h3>{t.ctaTitle}</h3><p>{t.ctaText}</p><a href={t.ctaLink} class="stgb-page-cta-btn">{t.ctaBtn}</a>
+      <h3>{t.ctaTitle}</h3><p>{t.ctaText}</p><a href={ctaLink} class="stgb-page-cta-btn">{t.ctaBtn}</a>
     </div></div>
   </div></section>
 </div>}
