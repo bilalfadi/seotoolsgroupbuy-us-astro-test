@@ -98,5 +98,7 @@
   "contact_tagline": "For payment and tools access",
   "contact_fb_title": "Facebook",
   "contact_fb_text": "Message us on Messenger for payment & access help.",
-  "contact_fb_cta": "Chat Now →"
+  "contact_fb_cta": "Chat Now →",
+  "price_label_detail": "Per month",
+  "price_suffix_card": "/mo"
 }
