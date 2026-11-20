@@ -68,7 +68,7 @@ for(let index=0;index<pages.length;index++){
  const al=normalizedLinks(a.links||[],origin),bl=normalizedLinks(b.links||[],preview);
  pair.compare={
   statusMatch:a.status===b.status,titleMatch:a.title===b.title,descriptionMatch:a.description===b.description,
-  canonicalMatch:a.canonical===b.canonical,h1Match:JSON.stringify(a.h1)===JSON.stringify(b.h1),
+  canonicalMatch:normalizedPath(a.canonical,origin)===normalizedPath(b.canonical,preview),h1Match:JSON.stringify(a.h1)===JSON.stringify(b.h1),
   headingsMatch:JSON.stringify(a.headings)===JSON.stringify(b.headings),
   exactTextMatch:(a.text||'').replace(/\s+/g,' ').trim()===(b.text||'').replace(/\s+/g,' ').trim(),
   wordCounts:{origin:originWords.length,preview:previewWords.length},
