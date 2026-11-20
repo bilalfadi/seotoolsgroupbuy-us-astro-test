@@ -107,3 +107,15 @@ content:
       - { name: jobTitle, label: Job Title, type: string }
       - { name: organization, label: Organization, type: string }
       - { name: image, label: Photo, type: image, options: { media: uploads } }
+
+  - name: policy-links
+    label: Policy Page Button Links
+    type: file
+    path: content/settings/policy-links.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: dmcaPolicy, label: DMCA Agent Email Link, type: string, required: true }
+      - { name: privacyPolicy, label: Privacy Policy Contact Link, type: string, required: true }
+      - { name: refundPolicy, label: Refund Request Link, type: string, required: true }
+      - { name: termsConditions, label: Terms Support Link, type: string, required: true }
