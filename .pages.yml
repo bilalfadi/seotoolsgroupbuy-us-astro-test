@@ -44,6 +44,10 @@ content:
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
       - { name: focusKeyword, type: string }
+      - { name: author, label: Post Author, type: string }
+      - { name: authorImage, label: Author Photo, type: image, options: { media: uploads } }
+      - { name: authorJobTitle, label: Author Job Title, type: string }
+      - { name: authorOrganization, label: Author Organization, type: string }
   - name: pages
     label: Website Pages
     type: collection
@@ -88,3 +92,15 @@ content:
       - { name: adminEmail, label: Abuse Reports Email, type: string, required: true }
       - { name: mailingAddress, label: Mailing Address, type: text }
       - { name: phone, label: Phone, type: string }
+
+  - name: blog-author-settings
+    label: Blog Author Defaults
+    type: file
+    path: content/settings/blog-author.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: name, label: Name, type: string }
+      - { name: jobTitle, label: Job Title, type: string }
+      - { name: organization, label: Organization, type: string }
+      - { name: image, label: Photo, type: image, options: { media: uploads } }
