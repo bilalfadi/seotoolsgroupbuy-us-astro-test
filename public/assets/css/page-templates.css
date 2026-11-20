@@ -153,8 +153,10 @@
 
 /* Contact page */
 .stgb-page-contact-cards { position: relative; z-index: 10; margin-top: -2rem; }
-.stgb-page-contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 64rem; margin: 0 auto; }
-@media(min-width:768px){ .stgb-page-contact-grid { grid-template-columns: repeat(3,1fr); } }
+.stgb-page-contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 72rem; margin: 0 auto; }
+@media(min-width:640px){ .stgb-page-contact-grid { grid-template-columns: repeat(2,1fr); } }
+@media(min-width:1024px){ .stgb-page-contact-grid { grid-template-columns: repeat(4,1fr); } }
+.stgb-page-hero-tagline { font-size: 1.125rem; font-weight: 600; color: rgba(255,255,255,.95); margin: .35rem auto 0; max-width: 40rem; text-align: center; }
 .stgb-page-contact-card {
 	display: block; background: #fff; border-radius: 1rem; padding: 1.5rem; text-decoration: none;
 	box-shadow: 0 20px 40px rgba(15,23,42,.08); border: 1px solid #f3f4f6;
@@ -172,6 +174,7 @@
 .stgb-page-contact-card h3 { font-size: 1.25rem; font-weight: 700; color: #111827; margin: 0 0 .5rem; }
 .stgb-page-contact-card p { color: #4b5563; font-size: .9rem; margin: 0 0 .75rem; line-height: 1.5; }
 .stgb-page-contact-card__link { color: #059669; font-weight: 600; }
+.stgb-page-contact-card__link--fb { color: #1877f2; }
 .stgb-page-contact-card__link--orange { color: #ea580c; }
 .stgb-page-contact-card__link--slate { color: #334155; }
 
