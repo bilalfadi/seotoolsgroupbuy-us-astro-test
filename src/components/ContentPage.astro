@@ -1,6 +1,7 @@
 ---
 import labels from '../lib/site-default-copy.json';
 import PolicyPage from './PolicyPage.astro';
+import {parseYoastFaq} from '../lib/faq-parser.js';
 import contactSettings from '../../content/settings/contact.json';
 import fallback from '../lib/faq-defaults.json';
 import {home} from '../lib/content.js';
@@ -26,9 +27,7 @@ const faqCategories=[
 ];
 // Match WP stgb_faq_page_data(): Yoast HTML FAQ content takes precedence;
 // otherwise use its categorized fallback data, never invent categories.
-const parsedFaq=[...String(entry.content||'').matchAll(/<strong[^>]*class=["'][^"']*schema-faq-question[^"']*["'][^>]*>([\\s\\S]*?)<\\/strong>[\\s\\S]*?<p[^>]*class=["'][^"']*schema-faq-answer[^"']*["'][^>]*>([\\s\\S]*?)<\\/p>/gi)]
-  .map(m=>({q:m[1].replace(/<[^>]+>/g,'').trim(),a:m[2].trim(),cat:'all',html:true}))
-  .filter(x=>x.q&&x.a);
+const parsedFaq=parseYoastFaq(entry.content);
 const faqGroups=parsedFaq.length?[{id:'all',label:'All Questions',icon:'❓'}]:faqCategories;
 const faqItems=parsedFaq.length?parsedFaq:fallback;
 const modifiedDate=entry.modified?new Date(entry.modified):null;
