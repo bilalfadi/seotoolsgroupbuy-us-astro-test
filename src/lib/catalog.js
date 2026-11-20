@@ -26,16 +26,22 @@ export const postCategoryTags = p => [
   ...postCategories(p).flatMap(c=>[c.name,c.slug].filter(Boolean)),
   ...(Array.isArray(p?.tags)?p.tags.flatMap(t=>typeof t==='string'?[t]:[t?.name,t?.slug].filter(Boolean)):[])
 ].join(' ').toLowerCase();
-/** Same primary product category first; then other shared categories, then remaining tools. */
-export function relatedProducts(current,products,limit=4){
+/** Match inc/template-tags.php: same primary category title ASC, any shared title ASC,
+ * then remaining published products date DESC. Unlike WP, category term IDs are
+ * unavailable in imported JSON, so first imported product_cat is the best mapping. */
+export function relatedProducts(current,products,limit=4) {
   const cs=productCategories(current);
-  const others=products.filter(p=>p.slug!==current.slug && p.slug && p.title)
-    .sort((a,b)=>a.title.localeCompare(b.title));
+  const others=products.filter(p=>p.slug!==current.slug && p.slug && p.title && p.status==='publish');
+  const alphabetical=[...others].sort((a,b)=>a.title.localeCompare(b.title,'en',{sensitivity:'base'}));
+  const newest=[...others].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
   const selected=[];
   for(const group of [
-    others.filter(p=>cs[0]&&productCategories(p).includes(cs[0])),
-    others.filter(p=>cs.some(c=>productCategories(p).includes(c))),
-    others
-  ])for(const p of group){if(selected.length>=limit)break;if(!selected.some(x=>x.slug===p.slug))selected.push(p)}
+    alphabetical.filter(p=>cs[0]&&productCategories(p).includes(cs[0])),
+    alphabetical.filter(p=>cs.some(c=>productCategories(p).includes(c))),
+    newest
+  ]) for(const p of group) {
+    if(selected.length>=limit)break;
+    if(!selected.some(x=>x.slug===p.slug))selected.push(p);
+  }
   return selected;
 }
