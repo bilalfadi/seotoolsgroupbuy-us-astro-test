@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import {load,url} from '../lib/content.js';
+import labels from '../lib/site-default-copy.json';
 const posts=[...load('posts')].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
 const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/&[^;]+;/g,' ').replace(/\s+/g,' ').trim();
 const fmt=(date)=>{const d=new Date(date);return Number.isNaN(d.getTime())?'':d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})};
@@ -9,16 +10,16 @@ const fmt=(date)=>{const d=new Date(date);return Number.isNaN(d.getTime())?'':d.
 <section class="stgb-blog-archive-hero" aria-label="Blog">
  <div class="stgb-blog-archive-hero__bg"><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--1"></div><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--2"></div><div class="stgb-blog-archive-hero__dots"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--1"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--2"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--3"></div></div>
  <div class="stgb-container stgb-blog-archive-hero__inner"><div class="stgb-blog-archive-hero__grid"><div class="stgb-blog-archive-hero__copy">
- <div class="stgb-blog-archive-hero__badge"><span class="stgb-blog-archive-hero__badge-dot"></span><span>Latest Insights &amp; Guides</span></div>
- <h1 class="stgb-blog-archive-hero__title">Expert Playbooks for <span class="stgb-blog-archive-hero__title-accent">Premium Tools</span></h1>
- <p class="stgb-blog-archive-hero__desc">We test every SEO and productivity stack before publishing. Get real screenshots, honest reviews, and practical buying advice.</p>
- <div class="stgb-blog-archive-hero__stats"><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">★</span><span>Real Reviews</span></div><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">✓</span><span>Tested Tools</span></div><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">⚡</span><span>Pro Tips</span></div></div></div>
+ <div class="stgb-blog-archive-hero__badge"><span class="stgb-blog-archive-hero__badge-dot"></span><span>{labels.blog_badge}</span></div>
+ <h1 class="stgb-blog-archive-hero__title">{labels.blog_title_1} <span class="stgb-blog-archive-hero__title-accent">{labels.blog_title_2}</span> <span class="stgb-blog-archive-hero__title-line">{labels.blog_title_3}</span></h1>
+ <p class="stgb-blog-archive-hero__desc">{labels.blog_desc}</p>
+ <div class="stgb-blog-archive-hero__stats"><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">★</span><span>{labels.blog_stat1}</span></div><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">✓</span><span>{labels.blog_stat2}</span></div><div class="stgb-blog-archive-hero__stat"><span class="stgb-blog-archive-hero__stat-icon">⚡</span><span>{labels.blog_stat3}</span></div></div></div>
  <div class="stgb-blog-archive-hero__topics">
  {[
- ['🔍','SEO Mastery','Learn advanced SEO techniques'],
- ['🛠️','Tool Guides','Step-by-step walkthroughs'],
- ['💡','Pro Tips','Expert recommendations'],
- ['📊','Comparisons','Tool vs tool analysis']].map(t=><div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">{t[0]}</span><h2 class="stgb-blog-archive-hero__topic-title">{t[1]}</h2><p>{t[2]}</p></div>)}
+ ['🔍',labels.blog_topic1_title,labels.blog_topic1_desc],
+ ['🛠️',labels.blog_topic2_title,labels.blog_topic2_desc],
+ ['💡',labels.blog_topic3_title,labels.blog_topic3_desc],
+ ['📊',labels.blog_topic4_title,labels.blog_topic4_desc]].map(t=><div class="stgb-blog-archive-hero__topic"><span class="stgb-blog-archive-hero__topic-icon">{t[0]}</span><h2 class="stgb-blog-archive-hero__topic-title">{t[1]}</h2><p>{t[2]}</p></div>)}
  </div></div></div>
  <div class="stgb-blog-archive-hero__wave" aria-hidden="true"><svg viewBox="0 0 1440 120" fill="none"><path d="M0 60L48 65C96 70 192 80 288 85C384 90 480 90 576 82.5C672 75 768 60 864 52.5C960 45 1056 45 1152 52.5C1248 60 1344 75 1392 82.5L1440 90V120H0V60Z" fill="#f8fafc"/></svg></div>
 </section>
