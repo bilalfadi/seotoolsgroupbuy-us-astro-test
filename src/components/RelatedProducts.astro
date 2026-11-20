@@ -2,6 +2,7 @@
 import {url} from '../lib/content.js';
 import {productCategoryName,productPrice,formatProductPrice} from '../lib/catalog.js';
 import labels from '../lib/site-default-copy.json';
+import {productLogoData} from '../lib/legacy-render.js';
 const {products=[]}=Astro.props;
 ---
 {products.length>0&&<section class="stgb-product-detail__related">
@@ -11,8 +12,8 @@ const {products=[]}=Astro.props;
       <a href="/shop/" class="stgb-product-detail__related-link">View all tools →</a>
     </div>
     <div class="stgb-product-detail__related-grid">
-      {products.map(p=>{const price=productPrice(p);return <a class="stgb-related-card stgb-product-card" href={url(p.slug)}><div class="stgb-related-card__inner">
-        <div class="stgb-related-card__media">{p.featuredImage?<img class="stgb-related-card__img" src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy" decoding="async"/>:<div class="stgb-related-card__fallback">{p.title.substring(0,2)}</div>}</div>
+      {products.map(p=>{const price=productPrice(p);const logo=productLogoData(p.title);return <a class="stgb-related-card stgb-product-card" href={url(p.slug)}><div class="stgb-related-card__inner">
+        <div class="stgb-related-card__media">{p.featuredImage?<img class="stgb-related-card__img" src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy" decoding="async"/>:<div class="stgb-related-card__fallback" style={`background-color:${logo.color}`}>{logo.initials}</div>}</div>
         <div class="stgb-related-card__divider"></div><div class="stgb-related-card__body">
           <span class="stgb-related-card__category">{productCategoryName(p)}</span><h3 class="stgb-related-card__name">{p.title}</h3>
           <div class="stgb-related-card__pricing"><div class="stgb-related-card__price-wrap"><span class="stgb-related-card__price">{price.current?formatProductPrice(price.current):'Contact us'}</span><span class="stgb-related-card__per">{labels.price_suffix_card||'/mo'}</span></div>{price.onSale&&<span class="stgb-related-card__old">{formatProductPrice(price.regular)}</span>}</div>
