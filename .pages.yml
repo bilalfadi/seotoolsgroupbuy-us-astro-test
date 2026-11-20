@@ -76,3 +76,15 @@ content:
         fields:
           - { name: key, type: string }
           - { name: html, type: text }
+
+  - name: contact-settings
+    label: Contact Details
+    type: file
+    path: content/settings/contact.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: supportEmail, label: Support Email, type: string, required: true }
+      - { name: adminEmail, label: Abuse Reports Email, type: string, required: true }
+      - { name: mailingAddress, label: Mailing Address, type: text }
+      - { name: phone, label: Phone, type: string }
