@@ -21,7 +21,7 @@
   "pricing_wa_cta": "Chat Now →",
   "contact_badge": "Support Available",
   "contact_title": "Get In Touch With Us",
-  "contact_subtitle": "Have questions? Need help? Our support team is here to assist you via WhatsApp, email and chat.",
+  "contact_subtitle": "Have questions? Need help? Our support team is here to assist you via WhatsApp, Facebook, email and chat.",
   "contact_wa_title": "WhatsApp",
   "contact_wa_text": "Fastest response. Real humans on WhatsApp.",
   "contact_wa_cta": "Chat Now →",
@@ -94,5 +94,9 @@
   "blog_topic3_title": "Pro Tips",
   "blog_topic3_desc": "Expert recommendations",
   "blog_topic4_title": "Comparisons",
-  "blog_topic4_desc": "Tool vs tool analysis"
+  "blog_topic4_desc": "Tool vs tool analysis",
+  "contact_tagline": "For payment for tools access",
+  "contact_fb_title": "Facebook",
+  "contact_fb_text": "Message us on Messenger for payment & access help.",
+  "contact_fb_cta": "Chat Now →"
 }
