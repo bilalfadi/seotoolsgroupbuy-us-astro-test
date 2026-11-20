@@ -42,4 +42,4 @@ jobs:
       - name: Audit outcome
         if: always()
         run: |
-          node -e "const fs=require('fs');let bad=false;for(const p of ['visual-audit/report.json','mobile-functional-audit/report.json']){if(!fs.existsSync(p)){console.error('Missing audit report: '+p);bad=true;continue;}const d=JSON.parse(fs.readFileSync(p));console.log(p, 'pages:',d.sitemapCount,'failures:',d.failed??d.issueCount);if((d.failed??d.issueCount)>0)bad=true;}if(bad)process.exit(1)"
+          node -e "const fs=require('fs');let bad=false;for(const p of ['visual-audit/report.json','mobile-functional-audit/report.json']){if(!fs.existsSync(p)){console.error('Missing audit report: '+p);bad=true;continue;}const d=JSON.parse(fs.readFileSync(p));console.log(p, 'pages:',d.sitemapCount,'failures:',d.failed??d.issueCount,'exact text mismatch pages:',(d.pages||[]).filter(x=>x.compare?.exactTextMatch===false).length,'word mismatches:',(d.pages||[]).reduce((n,x)=>n+(x.compare?.wordMismatches||0),0));if((d.failed??d.issueCount)>0)bad=true;}if(bad)process.exit(1)"
