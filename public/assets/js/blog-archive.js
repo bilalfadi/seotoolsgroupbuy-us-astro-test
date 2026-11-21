@@ -22,7 +22,7 @@
     var excerpt = normalize(card.getAttribute('data-excerpt'));
     var tags = normalize(card.getAttribute('data-tags'));
 
-    if (query && title.indexOf(query) === -1 && excerpt.indexOf(query) === -1) {
+    if (query && title.indexOf(query) === -1 && excerpt.indexOf(query) === -1 && tags.indexOf(query) === -1) {
       return false;
     }
 
