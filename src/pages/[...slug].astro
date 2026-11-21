@@ -9,10 +9,9 @@ import labels from '../lib/site-default-copy.json';
 import {productPrice,formatProductPrice,productCategoryName,relatedProducts} from '../lib/catalog.js';
 import {prepareEditorContentHeadings,productLogoData} from '../lib/legacy-render.js';
 import {all,load,url} from '../lib/content.js';
-import {redirects,fixInternalLinks} from '../lib/route-fixes.js';
-export function getStaticPaths(){return [...all().filter(x=>x.slug!=='home').map(entry=>({params:{slug:entry.slug},props:{entry}})),...Object.entries(redirects).map(([from,to])=>({params:{slug:from},props:{redirectTo:to}}))]}
-const {entry,redirectTo}=Astro.props;
-if(redirectTo){return Astro.redirect('/'+redirectTo+'/',301);}
+import {fixInternalLinks} from '../lib/route-fixes.js';
+export function getStaticPaths(){return all().filter(x=>x.slug!=='home').map(entry=>({params:{slug:entry.slug},props:{entry}}))}
+const {entry}=Astro.props;
 entry.content=fixInternalLinks(entry.content);
 entry.shortDescription=fixInternalLinks(entry.shortDescription);
 const title=entry.seoTitle||entry.title;
