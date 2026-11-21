@@ -8,6 +8,8 @@ on:
       - public/assets/js/**
       - public/assets/css/**
       - .pages.yml
+      - package.json
+      - scripts/generate-redirects.mjs
       - .github/workflows/verify-astro-build.yml
 permissions:
   contents: read
