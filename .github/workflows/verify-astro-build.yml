@@ -9,7 +9,8 @@ on:
       - public/assets/css/**
       - .pages.yml
       - package.json
-      - scripts/generate-redirects.mjs
+      - scripts/**
+      - public/_redirects
       - .github/workflows/verify-astro-build.yml
 permissions:
   contents: read
@@ -24,3 +25,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Verify committed Cloudflare 301 rules match generated rules
+        run: git diff --exit-code -- public/_redirects
+      - name: Verify imported content
+        run: npm run verify
