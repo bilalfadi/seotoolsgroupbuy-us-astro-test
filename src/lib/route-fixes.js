@@ -10,6 +10,8 @@ const explicit = {
   'semrush':'semrush-group-buy',
   'screamingfrog':'screamingfrog-seo-spider-group-buy',
   'screaming-frog':'screamingfrog-seo-spider-group-buy',
+  'screaming-frog-seo-spider':'screamingfrog-seo-spider-group-buy',
+  'screamingfrog-seo-spider':'screamingfrog-seo-spider-group-buy',
   'screaming-frog-group-buy':'screamingfrog-seo-spider-group-buy',
   'seo-profiler':'seoprofiler',
   'claude-ai-group-buy-affordable-access-to-claudes-advanced-ai-technology':'claudeai',
