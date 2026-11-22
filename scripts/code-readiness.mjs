@@ -116,7 +116,7 @@ const report={ checkedAt:new Date().toISOString(), mode:'source-code-and-generat
     'HTTP status, Cloudflare redirects and live external URLs cannot be validated without deployment',
     'Responsive layout, interaction and payment/checkout behavior cannot be verified without a browser against a running site',
     'Account, cart and checkout currently render a membership-platform notice, not a native checkout',
-    'The staging layout currently emits noindex,nofollow; review before production launch'
+    'Public pages emit index,follow; cart, checkout, my-account and access-tools retain noindex,follow'
   ]};
 fs.mkdirSync('reports',{recursive:true});
 fs.writeFileSync('reports/code-readiness.json',JSON.stringify(report,null,2)+'\n');
