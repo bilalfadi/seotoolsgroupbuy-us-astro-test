@@ -87,8 +87,13 @@ for (const required of ['assets/css/globals.css','assets/js/theme.js','assets/js
   'media/wp-uploads/2026/11/stgb-site-icon-512-4.png']) {
   if (!fs.existsSync(path.join(out,required))) add('missingCriticalAsset','dist',required,true);
 }
+const warningKinds = Object.fromEntries([...new Set(warnings.map(w => w.kind))].sort()
+  .map(kind => [kind, { occurrences: warnings.filter(w => w.kind === kind).length,
+    uniquePaths: new Set(warnings.filter(w => w.kind === kind).map(w => w.detail)).size,
+    examples: [...new Set(warnings.filter(w => w.kind === kind).map(w => w.detail))].slice(0,12) }]));
+const warningFiles = [...new Set(warnings.map(w => w.file))].length;
 const report={ checkedAt:new Date().toISOString(), mode:'source-code-and-generated-files-only',
-  previewNotRequired:true, summary,
+  previewNotRequired:true, summary, warningKinds, warningFiles,
   errors:issues, warnings,
   knownLimitations:[
     'HTTP status, Cloudflare redirects and live external URLs cannot be validated without deployment',
@@ -98,7 +103,7 @@ const report={ checkedAt:new Date().toISOString(), mode:'source-code-and-generat
   ]};
 fs.mkdirSync('reports',{recursive:true});
 fs.writeFileSync('reports/code-readiness.json',JSON.stringify(report,null,2)+'\n');
-console.log('CODE_READINESS_SUMMARY='+JSON.stringify({ ...summary,criticalErrors:issues.length,warnings:warnings.length }));
+console.log('CODE_READINESS_SUMMARY='+JSON.stringify({ ...summary,criticalErrors:issues.length,warnings:warnings.length,warningKinds,warningFiles }));
 console.log('CODE_READINESS_CRITICAL='+JSON.stringify(issues.slice(0,30)));
 console.log('CODE_READINESS_WARNINGS_SAMPLE='+JSON.stringify(warnings.slice(0,30)));
 if (issues.length) process.exitCode=1;
