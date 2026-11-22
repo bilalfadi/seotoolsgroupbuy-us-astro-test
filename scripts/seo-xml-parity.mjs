@@ -18,6 +18,7 @@ function mismatch(key,slug,expected,actual){
  (report.examples[key]??=[]);
  if(report.examples[key].length<12)report.examples[key].push({slug,expected:String(expected??'').slice(0,160),actual:String(actual??'').slice(0,160)});
 }
+function checksum(text){let h=2166136261;const value=String(text??'');for(let i=0;i<value.length;i++)h=Math.imul(h^value.charCodeAt(i),16777619)>>>0;return h.toString(16).padStart(8,'0');}
 function decode(s){return String(s||'').replace(/&#(\d+);/g,(_,v)=>String.fromCodePoint(Number(v)))
  .replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');}
 function attr(html,selector,attrName='content'){
@@ -38,6 +39,17 @@ for(const x of baseline){
  if(!fs.existsSync(file)){issue('missingJSON',x.slug,file);continue}
  const r=JSON.parse(fs.readFileSync(file,'utf8'));
  const slug=x.slug;const self=x.slug==='home'?'/':'/'+slug+'/';
+ for(const field of ['content','excerpt']){
+  const text=String(r[field]??'');
+  if(x[field+'Hash']!==undefined&&(checksum(text)!==x[field+'Hash']||text.length!==x[field+'Length']))
+   mismatch('xmlToJSON.'+field,slug,x[field+'Length']+' chars / '+x[field+'Hash'],text.length+' chars / '+checksum(text));
+ }
+ if(x.type==='product' && x.excerptHash!==undefined){
+   const short=String(r.shortDescription??'');
+   if(checksum(short)!==x.excerptHash||short.length!==x.excerptLength)
+      mismatch('xmlToJSON.shortDescription',slug,x.excerptLength+' chars / '+x.excerptHash,short.length+' chars / '+checksum(short));
+ }
+
  if(seen.has(slug))report.counted.duplicateSlug++;
  seen.set(slug,true);
  report.checked++;
