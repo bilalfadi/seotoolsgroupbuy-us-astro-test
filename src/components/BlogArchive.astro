@@ -2,9 +2,10 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import {load,url} from '../lib/content.js';
 import labels from '../lib/site-default-copy.json';
-import {postCategoryName,postCategoryTags} from '../lib/catalog.js';
+import {postCategories,postCategoryName,postCategoryTags} from '../lib/catalog.js';
 import {trimWordExcerpt} from '../lib/legacy-render.js';
 const posts=[...load('posts')].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+const categories=[...new Map(posts.flatMap(postCategories).filter(c=>c.slug).map(c=>[c.slug,{slug:c.slug,label:c.name}])).values()].sort((a,b)=>a.label.localeCompare(b.label));
 const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/&[^;]+;/g,' ').replace(/\s+/g,' ').trim();
 const fmt=(date)=>{const d=new Date(date);return Number.isNaN(d.getTime())?'':d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})};
 ---
@@ -27,10 +28,10 @@ const fmt=(date)=>{const d=new Date(date);return Number.isNaN(d.getTime())?'':d.
 </section>
 <section class="stgb-blog-archive-toolbar"><div class="stgb-container"><div class="stgb-blog-archive-toolbar__card">
 <label class="stgb-blog-archive-toolbar__search" for="stgb-blog-search"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="stgb-blog-search" type="search" placeholder="Search articles..." autocomplete="off"/></label>
-<div class="stgb-blog-archive-toolbar__cats" role="tablist" aria-label="Filter articles">{[['all','All Posts'],['seo','SEO Tools'],['tutorial','Tutorials'],['review','Reviews'],['tips','Tips & Tricks']].map(([key,label])=><button type="button" data-filter={key} class:list={[key==='all'&&'is-active']}>{label}</button>)}</div>
+<div class="stgb-blog-archive-toolbar__cats" role="tablist" aria-label="Filter articles">{[{slug:'all',label:'All Posts'},...categories].map(cat=><button type="button" data-filter={cat.slug} class:list={[cat.slug==='all'&&'is-active']}>{cat.label}</button>)}</div>
 </div></div></section>
 <div class="stgb-container"><div class="stgb-blog-archive-grid" id="stgb-blog-archive-grid">
-{posts.map(p=>{const plain=strip(p.excerpt||p.content);const excerpt=trimWordExcerpt(p.excerpt||p.content,24);const cat=postCategoryName(p);const filter=(p.title+' '+plain+' '+cat+' '+postCategoryTags(p)).toLowerCase();return <article class="stgb-blog-archive-card" data-title={p.title} data-excerpt={excerpt} data-tags={filter}>
+{posts.map(p=>{const plain=strip(p.excerpt||p.content);const excerpt=trimWordExcerpt(p.excerpt||p.content,24);const cat=postCategoryName(p);const searchTags=postCategoryTags(p);const filterCategories=postCategories(p).map(c=>c.slug).filter(Boolean).join('|');return <article class="stgb-blog-archive-card" data-title={p.title} data-excerpt={excerpt} data-tags={searchTags} data-categories={filterCategories}>
 <a href={url(p.slug)} class="stgb-blog-archive-card__link"><div class="stgb-blog-archive-card__img">{p.featuredImage?<img src={p.featuredImage} loading="lazy" alt={p.featuredAlt||p.title}/>:<div class="stgb-blogs__featured-placeholder"></div>}</div><div class="stgb-blog-archive-card__body"><div class="stgb-blog-archive-card__meta"><span class="stgb-blog-archive-card__cat">{cat}</span><span>{fmt(p.date)}</span></div><h2>{p.title}</h2><p class="stgb-blog-archive-card__excerpt">{excerpt}</p><div class="stgb-blog-archive-card__footer"><span>{Math.max(1,Math.ceil(strip(p.content).split(/\s+/).length/200))} min read</span><span class="stgb-blog-archive-card__more">Read article →</span></div></div></a>
 </article>})}
 <p class="stgb-blog-archive-empty is-hidden">No articles match your search yet.</p>
