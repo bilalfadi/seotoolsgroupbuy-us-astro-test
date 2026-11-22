@@ -4,7 +4,7 @@ import labels from '../lib/site-default-copy.json';
 import {productPrice,formatProductPrice,productCategories,productCategoryName} from '../lib/catalog.js';
 import {productLogoData} from '../lib/legacy-render.js';
 const products=load('products').sort((a,b)=>a.title.localeCompare(b.title));
-const tabs=[[labels.tools_tab_all,'all'],[labels.tools_tab_seo,'seo'],[labels.tools_tab_content,'content'],[labels.tools_tab_amazon,'amazon'],[labels.tools_tab_design,'design'],[labels.tools_tab_ai,'ai'],['Other Tools','other']];
+const tabs=[[labels.tools_tab_all,'all'],[labels.tools_tab_seo,'seo'],[labels.tools_tab_content,'content'],[labels.tools_tab_amazon,'amazon'],[labels.tools_tab_design,'design'],[labels.tools_tab_ai,'ai']];
 const tab=p=>{
   let cats=String(productCategories(p)[0]||'').toLowerCase(),name=String(p.title||'').toLowerCase();
   if(cats.includes('seo'))return 'seo';
@@ -17,8 +17,8 @@ const tab=p=>{
   if(/canva|envato|depositphotos|storyblocks|videoblocks|design|graphic|stock|animation/.test(name))return 'design';
   if(/chatgpt|midjourney|gamma|elevenlabs|ai|claude|perplexity|copilot/.test(name))return 'ai';
   if(/grammarly|quetext|copyscape|frase|content|writer/.test(name))return 'content';
-  // Unknown imported categories must not be mislabeled as SEO tools.
-  return 'other';
+  // Match the original WordPress classifier: unmatched tools fall back to SEO.
+  return 'seo';
 };
 const formatPrice=p=>String(p.salePrice||p.price||'').replace(/^\$/,'');
 ---
