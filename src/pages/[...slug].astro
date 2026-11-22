@@ -10,6 +10,7 @@ import {productPrice,formatProductPrice,productCategoryName,relatedProducts} fro
 import {prepareEditorContentHeadings,productLogoData} from '../lib/legacy-render.js';
 import {all,load,url} from '../lib/content.js';
 import {fixInternalLinks} from '../lib/route-fixes.js';
+import {repairLinkedProductImages} from '../lib/repair-media.js';
 export function getStaticPaths(){return all().filter(x=>x.slug!=='home').map(entry=>({params:{slug:entry.slug},props:{entry}}))}
 const {entry}=Astro.props;
 entry.content=fixInternalLinks(entry.content);
@@ -17,6 +18,7 @@ entry.shortDescription=fixInternalLinks(entry.shortDescription);
 const title=entry.seoTitle||entry.title;
 const desc=entry.seoDescription||String(entry.excerpt||'').replace(/<[^>]+>/g,' ').slice(0,160);
 const products=load('products');
+entry.content=repairLinkedProductImages(entry.content,products);
 const isShop=['shop','single-tools-list','tools'].includes(entry.slug);
 const isProduct=entry.type==='product';
 const isAccount=['cart','checkout','my-account'].includes(entry.slug);
