@@ -1,16 +1,19 @@
-name: Staging browser readiness audit
+name: Offline source code readiness audit
 on:
   workflow_dispatch:
   push:
     paths:
-      - scripts/staging-browser-readiness.mjs
+      - content/**
+      - src/**
+      - scripts/code-readiness.mjs
+      - public/**
       - .github/workflows/staging-browser-readiness.yml
 permissions:
   contents: read
 jobs:
-  staging-readiness:
+  code-readiness:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,16 +21,13 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - name: Install Playwright for staging browser checks
-        run: |
-          npm install --no-save playwright
-          npx playwright install --with-deps chromium
-      - name: Check all product/page/blog routes, media, links, desktop/mobile UI and checkout markup
-        run: node scripts/staging-browser-readiness.mjs
-      - name: Upload detailed audit report
+      - run: npm run build
+      - name: Audit all published routes, local assets, internal links, metadata and order URLs
+        run: node scripts/code-readiness.mjs
+      - name: Upload detailed offline report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: staging-browser-readiness
-          path: reports/staging-browser-readiness.json
+          name: offline-code-readiness
+          path: reports/code-readiness.json
           if-no-files-found: warn
