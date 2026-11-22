@@ -9,6 +9,9 @@ const records = groups.flatMap(group => fs.readdirSync(path.join(root, 'content'
   .map(name => ({ group, file: 'content/' + group + '/' + name,
     ...JSON.parse(fs.readFileSync(path.join(root, 'content', group, name), 'utf8')) })));
 const published = records.filter(x => x.status === 'publish');
+const redirectPaths = new Set(fs.readFileSync(path.join(root, 'public', '_redirects'), 'utf8')
+  .split(/\r?\n/).filter(line => line.startsWith('/') && /\s+301\s*$/.test(line))
+  .map(line => line.split(/\s+/)[0]));
 const issues = [];
 const warnings = [];
 const summary = { products: records.filter(x => x.group === 'products').length,
@@ -44,7 +47,8 @@ function existsForURL(raw, file, asset) {
     if (!fs.existsSync(resolved)) add('missingAsset', file, raw);
   } else {
     if (!fs.existsSync(routeFile(local)) && !fs.existsSync(resolved) &&
-        !fs.existsSync(resolved+'.html')) add('missingLocalLink',file,raw);
+        !fs.existsSync(resolved+'.html') &&
+        !redirectPaths.has(local.endsWith('/') ? local : local+'/')) add('missingLocalLink',file,raw);
   }
 }
 for (const x of published) {
