@@ -4,7 +4,7 @@ const styles=['globals.css','header.css','footer.css','homepage-sections.css','p
 const scripts=['theme.js','chatbox.js','faq-accordion.js','scroll-reveal.js','pricing-flip.js','blog-archive.js','static-marketplace.js','product-detail.js','ahrefs-landing.js','semrush-landing.js'];
 import originalSeo from '../../migration/seo-xml-baseline.json';
 const fullCanonical='https://seotoolsgroupbuy.us'+canonical;
-const seoSlug=canonical==='/'?'home':String(canonical).replace(/^\\/+|\\/+$/g,'');
+const seoSlug=canonical==='/'?'home':String(canonical).split('/').filter(Boolean).join('/');
 const originalSocial=originalSeo.records.find(item=>item.slug===seoSlug);
 const socialOgTitle=originalSocial?.ogTitle ?? title;
 const socialOgDescription=originalSocial?.ogDescription ?? description;
