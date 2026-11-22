@@ -98,6 +98,66 @@ if(fs.existsSync(archive)){
  if(canonical!==sourceURL+'/category/seo-tools-blog/page/2/')
   issue('paginationCanonical', 'blog-page-2',{actual:canonical,expected:sourceURL+'/category/seo-tools-blog/page/2/'});
 }
+// Extra SEO coverage outside WordPress's 204 post/page/product records.
+const additional={
+  sourceProductCategorySlugs:[],
+  missingProductCategoryArchiveRoutes:[],
+  sourcePostTagSlugs:[],
+  missingPostTagArchiveRoutes:[],
+  productPagesWithoutProductSchema:0,
+  blogPostsWithoutArticleSchema:0,
+  htmlImagesWithoutAlt:0,
+  htmlImagesChecked:0,
+  ogImageURLsMissingLocalFile:[],
+  page2CanonicalChecked:fs.existsSync(archive),
+  robotsTxtHasSitemap:false
+};
+const categorySlugs=new Set(),tagSlugs=new Set();
+for(const x of baseline){
+ const group=groups[x.type];const file=path.join(root,'content',group,x.slug+'.json');
+ if(!fs.existsSync(file))continue;
+ const r=JSON.parse(fs.readFileSync(file,'utf8'));
+ for(const cat of r.categories||[]){
+  if(cat?.domain==='product_cat'&&cat.slug)categorySlugs.add(cat.slug);
+  if(cat?.domain==='post_tag'&&cat.slug)tagSlugs.add(cat.slug);
+ }
+ const self=x.slug==='home'?'/':'/'+x.slug+'/';
+ const htmlFile=path.join(dist,self.replace(/^\\//,''),'index.html');
+ if(!fs.existsSync(htmlFile))continue;
+ const html=fs.readFileSync(htmlFile,'utf8');
+ const blocks=[...html.matchAll(/<script[^>]+type="application\\/ld\\+json"[^>]*>([\\s\\S]*?)<\\/script>/gi)];
+ const types=new Set();
+ const traverse=value=>{
+  if(!value||typeof value!=='object')return;
+  if(Array.isArray(value)){value.forEach(traverse);return}
+  const t=value['@type'];
+  if(typeof t==='string')types.add(t);
+  else if(Array.isArray(t))t.forEach(z=>types.add(z));
+  for(const v of Object.values(value))if(v&&typeof v==='object')traverse(v);
+ };
+ for(const m of blocks)try{traverse(JSON.parse(m[1]))}catch{}
+ if(x.type==='product'&&!types.has('Product'))additional.productPagesWithoutProductSchema++;
+ if(x.type==='post'&&!types.has('Article')&&!types.has('BlogPosting')&&!types.has('NewsArticle'))additional.blogPostsWithoutArticleSchema++;
+ for(const m of html.matchAll(/<img\\b[^>]*>/gi)){
+  additional.htmlImagesChecked++;
+  if(!/\\balt=["'][^"']*["']/i.test(m[0]))additional.htmlImagesWithoutAlt++;
+ }
+ const img=attr(html,'property="og:image"');
+ if(img.startsWith(sourceURL+'/')){
+  const localPath=path.join(dist,decodeURIComponent(img.slice(sourceURL.length+1)).split('?')[0]);
+  if(!fs.existsSync(localPath)&&additional.ogImageURLsMissingLocalFile.length<40)
+    additional.ogImageURLsMissingLocalFile.push({slug:x.slug,url:img});
+ }
+}
+additional.sourceProductCategorySlugs=[...categorySlugs].sort();
+additional.sourcePostTagSlugs=[...tagSlugs].sort();
+additional.missingProductCategoryArchiveRoutes=additional.sourceProductCategorySlugs.filter(slug=>
+  !fs.existsSync(path.join(dist,'product-category',slug,'index.html')));
+additional.missingPostTagArchiveRoutes=additional.sourcePostTagSlugs.filter(slug=>
+  !fs.existsSync(path.join(dist,'product-tag',slug,'index.html')));
+additional.robotsTxtHasSitemap=fs.readFileSync(path.join(dist,'robots.txt'),'utf8').includes('Sitemap: https://seotoolsgroupbuy.us/sitemap.xml');
+report.additional=additional;
+
 report.counted.redirectRules=redirects.length;
 report.counted.sitemapURLs=sitemapLocs.size;
 report.counted.totalMismatches=Object.values(report.fieldMismatches).reduce((a,b)=>a+b,0);
@@ -110,3 +170,5 @@ fs.writeFileSync('reports/seo-xml-parity.json',JSON.stringify(report,null,2)+'\n
 console.log('SEO_PARITY_SUMMARY='+JSON.stringify({checked:report.checked,counts:report.counted,mismatches:report.fieldMismatches,issues:report.issues.slice(0,15)}));
 
 console.log('SEO_PARITY_MISMATCH_EXAMPLES='+JSON.stringify(Object.fromEntries(Object.entries(report.examples).map(([k,v])=>[k,v.slice(0,5)]))));
+
+console.log('SEO_ADDITIONAL_CHECKS='+JSON.stringify(report.additional));
