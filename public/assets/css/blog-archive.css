@@ -379,3 +379,10 @@ body.admin-bar.stgb-blog-archive .stgb-blog-archive-hero {
   width: 100%;
   height: 100%;
 }
+
+
+/* WordPress archive pagination */
+.stgb-blog-pagination{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;margin:2.5rem auto 0;padding:0 1rem}
+.stgb-blog-pagination a{display:inline-flex;min-width:2.75rem;min-height:2.75rem;align-items:center;justify-content:center;padding:.65rem .9rem;border:1px solid #e5e7eb;border-radius:.65rem;background:#fff;color:#374151;text-decoration:none;font-weight:600;transition:background .2s,color .2s,border-color .2s}
+.stgb-blog-pagination a:hover,.stgb-blog-pagination a.is-current{background:#10b981;border-color:#10b981;color:#fff}
+.stgb-blog-pagination a[aria-current="page"]{cursor:default}
