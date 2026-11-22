@@ -96,3 +96,5 @@ report.limitations=['Offline XML, JSON and generated HTML only. No live URL, mob
 fs.mkdirSync('reports',{recursive:true});
 fs.writeFileSync('reports/seo-xml-parity.json',JSON.stringify(report,null,2)+'\n');
 console.log('SEO_PARITY_SUMMARY='+JSON.stringify({checked:report.checked,counts:report.counted,mismatches:report.fieldMismatches,issues:report.issues.slice(0,15)}));
+
+console.log('SEO_PARITY_MISMATCH_EXAMPLES='+JSON.stringify(Object.fromEntries(Object.entries(report.examples).map(([k,v])=>[k,v.slice(0,5)]))));
