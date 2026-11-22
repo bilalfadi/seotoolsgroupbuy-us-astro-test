@@ -26,8 +26,7 @@
       return false;
     }
 
-    var categories = (card.getAttribute('data-categories') || '').split('|');
-    if (activeFilter !== 'all' && categories.indexOf(activeFilter) === -1) {
+    if (activeFilter !== 'all' && tags.indexOf(activeFilter) === -1) {
       return false;
     }
 
