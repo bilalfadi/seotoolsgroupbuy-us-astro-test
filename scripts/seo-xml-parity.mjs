@@ -122,10 +122,10 @@ for(const x of baseline){
   if(cat?.domain==='post_tag'&&cat.slug)tagSlugs.add(cat.slug);
  }
  const self=x.slug==='home'?'/':'/'+x.slug+'/';
- const htmlFile=path.join(dist,self.replace(/^\\//,''),'index.html');
+ const htmlFile=path.join(dist,self.replace(/^\//,''),'index.html');
  if(!fs.existsSync(htmlFile))continue;
  const html=fs.readFileSync(htmlFile,'utf8');
- const blocks=[...html.matchAll(/<script[^>]+type="application\\/ld\\+json"[^>]*>([\\s\\S]*?)<\\/script>/gi)];
+ const blocks=[...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
  const types=new Set();
  const traverse=value=>{
   if(!value||typeof value!=='object')return;
@@ -138,9 +138,9 @@ for(const x of baseline){
  for(const m of blocks)try{traverse(JSON.parse(m[1]))}catch{}
  if(x.type==='product'&&!types.has('Product'))additional.productPagesWithoutProductSchema++;
  if(x.type==='post'&&!types.has('Article')&&!types.has('BlogPosting')&&!types.has('NewsArticle'))additional.blogPostsWithoutArticleSchema++;
- for(const m of html.matchAll(/<img\\b[^>]*>/gi)){
+ for(const m of html.matchAll(/<img\b[^>]*>/gi)){
   additional.htmlImagesChecked++;
-  if(!/\\balt=["'][^"']*["']/i.test(m[0]))additional.htmlImagesWithoutAlt++;
+  if(!/\balt=["'][^"']*["']/i.test(m[0]))additional.htmlImagesWithoutAlt++;
  }
  const img=attr(html,'property="og:image"');
  if(img.startsWith(sourceURL+'/')){
