@@ -96,8 +96,21 @@ const warningKinds = Object.fromEntries([...new Set(warnings.map(w => w.kind))].
     uniquePaths: new Set(warnings.filter(w => w.kind === kind).map(w => w.detail)).size,
     examples: [...new Set(warnings.filter(w => w.kind === kind).map(w => w.detail))].slice(0,12) }]));
 const warningFiles = [...new Set(warnings.map(w => w.file))].length;
+const sourceWarnings=warnings.filter(w=>w.file.startsWith('content/'));
+const builtWarnings=warnings.filter(w=>w.file.startsWith('dist/'));
+const builtMissingImagePaths=[...new Set(builtWarnings.filter(w=>w.kind==='missingAsset').map(w=>w.detail))];
+const sourceMissingImagePaths=[...new Set(sourceWarnings.filter(w=>w.kind==='missingAsset').map(w=>w.detail))];
+const missingImageBreakdown={
+  sourceOnlyWarnings:sourceWarnings.length,
+  generatedPageWarnings:builtWarnings.length,
+  generatedPageUniqueMissingImagePaths:builtMissingImagePaths.length,
+  sourceUniqueMissingImagePaths:sourceMissingImagePaths.length,
+  generatedPageExamples:builtMissingImagePaths.slice(0,30),
+  generatedPagesWithWarnings:[...new Set(builtWarnings.map(w=>w.file))].slice(0,30)
+};
+
 const report={ checkedAt:new Date().toISOString(), mode:'source-code-and-generated-files-only',
-  previewNotRequired:true, summary, warningKinds, warningFiles,
+  previewNotRequired:true, summary, warningKinds, warningFiles, missingImageBreakdown,
   errors:issues, warnings,
   knownLimitations:[
     'HTTP status, Cloudflare redirects and live external URLs cannot be validated without deployment',
@@ -107,7 +120,7 @@ const report={ checkedAt:new Date().toISOString(), mode:'source-code-and-generat
   ]};
 fs.mkdirSync('reports',{recursive:true});
 fs.writeFileSync('reports/code-readiness.json',JSON.stringify(report,null,2)+'\n');
-console.log('CODE_READINESS_SUMMARY='+JSON.stringify({ ...summary,criticalErrors:issues.length,warnings:warnings.length,warningKinds,warningFiles }));
+console.log('CODE_READINESS_SUMMARY='+JSON.stringify({ ...summary,criticalErrors:issues.length,warnings:warnings.length,warningKinds,warningFiles,missingImageBreakdown }));
 console.log('CODE_READINESS_CRITICAL='+JSON.stringify(issues.slice(0,30)));
 console.log('CODE_READINESS_WARNINGS_SAMPLE='+JSON.stringify(warnings.slice(0,30)));
 if (issues.length) process.exitCode=1;
