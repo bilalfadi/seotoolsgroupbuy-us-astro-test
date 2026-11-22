@@ -1,6 +1,6 @@
 ---
-import BlogArchive from '../../../../../components/BlogArchive.astro';
-import {load} from '../../../../../lib/content.js';
+import BlogArchive from '../../../../components/BlogArchive.astro';
+import {load} from '../../../../lib/content.js';
 export function getStaticPaths(){
   const count=Math.ceil(load('posts').length/10);
   return Array.from({length:Math.max(0,count-1)},(_,i)=>({params:{page:String(i+2)},props:{pageNumber:i+2}}));
