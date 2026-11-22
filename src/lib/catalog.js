@@ -22,9 +22,13 @@ export const postCategories = p => Array.isArray(p?.categories)
   ? p.categories.filter(c=>c?.name && (!c.domain || c.domain==='category'))
   : [];
 export const postCategoryName = p => postCategories(p)[0]?.name || 'Blog';
+export const postTags = p => [
+  ...(Array.isArray(p?.categories)?p.categories.filter(t=>t && t.domain==='post_tag'):[]),
+  ...(Array.isArray(p?.tags)?p.tags:[])
+].flatMap(t=>typeof t==='string'?[t]:[t?.name,t?.slug].filter(Boolean));
 export const postCategoryTags = p => [
   ...postCategories(p).flatMap(c=>[c.name,c.slug].filter(Boolean)),
-  ...(Array.isArray(p?.tags)?p.tags.flatMap(t=>typeof t==='string'?[t]:[t?.name,t?.slug].filter(Boolean)):[])
+  ...postTags(p)
 ].join(' ').toLowerCase();
 /** Match inc/template-tags.php: same primary category title ASC, any shared title ASC,
  * then remaining published products date DESC. Unlike WP, category term IDs are
