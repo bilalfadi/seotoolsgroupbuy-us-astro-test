@@ -54,6 +54,19 @@ for(const [relative,sourcePaths] of refs){
   // Prefer the same relative filename already downloaded in the media library.
   const exact=path.join(existingRoot,relative);
   let candidates=fs.existsSync(exact)?[exact]:(byName.get(basename)||[]);
+  if(!candidates.length){
+    const ext=path.extname(basename);
+    const stem=basename.slice(0,-ext.length);
+    // A WordPress migration can rename a file to <original>-1.ext.
+    // Accept this only when it is the single exact-stem, same-format variant.
+    const variants=images.filter(file=>{
+      const name=path.basename(file).toLowerCase();
+      return name.startsWith(stem+'-') && name.endsWith(ext) &&
+        /^\\d+$/.test(name.slice(stem.length+1,-ext.length));
+    });
+    if(variants.length===1)candidates=variants;
+    else if(variants.length>1&&new Set(variants.map(hash)).size===1)candidates=[variants[0]];
+  }
   // Only use multiple candidate files when their hashes prove the bytes are identical.
   if(candidates.length>1){
     const hashes=new Set(candidates.map(hash));
