@@ -5,6 +5,8 @@ on:
     paths:
       - content/**
       - src/**
+      - migration/seo-xml-baseline.json
+      - scripts/seo-xml-parity.mjs
       - scripts/code-readiness.mjs
       - scripts/materialize-legacy-media.mjs
       - package.json
@@ -26,6 +28,8 @@ jobs:
       - run: npm run build
       - name: Audit all published routes, local assets, internal links, metadata and order URLs
         run: node scripts/code-readiness.mjs
+      - name: Compare all original Yoast SEO fields against built Astro HTML
+        run: node scripts/seo-xml-parity.mjs
       - name: Upload detailed offline report
         if: always()
         uses: actions/upload-artifact@v4
@@ -33,5 +37,6 @@ jobs:
           name: offline-code-readiness
           path: |
             reports/code-readiness.json
+            reports/seo-xml-parity.json
             reports/legacy-media-compatibility.json
           if-no-files-found: warn
