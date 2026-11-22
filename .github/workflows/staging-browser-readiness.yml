@@ -1,0 +1,33 @@
+name: Staging browser readiness audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/staging-browser-readiness.mjs
+      - .github/workflows/staging-browser-readiness.yml
+permissions:
+  contents: read
+jobs:
+  staging-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Install Playwright for staging browser checks
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Check all product/page/blog routes, media, links, desktop/mobile UI and checkout markup
+        run: node scripts/staging-browser-readiness.mjs
+      - name: Upload detailed audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: staging-browser-readiness
+          path: reports/staging-browser-readiness.json
+          if-no-files-found: warn
