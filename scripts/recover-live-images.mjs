@@ -37,7 +37,7 @@ await Promise.all(Array.from({length:5}, async () => {
         const mime=response.headers.get('content-type')||'';
         const attempt={host,status:response.status,type:mime};
         status.attempts.push(attempt);
-        if (!response.ok()) continue;
+        if (!response.ok) continue;
         const length=Number(response.headers.get('content-length')||0);
         if (length > 25_000_000) {attempt.error='oversize';continue;}
         const data=Buffer.from(await response.arrayBuffer());
