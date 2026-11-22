@@ -18,7 +18,7 @@ const categories=[...new Map(posts.flatMap(postCategories).filter(c=>c.slug).map
 const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/&[^;]+;/g,' ').replace(/\s+/g,' ').trim();
 const fmt=(date)=>{const d=new Date(date);return Number.isNaN(d.getTime())?'':d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})};
 ---
-<SiteLayout title="Blogs - SEO Tips & Guides | SEO Tools Group Buy" description="Expert SEO tools guides, reviews and practical tips." canonical="/category/seo-tools-blog/" type="archive">
+<SiteLayout title="Blogs - SEO Tips & Guides | SEO Tools Group Buy" description="Expert SEO tools guides, reviews and practical tips." canonical={pageUrl(currentPage)} type="archive">
 <section class="stgb-blog-archive-hero" aria-label="Blog">
  <div class="stgb-blog-archive-hero__bg"><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--1"></div><div class="stgb-blog-archive-hero__glow stgb-blog-archive-hero__glow--2"></div><div class="stgb-blog-archive-hero__dots"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--1"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--2"></div><div class="stgb-blog-archive-hero__float stgb-blog-archive-hero__float--3"></div></div>
  <div class="stgb-container stgb-blog-archive-hero__inner"><div class="stgb-blog-archive-hero__grid"><div class="stgb-blog-archive-hero__copy">
