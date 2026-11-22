@@ -1,0 +1,44 @@
+name: Recover original live WordPress images
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/recover-live-images.mjs
+      - .github/workflows/recover-live-images.yml
+permissions:
+  contents: write
+jobs:
+  recover-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/code-readiness.mjs
+      - name: Fetch original files from live website (verify image bytes)
+        run: node scripts/recover-live-images.mjs
+      - name: Commit recovered original images to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/wp-content/uploads/
+          if git diff --cached --quiet; then
+            echo "No live image bytes could be recovered"
+          else
+            git commit -m "Restore original WordPress images retrieved from live site"
+            git push origin HEAD:main
+          fi
+      - name: Upload recovery report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-live-image-recovery
+          path: reports/live-image-recovery.json
+          if-no-files-found: warn
