@@ -2,11 +2,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import svgRegistry from '../lib/landing-icons.json';
-import {paymentLink} from '../lib/route-fixes.js';
+import {purchaseLink} from '../lib/route-fixes.js';
 import siteSettings from '../../content/site.json';
 const {entry,landing}=Astro.props;
 const source=JSON.parse(fs.readFileSync(path.join(process.cwd(),'content/landings',landing+'.json'),'utf8'));
-const buyUrl=paymentLink(entry.externalUrl,'signup');
+const buyUrl=purchaseLink(entry.externalUrl);
 const cta=(text,cls)=>buyUrl?`<a href="${buyUrl.replaceAll('"','&quot;')}" class="${cls}" target="_blank" rel="noopener noreferrer">${text}</a>`:`<span class="${cls}">${text}</span>`;
 const tokens={
  buy_now_url:buyUrl,button_text:entry.buttonText||'Buy Now',img_uri:'/assets/images',
