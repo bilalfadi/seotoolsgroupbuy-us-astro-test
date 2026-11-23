@@ -100,5 +100,17 @@
   "contact_fb_text": "Message us on Messenger for payment & access help.",
   "contact_fb_cta": "Chat Now →",
   "price_label_detail": "Per month",
-  "price_suffix_card": "/mo"
+  "price_suffix_card": "/mo",
+  "related_heading": "Recommended tools",
+  "related_view_all": "View all tools →",
+  "related_view_details": "View Details →",
+  "market_view_details": "View Details",
+  "market_load_more": "Load More",
+  "blog_read_article": "Read article →",
+  "blog_no_results": "No articles match your search yet.",
+  "blog_prev": "← Previous",
+  "blog_next": "Next →",
+  "blog_author_intro": "We test every group-buy seat, benchmark pricing weekly, and publish the findings so your team knows exactly what to expect.",
+  "blog_author_heading": "About the author",
+  "blog_browse_all": "Browse all blogs"
 }
