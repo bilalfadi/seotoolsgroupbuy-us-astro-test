@@ -14,6 +14,69 @@ function add(from,to){
   if(rules.has(from)&&rules.get(from)!==to)throw new Error('Conflicting redirect '+from);
   rules.set(from,to);
 }
+// High-priority historical Next.js/WordPress aliases, verified against published Astro slugs.
+// These are HTTP 301 rules, not purchase-button redirects.
+const importantLegacySlugs = {
+  'ahref-group-buy':'ahrefs',
+  'ahrefs-group-buy':'ahrefs',
+  'adspy-group-buy':'adspy',
+  'ad-ecommerce-group-buy':'ad-ecommerce',
+  'adobe-stock-group-buy':'adobe-creative-cloud',
+  'amztrackers-group-buy':'amztrackers',
+  'answerthepublic-group-buy':'answerthepublic',
+  'article-builder-group-buy':'article-builder',
+  'article-forge-group-buy':'article-forge',
+  'bigspy-group-buy':'bigspy',
+  'buzzstream-group-buy-affordable-link-building-outreach-tools':'buzzstream',
+  'buzzsumo-group-buy':'buzzsumo',
+  'canva-group-buy':'canva',
+  'chatgpt-group-buy':'chatgpt',
+  'cbengine-group-buy':'cbengine',
+  'coursera-group-buy':'coursera',
+  'copymatic-ai-group-buy':'copymatic-ai',
+  'ecomhunt-group-buy':'ecomhunt',
+  'envato-elements-group-buy':'envato-elements',
+  'frase-group-buy':'frase',
+  'freepik-group-buy':'freepik',
+  'grammarly-group-buy':'grammarly',
+  'helium-10-group-buy':'helium-10',
+  'indexification-group-buy':'indexification',
+  'jasper-ai-group-buy':'jasper-ai',
+  'jungle-scout-group-buy':'jungle-scout',
+  'keywordrevealer-group-buy':'keywordrevealer',
+  'keywords-everywhere-group-buy':'keywords-everywhere',
+  'keywordtool-io-group-buy':'keywordtool-io',
+  'kwfinder-group-buy':'kwfinder',
+  'majestic-group-buy':'majestic',
+  'moz-group-buy':'moz',
+  'netflix-account-for-sale':'netflix',
+  'neuronwriter-group-buy':'neuronwriter',
+  'quetext-group-buy':'quetext',
+  'quillbot-group-buy':'quillbot',
+  'serpstat-group-buy':'serpstat',
+  'semrush':'semrush-group-buy',
+  'spin-rewriter-group-buy':'spinrewriter',
+  'spyfu-group-buy':'spyfu',
+  'storyblocks-group-buy':'storyblocks',
+  'surfer-seo-group-buy':'surfer-seo',
+  'ubersuggest-group-buy':'ubersuggest',
+  'udemy-group-buy':'udemy',
+  'unbounce-group-buy':'unbounce',
+  'woorank-group-buy':'woorank',
+  'wordai-group-buy':'wordai',
+  'wordhero-group-buy':'wordhero',
+  'wordtune-group-buy':'wordtune',
+  'vidiq-group-buy':'vidiq',
+  'screaming-frog-group-buy':'screamingfrog-seo-spider-group-buy',
+};
+for (const [oldSlug,targetSlug] of Object.entries(importantLegacySlugs)) {
+  if (oldSlug===targetSlug || existingSlugs.has(oldSlug)) continue;
+  for (const prefix of ['', '/product', '/project', '/seo-tools', '/tools']) {
+    add(prefix+'/'+oldSlug+'/', '/'+targetSlug+'/');
+  }
+}
+// Historical standalone article title changed to a shorter published URL.
+add('/ahrefs-review-the-best-seo-tool-for-2025/','/ahrefs-review/');
 // Historical WordPress archive/tag links (previously hardcoded in public/_redirects).
 add('/blog/','/category/seo-tools-blog/');
 add('/product-tag/buy-cheap-ahrefs/','/ahrefs/');
