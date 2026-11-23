@@ -135,7 +135,6 @@ content:
       - { name: focusKeyword, label: Focus Keyword, type: string }
       - { name: featuredImage, label: Sharing / Featured Image, type: image, options: { media: uploads } }
       - { name: featuredAlt, label: Featured Image Alt Text, type: string }
-      - { name: status, label: Publication Status, type: select, options: { values: [publish, draft, private] } }
 
   - name: homepage-sections
     label: Homepage - Easy Section Editor
