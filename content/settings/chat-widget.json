@@ -1,0 +1,31 @@
+{
+  "heading": "Need help?",
+  "subtitle": "Choose how to reach us",
+  "intro": "Contact our support team",
+  "options": [
+    {
+      "key": "fb",
+      "title": "Facebook Messenger",
+      "subtitle": "Chat on Facebook",
+      "href": "https://m.me/108606453898810"
+    },
+    {
+      "key": "wa",
+      "title": "WhatsApp",
+      "subtitle": "Fast response on WhatsApp",
+      "href": "https://wa.me/447845432224"
+    },
+    {
+      "key": "li",
+      "title": "LinkedIn",
+      "subtitle": "Connect with us",
+      "href": "https://www.linkedin.com/in/seo-group-buy-tools-90b29149/"
+    },
+    {
+      "key": "md",
+      "title": "Medium",
+      "subtitle": "Read our blog",
+      "href": "https://medium.com/@Seotoolsgroupbuy.us"
+    }
+  ]
+}
