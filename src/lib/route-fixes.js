@@ -58,6 +58,13 @@ export function paymentLink(raw, fallback='signup') {
    return base+'/users/login';
  return value;
 }
+// Buy Now/Order Now must reach this site's pay host even when legacy URL was a contact page.
+export function purchaseLink(raw) {
+ const value=paymentLink(raw,'signup');
+ const base=String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
+ if(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\//i.test(value))return base+'/users/signup';
+ return value;
+}
 export function fixInternalLinks(html='') {
  // Only href attributes. Do not rewrite purchased external URLs or media src URLs.
  return String(html).replace(/(href\s*=\s*["'])([^"']+)(["'])/gi,(full,start,raw,end)=>{
