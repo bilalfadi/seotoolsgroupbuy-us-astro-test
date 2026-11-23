@@ -1,0 +1,32 @@
+name: Verify Easy Pages CMS Homepage Editing
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'content/home-editor.json'
+      - 'content/pages/home.json'
+      - 'src/lib/home-editor.js'
+      - 'src/pages/index.astro'
+      - 'scripts/verify-home-editor.mjs'
+      - '.github/workflows/verify-home-cms.yml'
+permissions:
+  contents: read
+jobs:
+  edit-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirm complete editable inventory
+        run: node scripts/verify-home-editor.mjs inventory
+      - name: Make test CMS edits in temporary checkout
+        run: node scripts/verify-home-editor.mjs edit
+      - run: npm install --no-audit --no-fund
+      - name: Build with edited CMS values
+        run: npm run build
+      - name: Check edited heading and CTA output
+        run: node scripts/verify-home-editor.mjs check
