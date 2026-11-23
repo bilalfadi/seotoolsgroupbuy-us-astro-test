@@ -23,7 +23,7 @@ content:
       - { name: regularPrice, type: string }
       - { name: salePrice, type: string }
       - { name: shortDescription, type: rich-text, options: { format: html, media: uploads } }
-      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: true } }
+      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: false } }
       - { name: externalUrl, type: string }
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
@@ -42,7 +42,7 @@ content:
       - { name: status, label: Publication Status, type: select, default: publish, options: { values: [publish, draft, private] } }
       - { name: featuredImage, type: string }
       - { name: excerpt, type: rich-text, options: { format: html, media: uploads } }
-      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: true } }
+      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: false } }
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
       - { name: focusKeyword, type: string }
@@ -62,7 +62,7 @@ content:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
       - { name: status, label: Publication Status, type: select, default: publish, options: { values: [publish, draft, private] } }
-      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: true } }
+      - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: false } }
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
 
@@ -82,7 +82,10 @@ content:
         list: true
         fields:
           - { name: key, type: string }
-          - { name: html, type: text }
+          - name: html
+            label: Landing Section Content (Visual Editor)
+            type: rich-text
+            options: { format: html, media: uploads, switcher: false }
 
   - name: contact-settings
     label: Contact Details
