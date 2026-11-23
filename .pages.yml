@@ -19,7 +19,7 @@ content:
     operations: { rename: false, delete: false }
     fields:
       - { name: title, type: string, required: true }
-      - { name: slug, type: string, required: true }
+      - { name: slug, type: string, required: true, readonly: true }
       - { name: status, label: Publication Status, type: select, default: publish, options: { values: [publish, draft, private] } }
       - { name: featuredImage, type: string }
       - { name: featuredAlt, type: string }
@@ -42,7 +42,7 @@ content:
     operations: { rename: false, delete: false }
     fields:
       - { name: title, type: string, required: true }
-      - { name: slug, type: string, required: true }
+      - { name: slug, type: string, required: true, readonly: true }
       - { name: status, label: Publication Status, type: select, default: publish, options: { values: [publish, draft, private] } }
       - { name: featuredImage, type: string }
       - { name: excerpt, type: rich-text, options: { format: html, media: uploads } }
@@ -65,7 +65,7 @@ content:
     operations: { rename: false, delete: false }
     fields:
       - { name: title, type: string, required: true }
-      - { name: slug, type: string, required: true }
+      - { name: slug, type: string, required: true, readonly: true }
       - { name: status, label: Publication Status, type: select, default: publish, options: { values: [publish, draft, private] } }
       - { name: content, type: rich-text, options: { format: html, media: uploads, switcher: false } }
       - { name: seoTitle, type: string }
