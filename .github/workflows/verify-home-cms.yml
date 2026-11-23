@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'content/home-editor.json'
+      - 'content/site.json'
+      - 'src/layouts/SiteLayout.astro'
       - 'content/pages/home.json'
       - 'src/lib/home-editor.js'
       - 'src/pages/index.astro'
