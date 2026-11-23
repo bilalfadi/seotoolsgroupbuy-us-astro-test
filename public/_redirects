@@ -114,7 +114,7 @@
 /product/neuronwriter-group-buy/ /neuronwriter/ 301
 /product/quetext-group-buy/ /quetext/ 301
 /product/quillbot-group-buy/ /quillbot/ 301
-/product/screaming-frog-group-buy/ /screamingfrog-seo-spider-group-buy/ 301
+/product/screaming-frog-group-buy/ /screaming-frog-group-buy/ 301
 /product/semrush/ /semrush-group-buy/ 301
 /product/serpstat-group-buy/ /serpstat/ 301
 /product/spin-rewriter-group-buy/ /spinrewriter/ 301
@@ -165,7 +165,7 @@
 /project/neuronwriter-group-buy/ /neuronwriter/ 301
 /project/quetext-group-buy/ /quetext/ 301
 /project/quillbot-group-buy/ /quillbot/ 301
-/project/screaming-frog-group-buy/ /screamingfrog-seo-spider-group-buy/ 301
+/project/screaming-frog-group-buy/ /screaming-frog-group-buy/ 301
 /project/semrush/ /semrush-group-buy/ 301
 /project/serpstat-group-buy/ /serpstat/ 301
 /project/spin-rewriter-group-buy/ /spinrewriter/ 301
@@ -185,10 +185,9 @@
 /quillbot-group-buy/ /quillbot/ 301
 /rank-key-top-seo-group-buy/ /rank-key-top-seo/ 301
 /rytr-me-group-buy-affordable-access-to-ai-powered-content-writing/ /rytr-me/ 301
-/screaming-frog-group-buy/ /screamingfrog-seo-spider-group-buy/ 301
-/screaming-frog-seo-spider/ /screamingfrog-seo-spider-group-buy/ 301
-/screamingfrog-seo-spider/ /screamingfrog-seo-spider-group-buy/ 301
-/screamingfrog/ /screamingfrog-seo-spider-group-buy/ 301
+/screaming-frog-seo-spider/ /screaming-frog-group-buy/ 301
+/screamingfrog-seo-spider/ /screaming-frog-group-buy/ 301
+/screamingfrog/ /screaming-frog-group-buy/ 301
 /selleramp-group-buy/ /selleramp/ 301
 /semrush/ /semrush-group-buy/ 301
 /seo-profiler/ /seoprofiler/ 301
@@ -228,7 +227,7 @@
 /seo-tools/neuronwriter-group-buy/ /neuronwriter/ 301
 /seo-tools/quetext-group-buy/ /quetext/ 301
 /seo-tools/quillbot-group-buy/ /quillbot/ 301
-/seo-tools/screaming-frog-group-buy/ /screamingfrog-seo-spider-group-buy/ 301
+/seo-tools/screaming-frog-group-buy/ /screaming-frog-group-buy/ 301
 /seo-tools/semrush/ /semrush-group-buy/ 301
 /seo-tools/serpstat-group-buy/ /serpstat/ 301
 /seo-tools/spin-rewriter-group-buy/ /spinrewriter/ 301
@@ -293,7 +292,7 @@
 /tools/neuronwriter-group-buy/ /neuronwriter/ 301
 /tools/quetext-group-buy/ /quetext/ 301
 /tools/quillbot-group-buy/ /quillbot/ 301
-/tools/screaming-frog-group-buy/ /screamingfrog-seo-spider-group-buy/ 301
+/tools/screaming-frog-group-buy/ /screaming-frog-group-buy/ 301
 /tools/semrush/ /semrush-group-buy/ 301
 /tools/serpstat-group-buy/ /serpstat/ 301
 /tools/spin-rewriter-group-buy/ /spinrewriter/ 301
