@@ -25,10 +25,31 @@ if(mode==='edit'){
  home.seoDescription='CMS Edited Homepage Meta Description';
  home.featuredImage='/media/cms-test-home.webp';
  fs.writeFileSync(homeFile,JSON.stringify(home,null,2)+'\n');
+ const chatPath='content/settings/chat-widget.json',chat=JSON.parse(fs.readFileSync(chatPath,'utf8'));
+ chat.heading='CMS Chat Widget Heading';
+ chat.options.find(o=>o.key==='wa').href='https://example.com/cms-whatsapp';
+ fs.writeFileSync(chatPath,JSON.stringify(chat,null,2)+'\n');
+ const copyPath='src/lib/site-default-copy.json',copy=JSON.parse(fs.readFileSync(copyPath,'utf8'));
+ copy.tools_title='CMS Marketplace Heading';
+ copy.related_heading='CMS Product Recommendations';
+ fs.writeFileSync(copyPath,JSON.stringify(copy,null,2)+'\n');
+ const policyPath='src/lib/policy-themes.json',policy=JSON.parse(fs.readFileSync(policyPath,'utf8'));
+ policy['dmca-policy'].noticeTitle='CMS Legal Notice Heading';
+ fs.writeFileSync(policyPath,JSON.stringify(policy,null,2)+'\n');
+ const productPath='content/products/ahrefs.json',product=JSON.parse(fs.readFileSync(productPath,'utf8'));
+ product.enableCustomLanding=true;
+ fs.writeFileSync(productPath,JSON.stringify(product,null,2)+'\n');
+
  console.log('Edited heading and CTA in disposable CI checkout.');
 }else if(mode==='check'){
  const html=fs.readFileSync('dist/index.html','utf8');
  for(const text of ['CMS Easy Heading Test','href="/contact/"','CMS Edited Home Menu','CMS Join Label','CMS Edited Footer Intro','https://example.com/cms-social','CMS Edited Homepage SEO Title','CMS Edited Homepage Meta Description','/media/cms-test-home.webp'])if(!html.includes(text))throw new Error('Rendered homepage missing CMS edit: '+text);
- console.log('PASS: 217 structured homepage fields and edited heading, CTA, header/footer and social links rendered.');
+
+ for(const v of ['CMS Chat Widget Heading','https://example.com/cms-whatsapp'])if(!html.includes(v))throw Error('CMS chat item not rendered: '+v);
+ for(const [file,needle] of [['dist/shop/index.html','CMS Marketplace Heading'],['dist/shop/index.html','https://example.com/cms-whatsapp'],['dist/dmca-policy/index.html','CMS Legal Notice Heading'],['dist/semrush-group-buy/index.html','CMS Product Recommendations'],['dist/ahrefs/index.html','ahrefs-section']]){
+   if(!fs.readFileSync(file,'utf8').includes(needle))throw new Error(file+' missing CMS edited: '+needle);
+ }
+ console.log('PASS: Homepage, chat, marketplace, policy, product cards and optional Ahrefs landing edits render correctly.');
+
 }else if(mode==='inventory')console.log('Homepage CMS fields:',all.length,'in sections:',d.sections.length);
 else throw new Error('Usage: edit|check|inventory');
