@@ -1,8 +1,62 @@
 {
   "sections": [
     {
-      "name": "Hero and Introduction",
+      "name": "hero",
       "items": [
+        {
+          "kind": "h1",
+          "text": "SEO Tools Group Buy — Access to 90+ Tools",
+          "url": "",
+          "originalText": "SEO Tools Group Buy — Access to 90+ Tools",
+          "originalUrl": "",
+          "source": "<h1 class=\"s1-hero__title\">SEO Tools Group Buy — Access to 90+ Tools</h1>",
+          "offset": 338
+        },
+        {
+          "kind": "p",
+          "text": "SEO Tools Group Buy provides instant access to 90+ premium SEO, content writing, designer, Amazon, streaming, and spy tools at affordable prices.",
+          "url": "",
+          "originalText": "SEO Tools Group Buy provides instant access to 90+ premium SEO, content writing, designer, Amazon, streaming, and spy tools at affordable prices.",
+          "originalUrl": "",
+          "source": "<p class=\"s1-hero__subtitle\">SEO Tools Group Buy provides instant access to 90+ premium SEO, content writing, designer, Amazon, streaming, and spy tools at affordable prices.</p>",
+          "offset": 412
+        },
+        {
+          "kind": "p",
+          "text": "Affordable plans for marketers, freelancers, and businesses who need premium tools without full retail pricing.",
+          "url": "",
+          "originalText": "Affordable plans for marketers, freelancers, and businesses who need premium tools without full retail pricing.",
+          "originalUrl": "",
+          "source": "<p class=\"s1-hero__text\">Affordable plans for marketers, freelancers, and businesses who need premium tools without full retail pricing.</p>",
+          "offset": 591
+        },
+        {
+          "kind": "a",
+          "text": "Get Started – $4.99/mo Get Started →",
+          "url": "/#tools",
+          "originalText": "Get Started – $4.99/mo Get Started →",
+          "originalUrl": "/#tools",
+          "source": "<a class=\"s1-hero__btn s1-hero__btn--primary\" href=\"/#tools\"><span class=\"s1-hero__btn-desk\">Get Started – $4.99/mo</span><span class=\"s1-hero__btn-mobile\">Get Started</span><span class=\"s1-hero__btn-icon\">→</span></a>",
+          "offset": 759
+        },
+        {
+          "kind": "a",
+          "text": "Explore Tools Explore",
+          "url": "/shop",
+          "originalText": "Explore Tools Explore",
+          "originalUrl": "/shop",
+          "source": "<a class=\"s1-hero__btn s1-hero__btn--outline\" href=\"/shop\"><span class=\"s1-hero__btn-desk\">Explore Tools</span><span class=\"s1-hero__btn-mobile\">Explore</span></a>",
+          "offset": 978
+        },
+        {
+          "kind": "a",
+          "text": "View Pricing Plans Pricing",
+          "url": "/pricing-plans",
+          "originalText": "View Pricing Plans Pricing",
+          "originalUrl": "/pricing-plans",
+          "source": "<a class=\"s1-hero__btn s1-hero__btn--outline\" href=\"/pricing-plans\"><span class=\"s1-hero__btn-desk\">View Pricing Plans</span><span class=\"s1-hero__btn-mobile\">Pricing</span></a>",
+          "offset": 1142
+        },
         {
           "kind": "div",
           "text": "Secure",
@@ -81,13 +135,31 @@
       "name": "tools",
       "items": [
         {
-          "kind": "span",
-          "text": "SEMRU$H",
+          "kind": "h2",
+          "text": "Access Premium SEO Tools with Our Group Buy Service",
           "url": "",
-          "originalText": "SEMRU$H",
+          "originalText": "Access Premium SEO Tools with Our Group Buy Service",
           "originalUrl": "",
-          "source": "<span class=\"s2-tools__name\">SEMRU$H</span>",
-          "offset": 2647
+          "source": "<h2 class=\"s2-tools__title\">Access Premium SEO Tools with Our Group Buy Service</h2>",
+          "offset": 2225
+        },
+        {
+          "kind": "p",
+          "text": "Firstly, get easy, affordable, and reliable access to 90+ tools in one subscription.",
+          "url": "",
+          "originalText": "Firstly, get easy, affordable, and reliable access to 90+ tools in one subscription.",
+          "originalUrl": "",
+          "source": "<p class=\"s2-tools__sub\"><strong data-start=\"1425\" data-end=\"1437\">Firstly,</strong> get easy, affordable, and reliable access to 90+ tools in one subscription.</p>",
+          "offset": 2316
+        },
+        {
+          "kind": "a",
+          "text": "SE SEMRU$H",
+          "url": "/semrush-group-buy",
+          "originalText": "SE SEMRU$H",
+          "originalUrl": "/semrush-group-buy",
+          "source": "<a href=\"/semrush-group-buy\" class=\"s2-tools__card\"><div class=\"s2-tools__badge\" style=\"background:#f97316\">SE</div><span class=\"s2-tools__name\">SEMRU$H</span></a>",
+          "offset": 2531
         },
         {
           "kind": "a",
@@ -419,6 +491,33 @@
       "name": "pricing",
       "items": [
         {
+          "kind": "h2",
+          "text": "Choose Your Perfect SEO Tools Group Buy Plan",
+          "url": "",
+          "originalText": "Choose Your Perfect SEO Tools Group Buy Plan",
+          "originalUrl": "",
+          "source": "<h2 class=\"s3-pricing__title\">Choose Your Perfect SEO Tools Group Buy Plan</h2>",
+          "offset": 10129
+        },
+        {
+          "kind": "p",
+          "text": "Get instant access to premium tools at unbeatable prices",
+          "url": "",
+          "originalText": "Get instant access to premium tools at unbeatable prices",
+          "originalUrl": "",
+          "source": "<p class=\"s3-pricing__sub\">Get instant access to premium tools at unbeatable prices</p>",
+          "offset": 10209
+        },
+        {
+          "kind": "div",
+          "text": "&#x2b50;",
+          "url": "",
+          "originalText": "&#x2b50;",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__icon s3-pricing__icon--blue\">&#x2b50;</div>",
+          "offset": 10440
+        },
+        {
           "kind": "h3",
           "text": "SMALL PLAN",
           "url": "",
@@ -435,6 +534,24 @@
           "originalUrl": "",
           "source": "<p class=\"s3-pricing__desc\">Perfect for starters</p>",
           "offset": 10553
+        },
+        {
+          "kind": "span",
+          "text": "$15",
+          "url": "",
+          "originalText": "$15",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__price\">$15</span>",
+          "offset": 10643
+        },
+        {
+          "kind": "span",
+          "text": "/month",
+          "url": "",
+          "originalText": "/month",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__per\">/month</span>",
+          "offset": 10685
         },
         {
           "kind": "div",
@@ -464,6 +581,15 @@
           "offset": 10989
         },
         {
+          "kind": "div",
+          "text": "← Hover out to return",
+          "url": "",
+          "originalText": "← Hover out to return",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__card-back-hint\">← Hover out to return</div>",
+          "offset": 11169
+        },
+        {
           "kind": "h3",
           "text": "SMALL PLAN Tools",
           "url": "",
@@ -471,6 +597,15 @@
           "originalUrl": "",
           "source": "<h3 class=\"s3-pricing__card-back-title\">SMALL PLAN Tools</h3>",
           "offset": 11237
+        },
+        {
+          "kind": "div",
+          "text": "Most Popular",
+          "url": "",
+          "originalText": "Most Popular",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__badge\">Most Popular</div>",
+          "offset": 29918
         },
         {
           "kind": "div",
@@ -500,6 +635,24 @@
           "offset": 30086
         },
         {
+          "kind": "span",
+          "text": "$25",
+          "url": "",
+          "originalText": "$25",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__price\">$25</span>",
+          "offset": 30174
+        },
+        {
+          "kind": "span",
+          "text": "/month",
+          "url": "",
+          "originalText": "/month",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__per\">/month</span>",
+          "offset": 30216
+        },
+        {
           "kind": "div",
           "text": "60+ Tools",
           "url": "",
@@ -527,6 +680,15 @@
           "offset": 30516
         },
         {
+          "kind": "div",
+          "text": "← Hover out to return",
+          "url": "",
+          "originalText": "← Hover out to return",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__card-back-hint\">← Hover out to return</div>",
+          "offset": 30717
+        },
+        {
           "kind": "h3",
           "text": "AHREEF$ COMBO Tools",
           "url": "",
@@ -534,6 +696,15 @@
           "originalUrl": "",
           "source": "<h3 class=\"s3-pricing__card-back-title\">AHREEF$ COMBO Tools</h3>",
           "offset": 30785
+        },
+        {
+          "kind": "div",
+          "text": "&#x1f451;",
+          "url": "",
+          "originalText": "&#x1f451;",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__icon s3-pricing__icon--purple\">&#x1f451;</div>",
+          "offset": 49757
         },
         {
           "kind": "h3",
@@ -552,6 +723,24 @@
           "originalUrl": "",
           "source": "<p class=\"s3-pricing__desc\">Everything you need</p>",
           "offset": 49872
+        },
+        {
+          "kind": "span",
+          "text": "$50",
+          "url": "",
+          "originalText": "$50",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__price\">$50</span>",
+          "offset": 49961
+        },
+        {
+          "kind": "span",
+          "text": "/month",
+          "url": "",
+          "originalText": "/month",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__per\">/month</span>",
+          "offset": 50003
         },
         {
           "kind": "div",
@@ -581,6 +770,15 @@
           "offset": 50302
         },
         {
+          "kind": "div",
+          "text": "← Hover out to return",
+          "url": "",
+          "originalText": "← Hover out to return",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__card-back-hint\">← Hover out to return</div>",
+          "offset": 50482
+        },
+        {
           "kind": "h3",
           "text": "MEGA PLAN Tools",
           "url": "",
@@ -588,6 +786,15 @@
           "originalUrl": "",
           "source": "<h3 class=\"s3-pricing__card-back-title\">MEGA PLAN Tools</h3>",
           "offset": 50550
+        },
+        {
+          "kind": "div",
+          "text": "&#x2b50;",
+          "url": "",
+          "originalText": "&#x2b50;",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__icon s3-pricing__icon--blue\">&#x2b50;</div>",
+          "offset": 73324
         },
         {
           "kind": "h3",
@@ -606,6 +813,24 @@
           "originalUrl": "",
           "source": "<p class=\"s3-pricing__desc\">Essential tools</p>",
           "offset": 73436
+        },
+        {
+          "kind": "span",
+          "text": "$10",
+          "url": "",
+          "originalText": "$10",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__price\">$10</span>",
+          "offset": 73521
+        },
+        {
+          "kind": "span",
+          "text": "/month",
+          "url": "",
+          "originalText": "/month",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__per\">/month</span>",
+          "offset": 73563
         },
         {
           "kind": "div",
@@ -635,6 +860,15 @@
           "offset": 73865
         },
         {
+          "kind": "div",
+          "text": "← Hover out to return",
+          "url": "",
+          "originalText": "← Hover out to return",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__card-back-hint\">← Hover out to return</div>",
+          "offset": 74045
+        },
+        {
           "kind": "h3",
           "text": "LITE PLAN Tools",
           "url": "",
@@ -642,6 +876,15 @@
           "originalUrl": "",
           "source": "<h3 class=\"s3-pricing__card-back-title\">LITE PLAN Tools</h3>",
           "offset": 74113
+        },
+        {
+          "kind": "div",
+          "text": "&#x26a1;",
+          "url": "",
+          "originalText": "&#x26a1;",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__icon s3-pricing__icon--orange\">&#x26a1;</div>",
+          "offset": 80240
         },
         {
           "kind": "h3",
@@ -660,6 +903,24 @@
           "originalUrl": "",
           "source": "<p class=\"s3-pricing__desc\">For content creators</p>",
           "offset": 80356
+        },
+        {
+          "kind": "span",
+          "text": "$15",
+          "url": "",
+          "originalText": "$15",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__price\">$15</span>",
+          "offset": 80446
+        },
+        {
+          "kind": "span",
+          "text": "/month",
+          "url": "",
+          "originalText": "/month",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__per\">/month</span>",
+          "offset": 80488
         },
         {
           "kind": "div",
@@ -689,6 +950,15 @@
           "offset": 80779
         },
         {
+          "kind": "div",
+          "text": "← Hover out to return",
+          "url": "",
+          "originalText": "← Hover out to return",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__card-back-hint\">← Hover out to return</div>",
+          "offset": 80959
+        },
+        {
           "kind": "h3",
           "text": "WRITER PLAN Tools",
           "url": "",
@@ -696,6 +966,15 @@
           "originalUrl": "",
           "source": "<h3 class=\"s3-pricing__card-back-title\">WRITER PLAN Tools</h3>",
           "offset": 81027
+        },
+        {
+          "kind": "div",
+          "text": "&#x1f451;",
+          "url": "",
+          "originalText": "&#x1f451;",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__icon s3-pricing__icon--purple\">&#x1f451;</div>",
+          "offset": 90053
         },
         {
           "kind": "h3",
@@ -714,6 +993,24 @@
           "originalUrl": "",
           "source": "<p class=\"s3-pricing__desc\">For designers</p>",
           "offset": 90172
+        },
+        {
+          "kind": "span",
+          "text": "$10",
+          "url": "",
+          "originalText": "$10",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__price\">$10</span>",
+          "offset": 90255
+        },
+        {
+          "kind": "span",
+          "text": "/month",
+          "url": "",
+          "originalText": "/month",
+          "originalUrl": "",
+          "source": "<span class=\"s3-pricing__per\">/month</span>",
+          "offset": 90297
         },
         {
           "kind": "div",
@@ -743,6 +1040,15 @@
           "offset": 90584
         },
         {
+          "kind": "div",
+          "text": "← Hover out to return",
+          "url": "",
+          "originalText": "← Hover out to return",
+          "originalUrl": "",
+          "source": "<div class=\"s3-pricing__card-back-hint\">← Hover out to return</div>",
+          "offset": 90764
+        },
+        {
           "kind": "h3",
           "text": "DESIGNER PLAN Tools",
           "url": "",
@@ -756,6 +1062,15 @@
     {
       "name": "features-categories",
       "items": [
+        {
+          "kind": "h2",
+          "text": "Why Our SEO Tools Group Buy Service Is the Perfect Choice",
+          "url": "",
+          "originalText": "Why Our SEO Tools Group Buy Service Is the Perfect Choice",
+          "originalUrl": "",
+          "source": "<h2>Why Our SEO Tools Group Buy Service Is the Perfect Choice</h2>",
+          "offset": 95953
+        },
         {
           "kind": "h3",
           "text": "Affordable Price",
@@ -865,6 +1180,24 @@
           "offset": 100787
         },
         {
+          "kind": "h2",
+          "text": "Browse SEO Tools Group Buy Categories",
+          "url": "",
+          "originalText": "Browse SEO Tools Group Buy Categories",
+          "originalUrl": "",
+          "source": "<h2>Browse SEO Tools Group Buy Categories</h2>",
+          "offset": 101073
+        },
+        {
+          "kind": "span",
+          "text": "SEO Tools",
+          "url": "",
+          "originalText": "SEO Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__tag\">SEO Tools</span>",
+          "offset": 101276
+        },
+        {
           "kind": "h3",
           "text": "SEO Tools Group Buy",
           "url": "",
@@ -892,55 +1225,199 @@
           "offset": 101832
         },
         {
-          "kind": "a",
-          "text": "Content Tools Content Tools Group Buy View All Content Tools Plans View All Tools",
-          "url": "/single-tools-list/?tab=content",
-          "originalText": "Content Tools Content Tools Group Buy View All Content Tools Plans View All Tools",
-          "originalUrl": "/single-tools-list/?tab=content",
-          "source": "<a href=\"/single-tools-list/?tab=content\" class=\"stgb-categories__card stgb-reveal-item\" style=\"--delay:500ms\">\n\t\t\t\t\t<span class=\"stgb-categories__tag\">Content Tools</span>\n\t\t\t\t\t<div class=\"stgb-categories__icon\"><svg class=\"stgb-cat-svg\" width=\"48\" height=\"48\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z\"/></svg></div>\n\t\t\t\t\t<h3>Content Tools Group Buy</h3>\n\t\t\t\t\t<p>View All Content Tools Plans</p>\n\t\t\t\t\t<span class=\"stgb-categories__btn\">View All Tools</span>\n\t\t\t\t</a>",
-          "offset": 101898
+          "kind": "span",
+          "text": "Content Tools",
+          "url": "",
+          "originalText": "Content Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__tag\">Content Tools</span>",
+          "offset": 102015
         },
         {
-          "kind": "a",
-          "text": "Amazon Tools Amazon Tools Group Buy View All Amazon Tools Plans View All Tools",
-          "url": "/single-tools-list/?tab=amazon",
-          "originalText": "Amazon Tools Amazon Tools Group Buy View All Amazon Tools Plans View All Tools",
-          "originalUrl": "/single-tools-list/?tab=amazon",
-          "source": "<a href=\"/single-tools-list/?tab=amazon\" class=\"stgb-categories__card stgb-reveal-item\" style=\"--delay:600ms\">\n\t\t\t\t\t<span class=\"stgb-categories__tag\">Amazon Tools</span>\n\t\t\t\t\t<div class=\"stgb-categories__icon\"><svg class=\"stgb-cat-svg\" width=\"48\" height=\"48\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z\"/></svg></div>\n\t\t\t\t\t<h3>Amazon Tools Group Buy</h3>\n\t\t\t\t\t<p>View All Amazon Tools Plans</p>\n\t\t\t\t\t<span class=\"stgb-categories__btn\">View All Tools</span>\n\t\t\t\t</a>",
-          "offset": 102571
+          "kind": "h3",
+          "text": "Content Tools Group Buy",
+          "url": "",
+          "originalText": "Content Tools Group Buy",
+          "originalUrl": "",
+          "source": "<h3>Content Tools Group Buy</h3>",
+          "offset": 102426
         },
         {
-          "kind": "a",
-          "text": "Design Tools Design Tools Group Buy View All Design Tools Plans View All Tools",
-          "url": "/single-tools-list/?tab=design",
-          "originalText": "Design Tools Design Tools Group Buy View All Design Tools Plans View All Tools",
-          "originalUrl": "/single-tools-list/?tab=design",
-          "source": "<a href=\"/single-tools-list/?tab=design\" class=\"stgb-categories__card stgb-reveal-item\" style=\"--delay:700ms\">\n\t\t\t\t\t<span class=\"stgb-categories__tag\">Design Tools</span>\n\t\t\t\t\t<div class=\"stgb-categories__icon\"><svg class=\"stgb-cat-svg\" width=\"48\" height=\"48\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01\"/></svg></div>\n\t\t\t\t\t<h3>Design Tools Group Buy</h3>\n\t\t\t\t\t<p>View All Design Tools Plans</p>\n\t\t\t\t\t<span class=\"stgb-categories__btn\">View All Tools</span>\n\t\t\t\t</a>",
-          "offset": 103164
+          "kind": "p",
+          "text": "View All Content Tools Plans",
+          "url": "",
+          "originalText": "View All Content Tools Plans",
+          "originalUrl": "",
+          "source": "<p>View All Content Tools Plans</p>",
+          "offset": 102464
         },
         {
-          "kind": "a",
-          "text": "AI Tools AI Tools Group Buy View All AI Tools Plans View All Tools",
-          "url": "/single-tools-list/?tab=ai",
-          "originalText": "AI Tools AI Tools Group Buy View All AI Tools Plans View All Tools",
-          "originalUrl": "/single-tools-list/?tab=ai",
-          "source": "<a href=\"/single-tools-list/?tab=ai\" class=\"stgb-categories__card stgb-reveal-item\" style=\"--delay:800ms\">\n\t\t\t\t\t<span class=\"stgb-categories__tag\">AI Tools</span>\n\t\t\t\t\t<div class=\"stgb-categories__icon\"><svg class=\"stgb-cat-svg\" width=\"48\" height=\"48\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z\"/></svg></div>\n\t\t\t\t\t<h3>AI Tools Group Buy</h3>\n\t\t\t\t\t<p>View All AI Tools Plans</p>\n\t\t\t\t\t<span class=\"stgb-categories__btn\">View All Tools</span>\n\t\t\t\t</a>",
-          "offset": 103907
+          "kind": "span",
+          "text": "View All Tools",
+          "url": "",
+          "originalText": "View All Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__btn\">View All Tools</span>",
+          "offset": 102505
         },
         {
-          "kind": "a",
-          "text": "All Tools All Tools Group Buy View All Tools Plans View All Tools",
-          "url": "/single-tools-list/",
-          "originalText": "All Tools All Tools Group Buy View All Tools Plans View All Tools",
-          "originalUrl": "/single-tools-list/",
-          "source": "<a href=\"/single-tools-list/\" class=\"stgb-categories__card stgb-reveal-item\" style=\"--delay:900ms\">\n\t\t\t\t\t<span class=\"stgb-categories__tag\">All Tools</span>\n\t\t\t\t\t<div class=\"stgb-categories__icon\"><svg class=\"stgb-cat-svg\" width=\"48\" height=\"48\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\"/></svg></div>\n\t\t\t\t\t<h3>All Tools Group Buy</h3>\n\t\t\t\t\t<p>View All Tools Plans</p>\n\t\t\t\t\t<span class=\"stgb-categories__btn\">View All Tools</span>\n\t\t\t\t</a>",
-          "offset": 104650
+          "kind": "span",
+          "text": "Amazon Tools",
+          "url": "",
+          "originalText": "Amazon Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__tag\">Amazon Tools</span>",
+          "offset": 102687
+        },
+        {
+          "kind": "h3",
+          "text": "Amazon Tools Group Buy",
+          "url": "",
+          "originalText": "Amazon Tools Group Buy",
+          "originalUrl": "",
+          "source": "<h3>Amazon Tools Group Buy</h3>",
+          "offset": 103021
+        },
+        {
+          "kind": "p",
+          "text": "View All Amazon Tools Plans",
+          "url": "",
+          "originalText": "View All Amazon Tools Plans",
+          "originalUrl": "",
+          "source": "<p>View All Amazon Tools Plans</p>",
+          "offset": 103058
+        },
+        {
+          "kind": "span",
+          "text": "View All Tools",
+          "url": "",
+          "originalText": "View All Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__btn\">View All Tools</span>",
+          "offset": 103098
+        },
+        {
+          "kind": "span",
+          "text": "Design Tools",
+          "url": "",
+          "originalText": "Design Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__tag\">Design Tools</span>",
+          "offset": 103280
+        },
+        {
+          "kind": "h3",
+          "text": "Design Tools Group Buy",
+          "url": "",
+          "originalText": "Design Tools Group Buy",
+          "originalUrl": "",
+          "source": "<h3>Design Tools Group Buy</h3>",
+          "offset": 103764
+        },
+        {
+          "kind": "p",
+          "text": "View All Design Tools Plans",
+          "url": "",
+          "originalText": "View All Design Tools Plans",
+          "originalUrl": "",
+          "source": "<p>View All Design Tools Plans</p>",
+          "offset": 103801
+        },
+        {
+          "kind": "span",
+          "text": "View All Tools",
+          "url": "",
+          "originalText": "View All Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__btn\">View All Tools</span>",
+          "offset": 103841
+        },
+        {
+          "kind": "span",
+          "text": "AI Tools",
+          "url": "",
+          "originalText": "AI Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__tag\">AI Tools</span>",
+          "offset": 104019
+        },
+        {
+          "kind": "h3",
+          "text": "AI Tools Group Buy",
+          "url": "",
+          "originalText": "AI Tools Group Buy",
+          "originalUrl": "",
+          "source": "<h3>AI Tools Group Buy</h3>",
+          "offset": 104515
+        },
+        {
+          "kind": "p",
+          "text": "View All AI Tools Plans",
+          "url": "",
+          "originalText": "View All AI Tools Plans",
+          "originalUrl": "",
+          "source": "<p>View All AI Tools Plans</p>",
+          "offset": 104548
+        },
+        {
+          "kind": "span",
+          "text": "View All Tools",
+          "url": "",
+          "originalText": "View All Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__btn\">View All Tools</span>",
+          "offset": 104584
+        },
+        {
+          "kind": "span",
+          "text": "All Tools",
+          "url": "",
+          "originalText": "All Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__tag\">All Tools</span>",
+          "offset": 104755
+        },
+        {
+          "kind": "h3",
+          "text": "All Tools Group Buy",
+          "url": "",
+          "originalText": "All Tools Group Buy",
+          "originalUrl": "",
+          "source": "<h3>All Tools Group Buy</h3>",
+          "offset": 105194
+        },
+        {
+          "kind": "p",
+          "text": "View All Tools Plans",
+          "url": "",
+          "originalText": "View All Tools Plans",
+          "originalUrl": "",
+          "source": "<p>View All Tools Plans</p>",
+          "offset": 105228
+        },
+        {
+          "kind": "span",
+          "text": "View All Tools",
+          "url": "",
+          "originalText": "View All Tools",
+          "originalUrl": "",
+          "source": "<span class=\"stgb-categories__btn\">View All Tools</span>",
+          "offset": 105261
         }
       ]
     },
     {
       "name": "content",
       "items": [
+        {
+          "kind": "div",
+          "text": "90+ Premium Tools",
+          "url": "",
+          "originalText": "90+ Premium Tools",
+          "originalUrl": "",
+          "source": "<div class=\"s4-content__pill\">90+ Premium Tools</div>",
+          "offset": 105522
+        },
         {
           "kind": "h2",
           "text": "Save Big with Affordable Group Buy SEO Tools Plans",
@@ -1208,6 +1685,15 @@
       "name": "blogs",
       "items": [
         {
+          "kind": "div",
+          "text": "Blog",
+          "url": "",
+          "originalText": "Blog",
+          "originalUrl": "",
+          "source": "<div class=\"stgb-blogs__label\">Blog</div>",
+          "offset": 111885
+        },
+        {
           "kind": "h2",
           "text": "Latest Insights",
           "url": "",
@@ -1230,6 +1716,33 @@
     {
       "name": "faq",
       "items": [
+        {
+          "kind": "h2",
+          "text": "SEO Tools Group Buy FAQs",
+          "url": "",
+          "originalText": "SEO Tools Group Buy FAQs",
+          "originalUrl": "",
+          "source": "<h2 class=\"s5-faq__title\">SEO Tools Group Buy FAQs</h2>",
+          "offset": 112321
+        },
+        {
+          "kind": "p",
+          "text": "Need more information? Contact us",
+          "url": "",
+          "originalText": "Need more information? Contact us",
+          "originalUrl": "",
+          "source": "<p class=\"s5-faq__sub\">\n        Need more information? Contact us\n      </p>",
+          "offset": 112383
+        },
+        {
+          "kind": "div",
+          "text": "SEO Tools Group Buy is a service that gives you affordable access to 90+ premium SEO, content writing, designer, Amazon, streaming, and spy tools. In group buy, members use shared accounts at a low monthly price. If you want a private account, that option is also available at a separate price.",
+          "url": "",
+          "originalText": "SEO Tools Group Buy is a service that gives you affordable access to 90+ premium SEO, content writing, designer, Amazon, streaming, and spy tools. In group buy, members use shared accounts at a low monthly price. If you want a private account, that option is also available at a separate price.",
+          "originalUrl": "",
+          "source": "<div class=\"s5-faq__a\">SEO Tools Group Buy is a service that gives you affordable access to 90+ premium SEO, content writing, designer, Amazon, streaming, and spy tools. In group buy, members use shared accounts at a low monthly price. If you want a private account, that option is also available at a separate price.</div>",
+          "offset": 112622
+        },
         {
           "kind": "div",
           "text": "In group buy, you get access to shared accounts of premium SEO tools. We purchase legitimate subscriptions and provide access through our members platform so you can use the tools at a much lower cost than buying each tool alone. If you need a private account instead of a shared one, we can provide that too at a separate price.",
@@ -1308,49 +1821,166 @@
       "name": "support",
       "items": [
         {
+          "kind": "h2",
+          "text": "Ready to Buy SEO Tools?",
+          "url": "",
+          "originalText": "Ready to Buy SEO Tools?",
+          "originalUrl": "",
+          "source": "<h2 class=\"s6-support__title\">Ready to Buy SEO Tools?</h2>",
+          "offset": 116589
+        },
+        {
+          "kind": "p",
+          "text": "Choose a plan and get access to 90+ premium tools through our members platform.",
+          "url": "",
+          "originalText": "Choose a plan and get access to 90+ premium tools through our members platform.",
+          "originalUrl": "",
+          "source": "<p class=\"s6-support__sub\">Choose a plan and get access to 90+ premium tools through our members platform.</p>",
+          "offset": 116654
+        },
+        {
           "kind": "a",
-          "text": "&#x1f4e7; Email Support Email us at support@seotoolsgroupbuy.us or seotoolsgroupbuy.us@gmail.com for comprehensive assistance.",
+          "text": "View Pricing Plans →",
+          "url": "/#pricing-plans",
+          "originalText": "View Pricing Plans →",
+          "originalUrl": "/#pricing-plans",
+          "source": "<a href=\"/#pricing-plans\">View Pricing Plans →</a>",
+          "offset": 116812
+        },
+        {
+          "kind": "a",
+          "text": "Buy Tools Now →",
+          "url": "/shop/",
+          "originalText": "Buy Tools Now →",
+          "originalUrl": "/shop/",
+          "source": "<a href=\"/shop/\">Buy Tools Now →</a>",
+          "offset": 116871
+        },
+        {
+          "kind": "a",
+          "text": "Email Us →",
           "url": "mailto:seotoolsgroupbuy.us@gmail.com",
-          "originalText": "&#x1f4e7; Email Support Email us at support@seotoolsgroupbuy.us or seotoolsgroupbuy.us@gmail.com for comprehensive assistance.",
+          "originalText": "Email Us →",
           "originalUrl": "mailto:seotoolsgroupbuy.us@gmail.com",
-          "source": "<a class=\"s6-support__card\" href=\"mailto:seotoolsgroupbuy.us@gmail.com\">\n        <h3 class=\"s6-support__card-title\">&#x1f4e7; Email Support</h3>\n        <div class=\"s6-support__card-desc\">Email us at support@seotoolsgroupbuy.us or seotoolsgroupbuy.us@gmail.com for comprehensive assistance.</div>\n      </a>",
-          "offset": 117476
+          "source": "<a href=\"mailto:seotoolsgroupbuy.us@gmail.com\">Email Us →</a>",
+          "offset": 116916
         },
         {
           "kind": "a",
-          "text": "&#x1f3ab; Support Ticket Submit detailed technical queries and service requests via our ticket system.",
-          "url": "/contact/",
-          "originalText": "&#x1f3ab; Support Ticket Submit detailed technical queries and service requests via our ticket system.",
-          "originalUrl": "/contact/",
-          "source": "<a class=\"s6-support__card\" href=\"/contact/\">\n        <h3 class=\"s6-support__card-title\">&#x1f3ab; Support Ticket</h3>\n        <div class=\"s6-support__card-desc\">Submit detailed technical queries and service requests via our ticket system.</div>\n      </a>",
-          "offset": 117790
+          "text": "Chat with Expert →",
+          "url": "https://wa.me/447845432224",
+          "originalText": "Chat with Expert →",
+          "originalUrl": "https://wa.me/447845432224",
+          "source": "<a href=\"https://wa.me/447845432224\" target=\"_blank\" rel=\"noopener noreferrer\">Chat with Expert →</a>",
+          "offset": 116986
         },
         {
-          "kind": "a",
-          "text": "&#x1f4ac; Live Chat Chat with our support agents in real-time for immediate assistance.",
-          "url": "/contact/",
-          "originalText": "&#x1f4ac; Live Chat Chat with our support agents in real-time for immediate assistance.",
-          "originalUrl": "/contact/",
-          "source": "<a class=\"s6-support__card\" href=\"/contact/\">\n        <h3 class=\"s6-support__card-title\">&#x1f4ac; Live Chat</h3>\n        <div class=\"s6-support__card-desc\">Chat with our support agents in real-time for immediate assistance.</div>\n      </a>",
-          "offset": 118053
+          "kind": "h3",
+          "text": "&#x1f4ac; WhatsApp Support",
+          "url": "",
+          "originalText": "&#x1f4ac; WhatsApp Support",
+          "originalUrl": "",
+          "source": "<h3 class=\"s6-support__card-title\">&#x1f4ac; WhatsApp Support</h3>",
+          "offset": 117267
         },
         {
-          "kind": "a",
-          "text": "&#x2753; Knowledge Base Access comprehensive guides and answers to frequently asked questions.",
-          "url": "/frequently-asked-questions-faqs-for-an-seo-group-buy/",
-          "originalText": "&#x2753; Knowledge Base Access comprehensive guides and answers to frequently asked questions.",
-          "originalUrl": "/frequently-asked-questions-faqs-for-an-seo-group-buy/",
-          "source": "<a class=\"s6-support__card\" href=\"/frequently-asked-questions-faqs-for-an-seo-group-buy/\">\n        <h3 class=\"s6-support__card-title\">&#x2753; Knowledge Base</h3>\n        <div class=\"s6-support__card-desc\">Access comprehensive guides and answers to frequently asked questions.</div>\n      </a>",
-          "offset": 118301
+          "kind": "div",
+          "text": "Get instant expert assistance via WhatsApp for immediate technical support.",
+          "url": "",
+          "originalText": "Get instant expert assistance via WhatsApp for immediate technical support.",
+          "originalUrl": "",
+          "source": "<div class=\"s6-support__card-desc\">Get instant expert assistance via WhatsApp for immediate technical support.</div>",
+          "offset": 117342
         },
         {
-          "kind": "a",
-          "text": "&#x1f4de; Contact Us Get in touch with us for any inquiries, support, or partnership opportunities.",
-          "url": "/contact/",
-          "originalText": "&#x1f4de; Contact Us Get in touch with us for any inquiries, support, or partnership opportunities.",
-          "originalUrl": "/contact/",
-          "source": "<a class=\"s6-support__card\" href=\"/contact/\">\n        <h3 class=\"s6-support__card-title\">&#x1f4de; Contact Us</h3>\n        <div class=\"s6-support__card-desc\">Get in touch with us for any inquiries, support, or partnership opportunities.</div>\n      </a>",
-          "offset": 118601
+          "kind": "h3",
+          "text": "&#x1f4e7; Email Support",
+          "url": "",
+          "originalText": "&#x1f4e7; Email Support",
+          "originalUrl": "",
+          "source": "<h3 class=\"s6-support__card-title\">&#x1f4e7; Email Support</h3>",
+          "offset": 117557
+        },
+        {
+          "kind": "div",
+          "text": "Email us at support@seotoolsgroupbuy.us or seotoolsgroupbuy.us@gmail.com for comprehensive assistance.",
+          "url": "",
+          "originalText": "Email us at support@seotoolsgroupbuy.us or seotoolsgroupbuy.us@gmail.com for comprehensive assistance.",
+          "originalUrl": "",
+          "source": "<div class=\"s6-support__card-desc\">Email us at support@seotoolsgroupbuy.us or seotoolsgroupbuy.us@gmail.com for comprehensive assistance.</div>",
+          "offset": 117629
+        },
+        {
+          "kind": "h3",
+          "text": "&#x1f3ab; Support Ticket",
+          "url": "",
+          "originalText": "&#x1f3ab; Support Ticket",
+          "originalUrl": "",
+          "source": "<h3 class=\"s6-support__card-title\">&#x1f3ab; Support Ticket</h3>",
+          "offset": 117844
+        },
+        {
+          "kind": "div",
+          "text": "Submit detailed technical queries and service requests via our ticket system.",
+          "url": "",
+          "originalText": "Submit detailed technical queries and service requests via our ticket system.",
+          "originalUrl": "",
+          "source": "<div class=\"s6-support__card-desc\">Submit detailed technical queries and service requests via our ticket system.</div>",
+          "offset": 117917
+        },
+        {
+          "kind": "h3",
+          "text": "&#x1f4ac; Live Chat",
+          "url": "",
+          "originalText": "&#x1f4ac; Live Chat",
+          "originalUrl": "",
+          "source": "<h3 class=\"s6-support__card-title\">&#x1f4ac; Live Chat</h3>",
+          "offset": 118107
+        },
+        {
+          "kind": "div",
+          "text": "Chat with our support agents in real-time for immediate assistance.",
+          "url": "",
+          "originalText": "Chat with our support agents in real-time for immediate assistance.",
+          "originalUrl": "",
+          "source": "<div class=\"s6-support__card-desc\">Chat with our support agents in real-time for immediate assistance.</div>",
+          "offset": 118175
+        },
+        {
+          "kind": "h3",
+          "text": "&#x2753; Knowledge Base",
+          "url": "",
+          "originalText": "&#x2753; Knowledge Base",
+          "originalUrl": "",
+          "source": "<h3 class=\"s6-support__card-title\">&#x2753; Knowledge Base</h3>",
+          "offset": 118400
+        },
+        {
+          "kind": "div",
+          "text": "Access comprehensive guides and answers to frequently asked questions.",
+          "url": "",
+          "originalText": "Access comprehensive guides and answers to frequently asked questions.",
+          "originalUrl": "",
+          "source": "<div class=\"s6-support__card-desc\">Access comprehensive guides and answers to frequently asked questions.</div>",
+          "offset": 118472
+        },
+        {
+          "kind": "h3",
+          "text": "&#x1f4de; Contact Us",
+          "url": "",
+          "originalText": "&#x1f4de; Contact Us",
+          "originalUrl": "",
+          "source": "<h3 class=\"s6-support__card-title\">&#x1f4de; Contact Us</h3>",
+          "offset": 118655
+        },
+        {
+          "kind": "div",
+          "text": "Get in touch with us for any inquiries, support, or partnership opportunities.",
+          "url": "",
+          "originalText": "Get in touch with us for any inquiries, support, or partnership opportunities.",
+          "originalUrl": "",
+          "source": "<div class=\"s6-support__card-desc\">Get in touch with us for any inquiries, support, or partnership opportunities.</div>",
+          "offset": 118724
         },
         {
           "kind": "div",
