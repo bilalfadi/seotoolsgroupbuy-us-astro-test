@@ -42,21 +42,19 @@ function resolvePath(path) {
  const resolved=redirects[decodeURIComponent(m[1])];
  return resolved?'/'+resolved+'/'+(m[2]||'')+(m[3]||''):path;
 }
-// Preserve existing member cart IDs, redirect account paths to this site's payment host.
-// Vite bundles this CMS JSON at build time; no runtime filesystem path is required.
-const paymentSettings=Object.values(import.meta.glob('../../content/site.json',{eager:true,import:'default'}))[0] || {};
-export function paymentLink(_raw, _fallback='signup') {
- return String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
+// Pure URL helpers: this module is also imported by Node.js redirect generation.
+// Pages pass their CMS paymentBaseUrl explicitly, so no Vite-only import.meta.glob is used.
+export function paymentLink(_raw, paymentBaseUrl='https://pay.seotoolsgroupbuy.us') {
+ return String(paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
 }
-// All product purchase buttons use the payment site root, not login/cart paths.
-export function purchaseLink(raw) { return paymentLink(raw); }
-export function fixInternalLinks(html='') {
+export function purchaseLink(raw,paymentBaseUrl) { return paymentLink(raw,paymentBaseUrl); }
+export function fixInternalLinks(html='',paymentBaseUrl) {
  // Only href attributes. Do not rewrite purchased external URLs or media src URLs.
  return String(html).replace(/(href\s*=\s*["'])([^"']+)(["'])/gi,(full,start,raw,end)=>{
    // Contact Us navigation stays on the main website; only purchase CTAs use signup fallback.
    const isContact=/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\/contact\/?(?:[?#].*)?$/i.test(raw);
    const memberAction=/^https?:\/\/(?:www\.)?(?:seogroupsbuy\.com|pay\.seotoolsgroupbuy\.us)\/users\/(?:login|signup|cart\/)/i.test(raw);
-   const paid=memberAction&&!isContact?paymentLink(raw):raw;
+   const paid=memberAction&&!isContact?paymentLink(raw,paymentBaseUrl):raw;
    if(paid!==raw)return start+paid+end;
    let val=raw.replace(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us(?=\/)/i,'');
    if (!val.startsWith('/')) return full;
