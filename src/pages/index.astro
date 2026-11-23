@@ -2,10 +2,11 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import HomeBlogs from '../components/HomeBlogs.astro';
 import {home} from '../lib/content.js';
+import siteSettings from '../../content/site.json';
 import {fixInternalLinks} from '../lib/route-fixes.js';
 import {applyHomeEditor} from '../lib/home-editor.js';
 const page=home();
-const markup=fixInternalLinks(applyHomeEditor(page?.content||'<h1>SEO Tools Group Buy</h1>'));
+const markup=fixInternalLinks(applyHomeEditor(page?.content||'<h1>SEO Tools Group Buy</h1>'),siteSettings.paymentBaseUrl);
 const shortcode='[stgb_home_blogs]';
 const pos=markup.indexOf(shortcode);
 const before=pos<0?markup:markup.slice(0,pos);
