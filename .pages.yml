@@ -146,3 +146,73 @@ content:
               - { name: originalUrl, type: string, hidden: true }
               - { name: source, type: text, hidden: true }
               - { name: offset, type: number, hidden: true }
+
+  - name: site-settings
+    label: Header, Footer, Logos and Social Links
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: brand, label: Website Name, type: string }
+      - { name: headerLogo, label: Header Logo, type: image, options: { media: uploads } }
+      - { name: footerLogo, label: Footer Logo, type: image, options: { media: uploads } }
+      - { name: favicon, label: Favicon, type: image, options: { media: uploads } }
+      - { name: joinText, label: Signup Button Label, type: string }
+      - { name: joinUrl, label: Signup URL, type: string }
+      - { name: loginText, label: Login Button Label, type: string }
+      - { name: loginUrl, label: Login URL, type: string }
+      - { name: mobileMenuTitle, label: Mobile Menu Title, type: string }
+      - { name: footerDescription, label: Footer Description, type: text }
+      - { name: followHeading, label: Social Links Heading, type: string }
+      - { name: quickLinksHeading, label: Footer Quick Links Heading, type: string }
+      - { name: supportHeading, label: Support Heading, type: string }
+      - { name: disclaimer, label: Disclaimer, type: text }
+      - { name: copyright, label: Copyright Text, type: string }
+      - name: nav
+        label: Main Navigation Menu
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{label}" }
+        fields:
+          - { name: label, label: Link Text, type: string }
+          - { name: url, label: Destination, type: string }
+      - name: topbar
+        label: Top Bar Links
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{label}" }
+        fields:
+          - { name: label, label: Link Text, type: string }
+          - { name: url, label: Destination, type: string }
+      - name: social
+        label: Social Media Links
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{label}" }
+        fields:
+          - { name: label, label: Link Text, type: string }
+          - { name: url, label: Destination, type: string }
+      - name: quickLinks
+        label: Footer Quick Links
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{label}" }
+        fields:
+          - { name: label, label: Link Text, type: string }
+          - { name: url, label: Destination, type: string }
+      - name: supportLinks
+        label: Footer Support Links
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{label}" }
+        fields:
+          - { name: label, label: Link Text, type: string }
+          - { name: url, label: Destination, type: string }
+      - name: legalLinks
+        label: Bottom Policy Links
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{label}" }
+        fields:
+          - { name: label, label: Link Text, type: string }
+          - { name: url, label: Destination, type: string }
