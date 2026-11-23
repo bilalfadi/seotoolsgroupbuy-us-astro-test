@@ -6,6 +6,8 @@ const sitePath='content/site.json';
 const site=JSON.parse(fs.readFileSync(sitePath,'utf8'));
 if(site.nav.length<6||site.social.length<5)throw new Error('Site CMS menus are incomplete');
 const all=d.sections.flatMap(s=>s.items);
+const homeFile='content/pages/home.json';
+const home=JSON.parse(fs.readFileSync(homeFile,'utf8'));
 if(d.sections.length!==8||all.length<200)throw new Error('Incomplete CMS homepage fields');
 if(mode==='edit'){
  const heading=all.find(i=>i.kind==='h1');
@@ -19,10 +21,14 @@ if(mode==='edit'){
  site.footerDescription='CMS Edited Footer Intro';
  site.social[0].url='https://example.com/cms-social';
  fs.writeFileSync(sitePath,JSON.stringify(site,null,2)+'\n');
+ home.seoTitle='CMS Edited Homepage SEO Title';
+ home.seoDescription='CMS Edited Homepage Meta Description';
+ home.featuredImage='/media/cms-test-home.webp';
+ fs.writeFileSync(homeFile,JSON.stringify(home,null,2)+'\n');
  console.log('Edited heading and CTA in disposable CI checkout.');
 }else if(mode==='check'){
  const html=fs.readFileSync('dist/index.html','utf8');
- for(const text of ['CMS Easy Heading Test','href="/contact/"','CMS Edited Home Menu','CMS Join Label','CMS Edited Footer Intro','https://example.com/cms-social'])if(!html.includes(text))throw new Error('Rendered homepage missing CMS edit: '+text);
+ for(const text of ['CMS Easy Heading Test','href="/contact/"','CMS Edited Home Menu','CMS Join Label','CMS Edited Footer Intro','https://example.com/cms-social','CMS Edited Homepage SEO Title','CMS Edited Homepage Meta Description','/media/cms-test-home.webp'])if(!html.includes(text))throw new Error('Rendered homepage missing CMS edit: '+text);
  console.log('PASS: 217 structured homepage fields and edited heading, CTA, header/footer and social links rendered.');
 }else if(mode==='inventory')console.log('Homepage CMS fields:',all.length,'in sections:',d.sections.length);
 else throw new Error('Usage: edit|check|inventory');
