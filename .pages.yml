@@ -236,3 +236,153 @@ content:
         fields:
           - { name: label, label: Link Text, type: string }
           - { name: url, label: Destination, type: string }
+
+  - name: site_copy
+    label: Website UI Text (114 Editable Labels)
+    type: file
+    path: src/lib/site-default-copy.json
+    format: json
+    fields:
+      - { name: footer_desc, label: "Footer Desc", type: text }
+      - { name: footer_follow, label: "Footer Follow", type: string }
+      - { name: footer_quick, label: "Footer Quick", type: string }
+      - { name: footer_support, label: "Footer Support", type: string }
+      - { name: footer_disclaimer, label: "Footer Disclaimer", type: string }
+      - { name: footer_rights, label: "Footer Rights", type: string }
+      - { name: chat_head_title, label: "Chat Head Title", type: string }
+      - { name: chat_head_sub, label: "Chat Head Sub", type: string }
+      - { name: chat_body_intro, label: "Chat Body Intro", type: text }
+      - { name: pricing_badge, label: "Pricing Badge", type: string }
+      - { name: pricing_title, label: "Pricing Title", type: string }
+      - { name: pricing_subtitle, label: "Pricing Subtitle", type: string }
+      - { name: pricing_chat_title, label: "Pricing Chat Title", type: string }
+      - { name: pricing_chat_text, label: "Pricing Chat Text", type: text }
+      - { name: pricing_fb_title, label: "Pricing Fb Title", type: string }
+      - { name: pricing_fb_text, label: "Pricing Fb Text", type: text }
+      - { name: pricing_fb_cta, label: "Pricing Fb Cta", type: string }
+      - { name: pricing_wa_title, label: "Pricing Wa Title", type: string }
+      - { name: pricing_wa_text, label: "Pricing Wa Text", type: text }
+      - { name: pricing_wa_cta, label: "Pricing Wa Cta", type: string }
+      - { name: contact_badge, label: "Contact Badge", type: string }
+      - { name: contact_title, label: "Contact Title", type: string }
+      - { name: contact_subtitle, label: "Contact Subtitle", type: string }
+      - { name: contact_wa_title, label: "Contact Wa Title", type: string }
+      - { name: contact_wa_text, label: "Contact Wa Text", type: text }
+      - { name: contact_wa_cta, label: "Contact Wa Cta", type: string }
+      - { name: contact_email_title, label: "Contact Email Title", type: string }
+      - { name: contact_email_text, label: "Contact Email Text", type: text }
+      - { name: contact_email_cta, label: "Contact Email Cta", type: string }
+      - { name: contact_status_title, label: "Contact Status Title", type: string }
+      - { name: contact_status_text, label: "Contact Status Text", type: text }
+      - { name: contact_status_cta, label: "Contact Status Cta", type: string }
+      - { name: contact_abuse_title, label: "Contact Abuse Title", type: string }
+      - { name: contact_abuse_text, label: "Contact Abuse Text", type: text }
+      - { name: contact_about_title, label: "Contact About Title", type: string }
+      - { name: contact_about_text, label: "Contact About Text", type: text }
+      - { name: contact_side_title, label: "Contact Side Title", type: string }
+      - { name: contact_side_sub, label: "Contact Side Sub", type: string }
+      - { name: contact_side_text, label: "Contact Side Text", type: text }
+      - { name: contact_side_li1, label: "Contact Side Li1", type: string }
+      - { name: contact_side_li2, label: "Contact Side Li2", type: string }
+      - { name: contact_side_li3, label: "Contact Side Li3", type: string }
+      - { name: contact_side_btn, label: "Contact Side Btn", type: string }
+      - { name: contact_address_title, label: "Contact Address Title", type: string }
+      - { name: contact_address_label, label: "Contact Address Label", type: string }
+      - { name: contact_address, label: "Contact Address", type: string }
+      - { name: contact_phone_label, label: "Contact Phone Label", type: string }
+      - { name: contact_phone, label: "Contact Phone", type: string }
+      - { name: contact_cta_title, label: "Contact Cta Title", type: string }
+      - { name: contact_cta_text, label: "Contact Cta Text", type: text }
+      - { name: contact_cta_btn, label: "Contact Cta Btn", type: string }
+      - { name: faq_badge, label: "Faq Badge", type: string }
+      - { name: faq_subtitle, label: "Faq Subtitle", type: string }
+      - { name: faq_categories, label: "Faq Categories", type: string }
+      - { name: faq_cta_title, label: "Faq Cta Title", type: string }
+      - { name: faq_cta_text, label: "Faq Cta Text", type: text }
+      - { name: faq_cta_btn, label: "Faq Cta Btn", type: string }
+      - { name: tools_eyebrow, label: "Tools Eyebrow", type: string }
+      - { name: tools_title, label: "Tools Title", type: string }
+      - { name: tools_desc, label: "Tools Desc", type: text }
+      - { name: tools_stat1_value, label: "Tools Stat1 Value", type: string }
+      - { name: tools_stat1_label, label: "Tools Stat1 Label", type: string }
+      - { name: tools_stat2_value, label: "Tools Stat2 Value", type: string }
+      - { name: tools_stat2_label, label: "Tools Stat2 Label", type: string }
+      - { name: tools_stat3_value, label: "Tools Stat3 Value", type: string }
+      - { name: tools_stat3_label, label: "Tools Stat3 Label", type: string }
+      - { name: tools_tab_all, label: "Tools Tab All", type: string }
+      - { name: tools_tab_seo, label: "Tools Tab Seo", type: string }
+      - { name: tools_tab_content, label: "Tools Tab Content", type: string }
+      - { name: tools_tab_amazon, label: "Tools Tab Amazon", type: string }
+      - { name: tools_tab_design, label: "Tools Tab Design", type: string }
+      - { name: tools_tab_ai, label: "Tools Tab Ai", type: string }
+      - { name: tools_support_title, label: "Tools Support Title", type: string }
+      - { name: tools_support_text, label: "Tools Support Text", type: text }
+      - { name: tools_support_wa, label: "Tools Support Wa", type: string }
+      - { name: tools_support_pricing, label: "Tools Support Pricing", type: string }
+      - { name: default_side_title, label: "Default Side Title", type: string }
+      - { name: default_side_text, label: "Default Side Text", type: text }
+      - { name: default_side_btn, label: "Default Side Btn", type: string }
+      - { name: default_links_title, label: "Default Links Title", type: string }
+      - { name: blog_badge, label: "Blog Badge", type: string }
+      - { name: blog_title_1, label: "Blog Title 1", type: string }
+      - { name: blog_title_2, label: "Blog Title 2", type: string }
+      - { name: blog_title_3, label: "Blog Title 3", type: string }
+      - { name: blog_desc, label: "Blog Desc", type: text }
+      - { name: blog_stat1, label: "Blog Stat1", type: string }
+      - { name: blog_stat2, label: "Blog Stat2", type: string }
+      - { name: blog_stat3, label: "Blog Stat3", type: string }
+      - { name: blog_topic1_title, label: "Blog Topic1 Title", type: string }
+      - { name: blog_topic1_desc, label: "Blog Topic1 Desc", type: text }
+      - { name: blog_topic2_title, label: "Blog Topic2 Title", type: string }
+      - { name: blog_topic2_desc, label: "Blog Topic2 Desc", type: text }
+      - { name: blog_topic3_title, label: "Blog Topic3 Title", type: string }
+      - { name: blog_topic3_desc, label: "Blog Topic3 Desc", type: text }
+      - { name: blog_topic4_title, label: "Blog Topic4 Title", type: string }
+      - { name: blog_topic4_desc, label: "Blog Topic4 Desc", type: text }
+      - { name: contact_tagline, label: "Contact Tagline", type: string }
+      - { name: contact_fb_title, label: "Contact Fb Title", type: string }
+      - { name: contact_fb_text, label: "Contact Fb Text", type: text }
+      - { name: contact_fb_cta, label: "Contact Fb Cta", type: string }
+      - { name: price_label_detail, label: "Price Label Detail", type: string }
+      - { name: price_suffix_card, label: "Price Suffix Card", type: string }
+      - { name: related_heading, label: "Related Heading", type: string }
+      - { name: related_view_all, label: "Related View All", type: string }
+      - { name: related_view_details, label: "Related View Details", type: string }
+      - { name: market_view_details, label: "Market View Details", type: string }
+      - { name: market_load_more, label: "Market Load More", type: string }
+      - { name: blog_read_article, label: "Blog Read Article", type: string }
+      - { name: blog_no_results, label: "Blog No Results", type: string }
+      - { name: blog_prev, label: "Blog Prev", type: string }
+      - { name: blog_next, label: "Blog Next", type: string }
+      - { name: blog_author_intro, label: "Blog Author Intro", type: text }
+      - { name: blog_author_heading, label: "Blog Author Heading", type: string }
+      - { name: blog_browse_all, label: "Blog Browse All", type: string }
+
+  - name: chat_widget
+    label: Floating Chat - Labels and Social URLs
+    type: file
+    path: content/settings/chat-widget.json
+    format: json
+    fields:
+      - { name: heading, label: Chat Heading, type: string }
+      - { name: subtitle, label: Chat Subtitle, type: string }
+      - { name: intro, label: Chat Introduction, type: text }
+      - name: options
+        label: Contact Channels
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: key, label: Channel ID, type: string, readonly: true }
+          - { name: title, label: Channel Name, type: string }
+          - { name: subtitle, label: Description, type: text }
+          - { name: href, label: Destination URL, type: string }
+  - name: faq_fallback
+    label: FAQ - Default Question Library
+    type: file
+    path: src/lib/faq-defaults.json
+    format: json
+    list: true
+    fields:
+      - { name: q, label: Question, type: string }
+      - { name: a, label: Answer, type: text }
+      - { name: cat, label: FAQ Category, type: string }
