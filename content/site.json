@@ -4,9 +4,9 @@
   "footerLogo": "/assets/images/seotoolsgroupbuy-footer-logo.webp",
   "favicon": "/media/wp-uploads/2026/11/stgb-site-icon-512-4.png",
   "joinText": "JOIN",
-  "joinUrl": "https://seogroupsbuy.com/users/signup",
+  "joinUrl": "https://pay.seotoolsgroupbuy.us/users/signup",
   "loginText": "Vip Login",
-  "loginUrl": "https://seogroupsbuy.com/users/login",
+  "loginUrl": "https://pay.seotoolsgroupbuy.us/users/login",
   "mobileMenuTitle": "Menu",
   "nav": [
     {
@@ -137,5 +137,6 @@
       "label": "Terms & Conditions",
       "url": "/terms-conditions/"
     }
-  ]
+  ],
+  "paymentBaseUrl": "https://pay.seotoolsgroupbuy.us"
 }
