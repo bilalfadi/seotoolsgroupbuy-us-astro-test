@@ -8,7 +8,8 @@ const explicit = {
   'tools':'single-tools-list',
   'contact-us':'contact',
   'semrush':'semrush-group-buy',
-  // Old canonical URL is intentionally NOT redirected yet.
+  // Former canonical Screaming Frog URL now permanently redirects to the new slug.
+  'screamingfrog-seo-spider-group-buy':'screaming-frog-group-buy',
   'screamingfrog':'screaming-frog-group-buy',
   'screaming-frog':'screaming-frog-group-buy',
   'screaming-frog-seo-spider':'screaming-frog-group-buy',
