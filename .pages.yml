@@ -437,3 +437,42 @@ content:
           - { name: ctaTitle, label: CTA Heading, type: string }
           - { name: ctaText, label: CTA Description, type: text }
           - { name: ctaBtn, label: CTA Button Text, type: string }
+
+  - name: policy_cards
+    label: Policy Page Cards - Add, Edit, Remove and Reorder
+    type: file
+    path: content/settings/policy-cards.json
+    format: json
+    fields:
+      - name: dmca-policy
+        label: DMCA Information Cards
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: icon, label: Icon Emoji, type: string }
+          - { name: title, label: Card Heading, type: string }
+          - { name: description, label: Card Description, type: text }
+      - name: privacy-policy
+        label: Privacy Information Cards
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: icon, label: Icon Emoji, type: string }
+          - { name: title, label: Card Heading, type: string }
+          - { name: description, label: Card Description, type: text }
+      - name: refund-policy
+        label: Refund Information Cards
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: icon, label: Icon Emoji, type: string }
+          - { name: title, label: Card Heading, type: string }
+          - { name: description, label: Card Description, type: text }
+      - name: terms-conditions
+        label: Terms Information Cards
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: icon, label: Icon Emoji, type: string }
+          - { name: title, label: Card Heading, type: string }
+          - { name: description, label: Card Description, type: text }
