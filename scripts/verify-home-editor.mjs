@@ -35,6 +35,10 @@ if(mode==='edit'){
  fs.writeFileSync(copyPath,JSON.stringify(copy,null,2)+'\n');
  const policyPath='src/lib/policy-themes.json',policy=JSON.parse(fs.readFileSync(policyPath,'utf8'));
  policy['dmca-policy'].noticeTitle='CMS Legal Notice Heading';
+ const cardsPath='content/settings/policy-cards.json',cards=JSON.parse(fs.readFileSync(cardsPath,'utf8'));
+ cards['dmca-policy'][0].title='CMS Edited DMCA Info Card';
+ cards['dmca-policy'].push({icon:'✅',title:'CMS Newly Added Policy Card',description:'Added from Pages CMS editor'});
+ fs.writeFileSync(cardsPath,JSON.stringify(cards,null,2)+'\n');
  fs.writeFileSync(policyPath,JSON.stringify(policy,null,2)+'\n');
  const productPath='content/products/ahrefs.json',product=JSON.parse(fs.readFileSync(productPath,'utf8'));
  product.enableCustomLanding=true;
@@ -46,7 +50,7 @@ if(mode==='edit'){
  for(const text of ['CMS Easy Heading Test','href="/contact/"','CMS Edited Home Menu','CMS Join Label','CMS Edited Footer Intro','https://example.com/cms-social','CMS Edited Homepage SEO Title','CMS Edited Homepage Meta Description','/media/cms-test-home.webp'])if(!html.includes(text))throw new Error('Rendered homepage missing CMS edit: '+text);
 
  for(const v of ['CMS Chat Widget Heading','https://example.com/cms-whatsapp'])if(!html.includes(v))throw Error('CMS chat item not rendered: '+v);
- for(const [file,needle] of [['dist/shop/index.html','CMS Marketplace Heading'],['dist/shop/index.html','https://example.com/cms-whatsapp'],['dist/dmca-policy/index.html','CMS Legal Notice Heading'],['dist/semrush-group-buy/index.html','CMS Product Recommendations'],['dist/ahrefs/index.html','ahrefs-section']]){
+ for(const [file,needle] of [['dist/shop/index.html','CMS Marketplace Heading'],['dist/shop/index.html','https://example.com/cms-whatsapp'],['dist/dmca-policy/index.html','CMS Legal Notice Heading'],['dist/dmca-policy/index.html','CMS Edited DMCA Info Card'],['dist/dmca-policy/index.html','CMS Newly Added Policy Card'],['dist/semrush-group-buy/index.html','CMS Product Recommendations'],['dist/ahrefs/index.html','ahrefs-section']]){
    if(!fs.readFileSync(file,'utf8').includes(needle))throw new Error(file+' missing CMS edited: '+needle);
  }
  console.log('PASS: Homepage, chat, marketplace, policy, product cards and optional Ahrefs landing edits render correctly.');
