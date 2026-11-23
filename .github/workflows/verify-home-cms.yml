@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - '.pages.yml'
       - 'content/home-editor.json'
       - 'content/site.json'
       - 'src/layouts/SiteLayout.astro'
