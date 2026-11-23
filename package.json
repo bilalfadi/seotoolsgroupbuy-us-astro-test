@@ -12,13 +12,9 @@
     "media": "node scripts/migrate-media.mjs",
     "redirects": "node scripts/generate-redirects.mjs",
     "verify:seo": "node scripts/verify-seo.mjs",
-    "deploy": "npm run build && wrangler deploy",
-    "deploy:preview": "npm run build && wrangler versions upload"
+    "deploy": "npm run build && npx wrangler deploy"
   },
   "dependencies": {
     "astro": "^5.16.0"
-  },
-  "devDependencies": {
-    "wrangler": "^4.166.0"
   }
 }
