@@ -2,13 +2,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import svgRegistry from '../lib/landing-icons.json';
+import {paymentLink} from '../lib/route-fixes.js';
+import siteSettings from '../../content/site.json';
 const {entry,landing}=Astro.props;
 const source=JSON.parse(fs.readFileSync(path.join(process.cwd(),'content/landings',landing+'.json'),'utf8'));
-const buyUrl=/^https?:\/\//.test(String(entry.externalUrl||''))?entry.externalUrl:'';
+const buyUrl=paymentLink(entry.externalUrl,'signup');
 const cta=(text,cls)=>buyUrl?`<a href="${buyUrl.replaceAll('"','&quot;')}" class="${cls}" target="_blank" rel="noopener noreferrer">${text}</a>`:`<span class="${cls}">${text}</span>`;
 const tokens={
  buy_now_url:buyUrl,button_text:entry.buttonText||'Buy Now',img_uri:'/assets/images',
- home_url:'/',login_url:'https://members.seotoolsgroupbuy.us/login',
+ home_url:'/',login_url:siteSettings.loginUrl,
  site_url:'https://seotoolsgroupbuy.us/',logo_url:'/assets/images/seotoolsgroupbuy-logo.webp',
  theme_uri:'',reviews_base:'/assets/images/reviews/',
  buy_now_cta_primary_dark:cta(entry.buttonText||'Start Your Access Now','ahrefs-btn ahrefs-btn--primary-dark ahrefs-btn--lg'),
