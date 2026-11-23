@@ -1,5 +1,6 @@
 ---
 import themes from '../lib/policy-themes.json';
+import policyCards from '../../content/settings/policy-cards.json';
 import policyLinks from '../../content/settings/policy-links.json';
 import {prepareEditorContentHeadings} from '../lib/legacy-render.js';
 const {entry}=Astro.props;
@@ -21,7 +22,7 @@ const policyContent=prepareEditorContentHeadings(entry.title,entry.content);
     <div class="stgb-page-wave"><svg viewBox="0 0 1440 120" fill="none" aria-hidden="true"><path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill={`url(#${entry.slug}-wave)`}/><defs><linearGradient id={`${entry.slug}-wave`} x1="0" y1="0" x2="1440" y2="0"><stop stop-color={t.wave[0]}/><stop offset="1" stop-color={t.wave[1]}/></linearGradient></defs></svg></div>
   </section>
   <section class="stgb-page-cards-row stgb-reveal"><div class="stgb-container"><div class="stgb-page-cards-grid">
-  {t.cards.map(c=><div class="stgb-page-info-card"><span class="stgb-page-info-card__icon">{c[0]}</span><h3>{c[1]}</h3><p>{c[2]}</p></div>)}
+  {(policyCards[entry.slug]||[]).map(c=><div class="stgb-page-info-card"><span class="stgb-page-info-card__icon">{c.icon}</span><h3>{c.title}</h3><p>{c.description}</p></div>)}
   </div></div></section>
   <section class="stgb-page-policy-main stgb-reveal"><div class="stgb-container">
     <div class="stgb-page-content-box"><div class:list={['stgb-page-content-box__bar',t.bar]}></div><div class="stgb-page-content-box__inner stgb-page-content-box__inner--wide">
