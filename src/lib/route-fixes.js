@@ -43,7 +43,8 @@ function resolvePath(path) {
  return resolved?'/'+resolved+'/'+(m[2]||'')+(m[3]||''):path;
 }
 // Preserve existing member cart IDs, redirect account paths to this site's payment host.
-import paymentSettings from '../../content/site.json';
+import {readFileSync} from 'node:fs';
+const paymentSettings=JSON.parse(readFileSync(new URL('../../content/site.json',import.meta.url),'utf8'));
 export function paymentLink(_raw, _fallback='signup') {
  return String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
 }
