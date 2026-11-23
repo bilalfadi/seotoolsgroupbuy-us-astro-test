@@ -1,0 +1,70 @@
+{
+  "dmca-policy": [
+    {
+      "icon": "📝",
+      "title": "File a Claim",
+      "description": "Submit DMCA takedown notice"
+    },
+    {
+      "icon": "⚡",
+      "title": "Fast Response",
+      "description": "Quick review process"
+    },
+    {
+      "icon": "🔄",
+      "title": "Counter Notice",
+      "description": "Dispute a takedown"
+    }
+  ],
+  "privacy-policy": [
+    {
+      "icon": "🔐",
+      "title": "Secure Data",
+      "description": "Your info is protected"
+    },
+    {
+      "icon": "📋",
+      "title": "Transparency",
+      "description": "Clear privacy practices"
+    },
+    {
+      "icon": "✅",
+      "title": "Your Rights",
+      "description": "Access & delete your data"
+    }
+  ],
+  "refund-policy": [
+    {
+      "icon": "⏰",
+      "title": "24-Hour Window",
+      "description": "Request within 24 hours of purchase"
+    },
+    {
+      "icon": "✅",
+      "title": "Easy Process",
+      "description": "Simple refund request via WhatsApp"
+    },
+    {
+      "icon": "💳",
+      "title": "Full Refund",
+      "description": "100% money back if eligible"
+    }
+  ],
+  "terms-conditions": [
+    {
+      "icon": "📋",
+      "title": "Service Terms",
+      "description": "Rules for using our platform"
+    },
+    {
+      "icon": "👤",
+      "title": "User Obligations",
+      "description": "Your responsibilities"
+    },
+    {
+      "icon": "⚖️",
+      "title": "Fair Usage",
+      "description": "Acceptable use policy"
+    }
+  ]
+}
