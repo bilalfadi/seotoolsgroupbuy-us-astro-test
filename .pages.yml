@@ -119,3 +119,30 @@ content:
       - { name: privacyPolicy, label: Privacy Policy Contact Link, type: string, required: true }
       - { name: refundPolicy, label: Refund Request Link, type: string, required: true }
       - { name: termsConditions, label: Terms Support Link, type: string, required: true }
+
+  - name: homepage-sections
+    label: Homepage - Easy Section Editor
+    type: file
+    path: content/home-editor.json
+    format: json
+    fields:
+      - name: sections
+        label: Homepage Sections
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{name}" }
+        fields:
+          - { name: name, label: Section, type: string, readonly: true }
+          - name: items
+            label: Headings, paragraphs, buttons and links
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{text}" }
+            fields:
+              - { name: text, label: Visible Text, type: text }
+              - { name: url, label: Link URL, type: string }
+              - { name: kind, label: Element Type, type: string, hidden: true }
+              - { name: originalText, type: text, hidden: true }
+              - { name: originalUrl, type: string, hidden: true }
+              - { name: source, type: text, hidden: true }
+              - { name: offset, type: number, hidden: true }
