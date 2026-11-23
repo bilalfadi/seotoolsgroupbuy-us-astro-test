@@ -67,7 +67,6 @@ const importantLegacySlugs = {
   'wordhero-group-buy':'wordhero',
   'wordtune-group-buy':'wordtune',
   'vidiq-group-buy':'vidiq',
-  'screaming-frog-group-buy':'screamingfrog-seo-spider-group-buy',
 };
 for (const [oldSlug,targetSlug] of Object.entries(importantLegacySlugs)) {
   if (oldSlug===targetSlug || existingSlugs.has(oldSlug)) continue;
