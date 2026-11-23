@@ -61,7 +61,9 @@ export function paymentLink(raw, fallback='signup') {
 export function fixInternalLinks(html='') {
  // Only href attributes. Do not rewrite purchased external URLs or media src URLs.
  return String(html).replace(/(href\s*=\s*["'])([^"']+)(["'])/gi,(full,start,raw,end)=>{
-   const paid=paymentLink(raw,'signup');
+   // Contact Us navigation stays on the main website; only purchase CTAs use signup fallback.
+   const isContact=/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\/contact\/?(?:[?#].*)?$/i.test(raw);
+   const paid=isContact?raw:paymentLink(raw,'signup');
    if(paid!==raw)return start+paid+end;
    let val=raw.replace(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us(?=\/)/i,'');
    if (!val.startsWith('/')) return full;
