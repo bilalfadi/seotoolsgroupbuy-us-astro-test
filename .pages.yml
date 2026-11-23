@@ -20,6 +20,7 @@ content:
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true, readonly: true }
+      - { name: enableCustomLanding, label: Use Custom Landing Design (Ahrefs/Semrush only), type: boolean, default: false }
       - { name: status, label: Publication Status, type: select, default: publish, options: { values: [publish, draft, private] } }
       - { name: featuredImage, type: string }
       - { name: featuredAlt, type: string }
@@ -72,7 +73,7 @@ content:
       - { name: seoDescription, type: text }
 
   - name: landings
-    label: Ahrefs and Semrush Landing Sections
+    label: Optional Ahrefs/Semrush Custom Landing Sections (turn on in product)
     type: collection
     path: content/landings
     format: json
@@ -386,3 +387,53 @@ content:
       - { name: q, label: Question, type: string }
       - { name: a, label: Answer, type: text }
       - { name: cat, label: FAQ Category, type: string }
+  - name: policy_design_copy
+    label: Policy Page Cards, Notices and CTAs
+    type: file
+    path: src/lib/policy-themes.json
+    format: json
+    fields:
+      - name: dmca-policy
+        label: DMCA Page
+        type: object
+        fields:
+          - { name: badge, label: Hero Badge, type: string }
+          - { name: subtitle, label: Hero Subtitle, type: text }
+          - { name: noticeTitle, label: Notice Heading, type: string }
+          - { name: noticeText, label: Notice Description, type: text }
+          - { name: ctaTitle, label: CTA Heading, type: string }
+          - { name: ctaText, label: CTA Description, type: text }
+          - { name: ctaBtn, label: CTA Button Text, type: string }
+      - name: privacy-policy
+        label: Privacy Page
+        type: object
+        fields:
+          - { name: badge, label: Hero Badge, type: string }
+          - { name: subtitle, label: Hero Subtitle, type: text }
+          - { name: noticeTitle, label: Notice Heading, type: string }
+          - { name: noticeText, label: Notice Description, type: text }
+          - { name: ctaTitle, label: CTA Heading, type: string }
+          - { name: ctaText, label: CTA Description, type: text }
+          - { name: ctaBtn, label: CTA Button Text, type: string }
+      - name: refund-policy
+        label: Refund Page
+        type: object
+        fields:
+          - { name: badge, label: Hero Badge, type: string }
+          - { name: subtitle, label: Hero Subtitle, type: text }
+          - { name: noticeTitle, label: Notice Heading, type: string }
+          - { name: noticeText, label: Notice Description, type: text }
+          - { name: ctaTitle, label: CTA Heading, type: string }
+          - { name: ctaText, label: CTA Description, type: text }
+          - { name: ctaBtn, label: CTA Button Text, type: string }
+      - name: terms-conditions
+        label: Terms Page
+        type: object
+        fields:
+          - { name: badge, label: Hero Badge, type: string }
+          - { name: subtitle, label: Hero Subtitle, type: text }
+          - { name: noticeTitle, label: Notice Heading, type: string }
+          - { name: noticeText, label: Notice Description, type: text }
+          - { name: ctaTitle, label: CTA Heading, type: string }
+          - { name: ctaText, label: CTA Description, type: text }
+          - { name: ctaBtn, label: CTA Button Text, type: string }
