@@ -1,0 +1,51 @@
+name: Verify Pages CMS edits reach Astro pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - '.pages.yml'
+      - 'src/**'
+      - 'scripts/**'
+      - '.github/workflows/verify-cms.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Pages CMS configuration
+        run: |
+          ruby -e 'require "yaml"; y=YAML.load_file(".pages.yml", aliases: true); abort "CMS editors missing" unless y.fetch("content").size >= 12; abort "Merge safety disabled" unless y.dig("settings","content","merge") == true'
+      - name: Validate original content
+        run: npm run verify
+      - name: Simulate CMS save without committing any content
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const edit=(p,fn)=>{const v=JSON.parse(fs.readFileSync(p,'utf8'));fn(v);fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n')};
+          edit('content/site.json',v=>{v.brand='CMS BRAND OUTPUT CHECK';v.joinText='CMS JOIN OUTPUT CHECK';v.footerDescription='CMS FOOTER OUTPUT CHECK';v.nav[0].label='CMS NAV OUTPUT CHECK'});
+          edit('content/products/ahrefs.json',v=>{v.title='CMS AHREFS PRODUCT CHECK';v.seoTitle='CMS AHREFS SEO CHECK'});
+          JS
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build edited website
+        run: npm run build
+      - name: Verify CMS changes appear in output
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const home=fs.readFileSync('dist/index.html','utf8');
+          const product=fs.readFileSync('dist/ahrefs/index.html','utf8');
+          for(const label of ['CMS BRAND OUTPUT CHECK','CMS JOIN OUTPUT CHECK','CMS FOOTER OUTPUT CHECK','CMS NAV OUTPUT CHECK'])assert.ok(home.includes(label),'CMS site setting did not render: '+label);
+          assert.ok(product.includes('CMS AHREFS PRODUCT CHECK'),'CMS product title did not render');
+          assert.ok(product.includes('CMS AHREFS SEO CHECK'),'CMS SEO title did not render');
+          console.log('PASS: site navigation, branding, footer, product text and SEO react to CMS edits.');
+          JS
