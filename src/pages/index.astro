@@ -11,7 +11,7 @@ const pos=markup.indexOf(shortcode);
 const before=pos<0?markup:markup.slice(0,pos);
 const after=pos<0?'':markup.slice(pos+shortcode.length);
 ---
-<SiteLayout title={page?.seoTitle||'SEO Tools Group Buy'} description={page?.seoDescription||page?.excerpt||'Affordable access to premium digital marketing tools'} type="home">
+<SiteLayout title={page?.seoTitle||'SEO Tools Group Buy'} description={page?.seoDescription||page?.excerpt||'Affordable access to premium digital marketing tools'} image={page?.featuredImage||''} type="home">
   <Fragment set:html={before} />
   {pos>=0&&<HomeBlogs />}
   {pos>=0&&<Fragment set:html={after}/>}
