@@ -54,6 +54,7 @@ content:
     label: Website Pages
     type: collection
     path: content/pages
+    exclude: [home.json]
     format: json
     filename: "{slug}.json"
     view: { primary: title, fields: [title, slug] }
@@ -122,6 +123,19 @@ content:
       - { name: privacyPolicy, label: Privacy Policy Contact Link, type: string, required: true }
       - { name: refundPolicy, label: Refund Request Link, type: string, required: true }
       - { name: termsConditions, label: Terms Support Link, type: string, required: true }
+
+  - name: homepage_seo
+    label: Homepage SEO and Featured Image
+    type: file
+    path: content/pages/home.json
+    format: json
+    fields:
+      - { name: seoTitle, label: Homepage SEO Title, type: string }
+      - { name: seoDescription, label: Homepage Meta Description, type: text }
+      - { name: focusKeyword, label: Focus Keyword, type: string }
+      - { name: featuredImage, label: Sharing / Featured Image, type: image, options: { media: uploads } }
+      - { name: featuredAlt, label: Featured Image Alt Text, type: string }
+      - { name: status, label: Publication Status, type: select, options: { values: [publish, draft, private] } }
 
   - name: homepage-sections
     label: Homepage - Easy Section Editor
