@@ -74,6 +74,11 @@ for (const [oldSlug,targetSlug] of Object.entries(importantLegacySlugs)) {
     add(prefix+'/'+oldSlug+'/', '/'+targetSlug+'/');
   }
 }
+// The new Screaming Frog canonical route is a real page, never a redirect.
+// Retain only its historical prefixed aliases; defer redirecting the former canonical URL.
+for (const prefix of ['/product', '/project', '/seo-tools', '/tools']) {
+  add(prefix+'/screaming-frog-group-buy/', '/screaming-frog-group-buy/');
+}
 // Historical standalone article title changed to a shorter published URL.
 add('/ahrefs-review-the-best-seo-tool-for-2025/','/ahrefs-review/');
 // Historical WordPress archive/tag links (previously hardcoded in public/_redirects).
