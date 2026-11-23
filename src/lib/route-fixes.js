@@ -44,33 +44,18 @@ function resolvePath(path) {
 }
 // Preserve existing member cart IDs, redirect account paths to this site's payment host.
 import paymentSettings from '../../content/site.json';
-export function paymentLink(raw, fallback='signup') {
- const base=String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
- const value=String(raw||'').trim();
- if(!value)return base+'/users/'+fallback;
- if(/^https?:\/\/(?:www\.)?seogroupsbuy\.com\/users\/(?:login|signup|cart\/)/i.test(value))
-   return value.replace(/^https?:\/\/(?:www\.)?seogroupsbuy\.com/i,base);
- if(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\/contact\/?(?:[?#].*)?$/i.test(value))
-   return base+'/users/signup';
- if(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\/(?:users\/(?:login|signup|cart\/)|checkout\/|cart\/|my-account\/)/i.test(value))
-   return value.replace(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us/i,base);
- if(/^https?:\/\/members\.seotoolsgroupbuy\.us\/login\/?$/i.test(value))
-   return base+'/users/login';
- return value;
+export function paymentLink(_raw, _fallback='signup') {
+ return String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
 }
-// Buy Now/Order Now must reach this site's pay host even when legacy URL was a contact page.
-export function purchaseLink(raw) {
- const value=paymentLink(raw,'signup');
- const base=String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
- if(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\//i.test(value))return base+'/users/signup';
- return value;
-}
+// All product purchase buttons use the payment site root, not login/cart paths.
+export function purchaseLink(raw) { return paymentLink(raw); }
 export function fixInternalLinks(html='') {
  // Only href attributes. Do not rewrite purchased external URLs or media src URLs.
  return String(html).replace(/(href\s*=\s*["'])([^"']+)(["'])/gi,(full,start,raw,end)=>{
    // Contact Us navigation stays on the main website; only purchase CTAs use signup fallback.
    const isContact=/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\/contact\/?(?:[?#].*)?$/i.test(raw);
-   const paid=isContact?raw:paymentLink(raw,'signup');
+   const memberAction=/^https?:\/\/(?:www\.)?(?:seogroupsbuy\.com|pay\.seotoolsgroupbuy\.us)\/users\/(?:login|signup|cart\/)/i.test(raw);
+   const paid=memberAction&&!isContact?paymentLink(raw):raw;
    if(paid!==raw)return start+paid+end;
    let val=raw.replace(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us(?=\/)/i,'');
    if (!val.startsWith('/')) return full;
