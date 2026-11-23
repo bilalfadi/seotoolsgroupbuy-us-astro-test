@@ -24,7 +24,8 @@ jobs:
         with:
           node-version: '22'
       - name: Validate Pages CMS YAML and editor collections
-        run: ruby -e 'require "yaml"; y=YAML.load_file(".pages.yml", aliases: true); c=y.fetch("content"); abort "CMS collections missing" if c.size < 9; puts "Pages CMS YAML valid with #{c.size} editors"'
+        run: |
+          ruby -e 'require "yaml"; y=YAML.load_file(".pages.yml", aliases: true); c=y.fetch("content"); abort "CMS collections missing" if c.size < 9; puts "Pages CMS YAML valid with #{c.size} editors"'
       - name: Confirm complete editable inventory
         run: node scripts/verify-home-editor.mjs inventory
       - name: Make test CMS edits in temporary checkout
