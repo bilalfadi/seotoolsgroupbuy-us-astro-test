@@ -43,8 +43,8 @@ function resolvePath(path) {
  return resolved?'/'+resolved+'/'+(m[2]||'')+(m[3]||''):path;
 }
 // Preserve existing member cart IDs, redirect account paths to this site's payment host.
-import {readFileSync} from 'node:fs';
-const paymentSettings=JSON.parse(readFileSync(new URL('../../content/site.json',import.meta.url),'utf8'));
+// Vite bundles this CMS JSON at build time; no runtime filesystem path is required.
+const paymentSettings=Object.values(import.meta.glob('../../content/site.json',{eager:true,import:'default'}))[0] || {};
 export function paymentLink(_raw, _fallback='signup') {
  return String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
 }
