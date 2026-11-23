@@ -1,0 +1,141 @@
+{
+  "brand": "SEO Tools Group Buy",
+  "headerLogo": "/assets/images/seotoolsgroupbuy-logo.webp",
+  "footerLogo": "/assets/images/seotoolsgroupbuy-footer-logo.webp",
+  "favicon": "/media/wp-uploads/2026/11/stgb-site-icon-512-4.png",
+  "joinText": "JOIN",
+  "joinUrl": "https://seogroupsbuy.com/users/signup",
+  "loginText": "Vip Login",
+  "loginUrl": "https://seogroupsbuy.com/users/login",
+  "mobileMenuTitle": "Menu",
+  "nav": [
+    {
+      "label": "HOME",
+      "url": "/"
+    },
+    {
+      "label": "PRICING PLANS",
+      "url": "/pricing-plans/"
+    },
+    {
+      "label": "TOOLS LIST",
+      "url": "/single-tools-list/"
+    },
+    {
+      "label": "FAQ",
+      "url": "/frequently-asked-questions-faqs-for-an-seo-group-buy/"
+    },
+    {
+      "label": "CONTACT US",
+      "url": "/contact/"
+    },
+    {
+      "label": "SHOP",
+      "url": "/shop/"
+    }
+  ],
+  "topbar": [
+    {
+      "label": "Pricing plans",
+      "url": "/pricing-plans/"
+    },
+    {
+      "label": "Live chat",
+      "url": "/contact/"
+    },
+    {
+      "label": "Contact us",
+      "url": "/contact/"
+    },
+    {
+      "label": "Blogs",
+      "url": "/category/seo-tools-blog/"
+    }
+  ],
+  "social": [
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/Seotoolsgroupbuy.us"
+    },
+    {
+      "label": "X",
+      "url": "https://x.com/Seogbtool"
+    },
+    {
+      "label": "Medium",
+      "url": "https://medium.com/@Seotoolsgroupbuy.us"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/seo-group-buy-tools-90b29149/"
+    },
+    {
+      "label": "WhatsApp",
+      "url": "https://wa.me/447845432224"
+    }
+  ],
+  "footerDescription": "Your trusted partner for affordable, reliable, and premium SEO tools. Access 90+ tools at unbeatable prices.",
+  "followHeading": "Follow Us",
+  "quickLinksHeading": "Quick Links",
+  "supportHeading": "Support & Guides",
+  "quickLinks": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Shop",
+      "url": "/shop/"
+    },
+    {
+      "label": "Blogs",
+      "url": "/category/seo-tools-blog/"
+    },
+    {
+      "label": "Pricing Plans",
+      "url": "/#pricing-plans"
+    }
+  ],
+  "supportLinks": [
+    {
+      "label": "Contact",
+      "url": "/contact/"
+    },
+    {
+      "label": "FAQ",
+      "url": "/frequently-asked-questions-faqs-for-an-seo-group-buy/"
+    },
+    {
+      "label": "Refund Policy",
+      "url": "/refund-policy/"
+    },
+    {
+      "label": "Privacy Policy",
+      "url": "/privacy-policy/"
+    },
+    {
+      "label": "Terms & Conditions",
+      "url": "/terms-conditions/"
+    }
+  ],
+  "disclaimer": "All product names, trademarks and logos belong to their respective owners. SEO Tools Group Buy is an independent access provider and is not affiliated with or endorsed by the listed software companies unless explicitly stated.",
+  "copyright": "All rights reserved.",
+  "legalLinks": [
+    {
+      "label": "DMCA Policy",
+      "url": "/dmca-policy/"
+    },
+    {
+      "label": "Privacy Policy",
+      "url": "/privacy-policy/"
+    },
+    {
+      "label": "Refund Policy",
+      "url": "/refund-policy/"
+    },
+    {
+      "label": "Terms & Conditions",
+      "url": "/terms-conditions/"
+    }
+  ]
+}
