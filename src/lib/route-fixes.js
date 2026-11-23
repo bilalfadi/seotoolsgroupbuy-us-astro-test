@@ -42,9 +42,27 @@ function resolvePath(path) {
  const resolved=redirects[decodeURIComponent(m[1])];
  return resolved?'/'+resolved+'/'+(m[2]||'')+(m[3]||''):path;
 }
+// Preserve existing member cart IDs, redirect account paths to this site's payment host.
+import paymentSettings from '../../content/site.json';
+export function paymentLink(raw, fallback='signup') {
+ const base=String(paymentSettings.paymentBaseUrl||'https://pay.seotoolsgroupbuy.us').replace(/\/$/,'');
+ const value=String(raw||'').trim();
+ if(!value)return base+'/users/'+fallback;
+ if(/^https?:\/\/(?:www\.)?seogroupsbuy\.com\/users\/(?:login|signup|cart\/)/i.test(value))
+   return value.replace(/^https?:\/\/(?:www\.)?seogroupsbuy\.com/i,base);
+ if(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\/contact\/?(?:[?#].*)?$/i.test(value))
+   return base+'/users/signup';
+ if(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us\/(?:users\/(?:login|signup|cart\/)|checkout\/|cart\/|my-account\/)/i.test(value))
+   return value.replace(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us/i,base);
+ if(/^https?:\/\/members\.seotoolsgroupbuy\.us\/login\/?$/i.test(value))
+   return base+'/users/login';
+ return value;
+}
 export function fixInternalLinks(html='') {
  // Only href attributes. Do not rewrite purchased external URLs or media src URLs.
  return String(html).replace(/(href\s*=\s*["'])([^"']+)(["'])/gi,(full,start,raw,end)=>{
+   const paid=paymentLink(raw,'signup');
+   if(paid!==raw)return start+paid+end;
    let val=raw.replace(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us(?=\/)/i,'');
    if (!val.startsWith('/')) return full;
    if(val==='/blog/'||val==='/blog')val='/category/seo-tools-blog/';
