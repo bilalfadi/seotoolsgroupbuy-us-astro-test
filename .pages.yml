@@ -182,6 +182,7 @@ content:
       - { name: joinUrl, label: Signup URL, type: string }
       - { name: loginText, label: Login Button Label, type: string }
       - { name: loginUrl, label: Login URL, type: string }
+      - { name: paymentBaseUrl, label: Purchase and Member Subdomain, type: string }
       - { name: mobileMenuTitle, label: Mobile Menu Title, type: string }
       - { name: footerDescription, label: Footer Description, type: text }
       - { name: followHeading, label: Social Links Heading, type: string }
