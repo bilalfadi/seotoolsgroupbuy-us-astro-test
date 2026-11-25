@@ -52,3 +52,17 @@ Fix commits:
 - `e81bb6789f04e3048df1a727ec1e6f1e2ea705a4`: Repair two Jasper references.
 - `534412066525a7eb15e46e4ae866da46f81ecb72`: Fix outdated sitemap
   verifier filename so build / CMS checks run successfully.
+
+## Live recovery run result
+
+GitHub Actions workflow **Recover original live WordPress images** (run `45667205284`) executed successfully as a job, but its asset recovery summary was:
+
+```json
+{"checked":24,"downloaded":0,"unavailable":24,"alreadyPresent":0}
+```
+
+All three source hosts responded 404 or blocked with non-image HTML for the eight outstanding originals. **Recovery job success does not mean recovered images.**
+
+To prevent browsers selecting broken `srcset` candidates from the legacy `app.` host, stale responsive-source attributes were removed for the 1 How It Works and 5 comparison screenshots, while keeping the original `src`, alt text, captions and content in place. Once the genuine files are uploaded at the expected paths, each source image will render without additional HTML edits.
+
+The missing-file report is now actionable: restore eight original files from an old WordPress `wp-content/uploads` backup/media ZIP or other verified original source. No substitute imagery was fabricated.
