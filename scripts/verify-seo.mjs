@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {fixInternalLinks} from '../src/lib/route-fixes.js';
 
 const root = process.cwd();
 const groups = ['products', 'posts', 'pages'];
@@ -58,6 +59,25 @@ if(!linkFixes.includes('buy-cheap-ahrefs|moz-pro-group-buy')) failures.push('Leg
 if(!linkFixes.includes("if(val==='')val='/'")) failures.push('HTTP homepage anchor normalization missing');
 if(!headers.includes('/assets/css/*')||!headers.includes('/media/*'))failures.push('Static asset cache header rules missing');
 if(!blogPost.includes('relatedGuides.map'))failures.push('Related guides cross-link missing');
+
+
+// Exact Ahrefs "links to redirect" paths: every published internal link must
+// resolve to a final permalink instead of a 307 or old product-tag 301.
+const auditRedirectPaths=[
+'/envato-elements','/quetext','/pricing-plans','/vyond','/moz','/quillbot',
+'/buzzsumo','/spyfu','/product-tag/moz-pro-group-buy/','/single-tools-list',
+'/kwfinder','/freepik','/leonardo-ai','/ubersuggest','/skillshare','/coursera',
+'/copyai','/helium-10','/wordhero','/shop','/jungle-scout','/surfer-seo',
+'/grammarly','/wordai','/frase','/semrush-group-buy','/mangools','/serpstat',
+'/ahrefs','/product-tag/buy-cheap-ahrefs/','/writesonic','/udemy',
+'/netflix','/majestic','/storyblocks','/chatgpt','/canva'];
+for(const target of auditRedirectPaths){
+ const rewritten=fixInternalLinks('<a href="'+target+'">','https://pay.seotoolsgroupbuy.us');
+ const match=rewritten.match(/href="([^"]+)"/);
+ const href=match?.[1]||'';
+ if(!href.startsWith('/')||!href.endsWith('/'))failures.push('Unnormalized Ahrefs redirect link: '+target+' -> '+href);
+ if(/^\/product-tag\//.test(href))failures.push('Legacy redirect not resolved: '+target);
+}
 
 const indexable = records.filter(x=>x.slug !== 'home' && !excluded.has(x.slug)).length + 2;
 console.log(JSON.stringify({published:records.length,expectedSitemapUrls:indexable,excludedFromIndex:[...excluded],issues:failures},null,2));
