@@ -47,5 +47,12 @@ const fmt=(date)=>{const d=new Date(date);return Number.isNaN(d.getTime())?'':d.
 </article>})}
 <p class="stgb-blog-archive-empty is-hidden">{labels.blog_no_results}</p>
 </div></div>
+<section class="stgb-container" aria-label="More SEO guides" style="padding:2rem 1rem 3rem">
+ <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem">More SEO Guides</h2>
+ <ul style="display:flex;flex-wrap:wrap;gap:1.25rem;list-style:none;padding:0">
+  <li><a href="/group-buy-seo-tools-are-they-a-smart-deal-or-a-risky-gamble/">Group Buy SEO Tools: Smart Deal or Risky Gamble?</a></li>
+  <li><a href="/top-5-best-seo-tools-for-e-commerce-seo/">Top 5 Best SEO Tools for E-Commerce SEO</a></li>
+ </ul>
+</section>
 {pageCount>1&&<nav class="stgb-blog-pagination" aria-label="Blog pages">{hasPrevious&&<a href={pageUrl(currentPage-1)} rel="prev">{labels.blog_prev}</a>}{pageLinks.map(item=><a href={item.href} aria-current={item.current?'page':undefined} class:list={[item.current&&'is-current']}>{item.number}</a>)}{hasNext&&<a href={pageUrl(currentPage+1)} rel="next">{labels.blog_next}</a>}</nav>}
 </SiteLayout>
