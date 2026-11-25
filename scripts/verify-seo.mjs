@@ -49,6 +49,16 @@ for(const slug of ['group-buy-seo-tools-are-they-a-smart-deal-or-a-risky-gamble'
  if(!archive.includes('/'+slug+'/'))failures.push('Orphan SEO guide missing from blog archive navigation: '+slug);
 }
 
+
+// Ahrefs audit regression tests: keep HTML metadata unchanged but prevent broken links and regressions.
+const linkFixes=fs.readFileSync(path.join(root,'src/lib/route-fixes.js'),'utf8');
+const headers=fs.readFileSync(path.join(root,'public/_headers'),'utf8');
+const blogPost=fs.readFileSync(path.join(root,'src/components/BlogPostPage.astro'),'utf8');
+if(!linkFixes.includes('buy-cheap-ahrefs|moz-pro-group-buy')) failures.push('Legacy product-tag redirects not normalized');
+if(!linkFixes.includes("if(val==='')val='/'")) failures.push('HTTP homepage anchor normalization missing');
+if(!headers.includes('/assets/css/*')||!headers.includes('/media/*'))failures.push('Static asset cache header rules missing');
+if(!blogPost.includes('relatedGuides.map'))failures.push('Related guides cross-link missing');
+
 const indexable = records.filter(x=>x.slug !== 'home' && !excluded.has(x.slug)).length + 2;
 console.log(JSON.stringify({published:records.length,expectedSitemapUrls:indexable,excludedFromIndex:[...excluded],issues:failures},null,2));
 if(failures.length) process.exitCode=1;
