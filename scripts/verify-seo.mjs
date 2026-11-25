@@ -42,22 +42,8 @@ for(const slug of ['ahrefs','helium-10']){
 }
 if(!sitemap.includes('postPageCount') || !sitemap.includes('category/seo-tools-blog/page/')) failures.push('Paginated blog archive missing from sitemap generator');
 
-// Guard the Ahrefs 25 Nov 2026 metadata and structured-data repairs.
-const longDescriptionSlugs=['frequently-asked-questions-faqs-for-an-seo-group-buy','pricing-plans','contact','buzzstream','content-and-writing','writerzen','stealthwriterai','vecteezy','gamma-ai','vidiq','mangools','seo-group-buy-tools-vs-free-seo-tools-which-one-is-worth-it','theoptimizer','topicmojo','vidnami','prowritingaid','seobility','snapied','get-stencil','creator-ai','dreamart-image-ai','wave-video','tuberanker','onlinetools-ai','murf-ai','peppertype','placeit','graphic-stock','copygenius','creative-fabrica'];
-const longTitleSlugs=['privacy-policy','hixai','claudeai','smartcopy','youai','closerscopy','writerzen','stealthwriterai','seositecheckup','jenni-ai','seoptimer','rytr-me','group-buy-vs-standard-subscriptions-for-seo-tools-which-is-right-for-you','copyai','writesonic'];
-const sourceBySlug=new Map();
-for(const group of groups)for(const file of fs.readdirSync(path.join(root,'content',group)).filter(f=>f.endsWith('.json'))){
- const item=JSON.parse(fs.readFileSync(path.join(root,'content',group,file),'utf8'));
- sourceBySlug.set(item.slug,item);
-}
-for(const slug of longDescriptionSlugs){
- const value=String(sourceBySlug.get(slug)?.seoDescription||'');
- if(value.length<80||value.length>155)failures.push('Ahrefs meta description length invalid '+slug+' ('+value.length+')');
-}
-for(const slug of longTitleSlugs){
- const value=String(sourceBySlug.get(slug)?.seoTitle||'').replace(/\u200b/g,'');
- if(value.length<20||value.length>70)failures.push('Ahrefs title length invalid '+slug+' ('+value.length+')');
-}
+// Owner requested preservation of original imported SEO titles and descriptions.
+// Do not enforce arbitrary length limits on existing editorial metadata.
 if(!layout.includes('structuredData.map(item='))failures.push('Per-page Product/Article/FAQ/ItemList schema not emitted in HTML layout');
 for(const slug of ['group-buy-seo-tools-are-they-a-smart-deal-or-a-risky-gamble','top-5-best-seo-tools-for-e-commerce-seo']){
  if(!archive.includes('/'+slug+'/'))failures.push('Orphan SEO guide missing from blog archive navigation: '+slug);
