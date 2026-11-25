@@ -10,7 +10,7 @@ const perPage=10;
 const pageCount=Math.max(1,Math.ceil(posts.length/perPage));
 const currentPage=Math.min(pageCount,Math.max(1,Number(pageNumber)||1));
 const archiveSeoTitle=currentPage===1?'Blogs - SEO Tips & Guides | SEO Tools Group Buy':`SEO Tips & Guides – Blog Page ${currentPage} | SEO Tools Group Buy`;
-const archiveSeoDescription=currentPage===1?'Browse practical SEO guides, tool reviews, comparisons and tutorials. Learn useful strategies for keyword research, rankings and digital marketing.':`Browse page ${currentPage} of our SEO blog for more tool reviews, tutorials and practical digital marketing tips from SEO Tools Group Buy.`;
+const archiveSeoDescription=currentPage===1?'Expert SEO tools guides, reviews and practical tips.':`Browse page ${currentPage} of our SEO blog for more tool reviews, tutorials and practical digital marketing tips from SEO Tools Group Buy.`;
 const pagePosts=posts.slice((currentPage-1)*perPage,currentPage*perPage);
 const pageUrl=n=>n===1?'/category/seo-tools-blog/':`/category/seo-tools-blog/page/${n}/`;
 const hasPrevious=currentPage>1;
