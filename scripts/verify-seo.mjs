@@ -26,6 +26,13 @@ if(!layout.includes('rel="canonical"')) failures.push('Canonical tag missing');
 if(!layout.includes('application/ld+json')) failures.push('JSON-LD missing');
 if(!sitemap.includes('all()') || !sitemap.includes('category/seo-tools-blog')) failures.push('Sitemap does not use published content');
 if(!robots.includes('Sitemap: https://seotoolsgroupbuy.us/sitemap.xml')) failures.push('Robots.txt sitemap reference missing');
+// Regression checks for duplicate metadata flagged by Ahrefs on 2026-11-25.
+const productSeo=slug=>JSON.parse(fs.readFileSync(path.join(root,'content/products',slug+'.json'),'utf8')).seoDescription?.trim();
+const closerscopyMeta=productSeo('closerscopy');
+const copyAiMeta=productSeo('copyai');
+if(!closerscopyMeta||!copyAiMeta||closerscopyMeta===copyAiMeta) failures.push('Copy AI and Closerscopy need distinct nonempty meta descriptions');
+const archive=fs.readFileSync(path.join(root,'src/components/BlogArchive.astro'),'utf8');
+if(!archive.includes('description={archiveSeoDescription}')||!archive.includes('currentPage===1?')) failures.push('Paginated blog archives need page-specific meta descriptions');
 const indexable = records.filter(x=>x.slug !== 'home' && !excluded.has(x.slug)).length + 2;
 console.log(JSON.stringify({published:records.length,expectedSitemapUrls:indexable,excludedFromIndex:[...excluded],issues:failures},null,2));
 if(failures.length) process.exitCode=1;
