@@ -1,6 +1,6 @@
 ---
 import labels from '../lib/site-default-copy.json';
-import {url} from '../lib/content.js';
+import {url,load} from '../lib/content.js';
 import authorSettings from '../../content/settings/blog-author.json';
 import {postCategoryName} from '../lib/catalog.js';
 import {prepareEditorContentHeadings} from '../lib/legacy-render.js';
@@ -15,8 +15,15 @@ const jobTitle=entry.authorJobTitle||authorSettings.jobTitle;
 const organization=entry.authorOrganization||authorSettings.organization;
 const authorImage=entry.authorImage||authorSettings.image;
 const articleHtml=prepareEditorContentHeadings(entry.title,entry.content);
+const relatedGuides=load('posts').filter(p=>p.slug!==entry.slug).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,4);
 ---
 <article class="stgb-post-article">
  <section class="stgb-post-hero" aria-label="Article header"><div class="stgb-container"><div class="stgb-post-hero__inner"><p class="stgb-post-hero__cat">{firstCategory}</p><h1 class="stgb-post-hero__title">{entry.title}</h1><div class="stgb-post-hero__meta"><span>{dateLine}</span><span class="stgb-post-hero__meta-sep" aria-hidden="true">•</span><span>By {author}</span></div><p class="stgb-post-hero__tagline">{labels.blog_author_intro}</p></div></div></section>
  <section class="stgb-container stgb-post-detail-body" id="stgb-post-detail-section"><div class="stgb-post-layout" id="stgb-post-detail-content"><div class="stgb-post-content-shell"><div class="stgb-post-content prose-rich post-detail-content" set:html={articleHtml}/></div><aside class="stgb-post-sidebar"><div class="stgb-author-card"><p class="stgb-author-card__label">{labels.blog_author_heading}</p><div class="stgb-author-card__body">{authorImage&&<div class="stgb-author-card__avatar"><img src={authorImage} alt="" width="80" height="80" loading="lazy" decoding="async"/></div>}<div class="stgb-author-card__info"><p class="stgb-author-card__name">{author}</p><p class="stgb-author-card__role">{jobTitle} <span> · {organization}</span></p></div></div></div><a href="/category/seo-tools-blog/" class="stgb-post-sidebar__cta">{labels.blog_browse_all}</a></aside></div></section>
+<nav aria-label="More SEO learning articles" class="stgb-container" style="padding:1.5rem 1rem 3rem">
+  <h2 style="font-weight:700;font-size:1.4rem;margin-bottom:1rem">More SEO Guides</h2>
+  <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:0.8rem;list-style:none;padding:0">
+    {relatedGuides.map(p=><li><a href={url(p.slug)} style="display:block;padding:1rem;background:white;border:1px solid #e2e8f0;border-radius:12px">{p.title}</a></li>)}
+  </ul>
+</nav>
 </article>
