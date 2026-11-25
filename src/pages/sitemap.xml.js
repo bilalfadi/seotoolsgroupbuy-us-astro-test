@@ -1,4 +1,4 @@
-import {all} from '../lib/content.js';
+import {all,load} from '../lib/content.js';
 
 /** Published public pages only. Host follows existing production canonical rules. */
 const BASE='https://seotoolsgroupbuy.us';
@@ -15,6 +15,11 @@ export function GET(){
   const unique=new Map();
   unique.set('/',{url:'/',modified:''});
   unique.set('/category/seo-tools-blog/',{url:'/category/seo-tools-blog/',modified:''});
+  const postPageCount=Math.ceil(load('posts').length/10);
+  for(let page=2;page<=postPageCount;page++){
+    const route=`/category/seo-tools-blog/page/${page}/`;
+    unique.set(route,{url:route,modified:''});
+  }
   for(const item of all()){
     if(!item.slug||BLOCKED.has(item.slug)||item.slug==='home')continue;
     const route='/'+encodeURIComponent(item.slug)+'/';
