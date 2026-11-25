@@ -1,0 +1,12 @@
+# Static asset caching for Cloudflare Workers Static Assets.
+# Keep HTML uncached so CMS redeploys and SEO changes become visible promptly.
+/assets/css/*
+  Cache-Control: public, max-age=3600
+/assets/js/*
+  Cache-Control: public, max-age=3600
+/assets/images/*
+  Cache-Control: public, max-age=604800
+/media/*
+  Cache-Control: public, max-age=604800
+/wp-content/uploads/*
+  Cache-Control: public, max-age=604800
