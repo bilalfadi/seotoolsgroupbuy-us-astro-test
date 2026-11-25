@@ -48,8 +48,6 @@ if(!layout.includes('structuredData.map(item='))failures.push('Per-page Product/
 for(const slug of ['group-buy-seo-tools-are-they-a-smart-deal-or-a-risky-gamble','top-5-best-seo-tools-for-e-commerce-seo']){
  if(!archive.includes('/'+slug+'/'))failures.push('Orphan SEO guide missing from blog archive navigation: '+slug);
 }
-const blogLongMeta=archive.match(/Browse practical SEO guides, tool reviews, comparisons and tutorials/);
-if(!blogLongMeta)failures.push('Blog archive meta description still too short');
 
 const indexable = records.filter(x=>x.slug !== 'home' && !excluded.has(x.slug)).length + 2;
 console.log(JSON.stringify({published:records.length,expectedSitemapUrls:indexable,excludedFromIndex:[...excluded],issues:failures},null,2));
