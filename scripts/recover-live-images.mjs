@@ -7,7 +7,7 @@ const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 const missing = [...new Set(report.warnings
   .filter(w => w.kind === 'missingAsset' && w.file.startsWith('dist/'))
   .map(w => w.detail))].filter(x => /^\/wp-content\/uploads\//.test(x));
-const hosts = ['https://seotoolsgroupbuy.us', 'https://app.seotoolsgroupbuy.us'];
+const hosts = ['https://seotoolsgroupbuy.us', 'https://app.seotoolsgroupbuy.us', 'https://www.seotoolsgroupbuy.us'];
 const root = path.resolve('public', 'wp-content', 'uploads');
 const results = [];
 function validImage(bytes, ext) {
