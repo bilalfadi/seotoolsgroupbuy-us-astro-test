@@ -64,7 +64,7 @@ export function fixInternalLinks(html='',paymentBaseUrl) {
    const memberAction=/^https?:\/\/(?:www\.)?(?:seogroupsbuy\.com|pay\.seotoolsgroupbuy\.us)\/users\/(?:login|signup|cart\/)/i.test(raw);
    const paid=memberAction&&!isContact?paymentLink(raw,paymentBaseUrl):raw;
    if(paid!==raw)return start+paid+end;
-   let val=raw.replace(/^https?:\\/\\/(?:www\\.|app\\.)?seotoolsgroupbuy\\.us(?=\\/|$)/i,'');
+   let val=raw.replace(/^https?:\/(?:\/)(?:www\.|app\.)?seotoolsgroupbuy\.us(?=\/|$)/i,'');
    if(val==='')val='/';
    if (!val.startsWith('/')) return full;
    if(val==='/blog/'||val==='/blog')val='/category/seo-tools-blog/';
