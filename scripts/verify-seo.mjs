@@ -33,6 +33,15 @@ const copyAiMeta=productSeo('copyai');
 if(!closerscopyMeta||!copyAiMeta||closerscopyMeta===copyAiMeta) failures.push('Copy AI and Closerscopy need distinct nonempty meta descriptions');
 const archive=fs.readFileSync(path.join(root,'src/components/BlogArchive.astro'),'utf8');
 if(!archive.includes('description={archiveSeoDescription}')||!archive.includes('currentPage===1?')) failures.push('Paginated blog archives need page-specific meta descriptions');
+// Ahrefs all-issues export: stop publishing demo placeholders, downgrade links and sitemap gaps.
+const articleRecord=JSON.parse(fs.readFileSync(path.join(root,'content/pages/group-buy-seo-tools-are-they-a-smart-deal-or-a-risky-gamble.json'),'utf8'));
+if(/YOUR_PRODUCT_(?:LINK|IMAGE)_URL_HERE/i.test(articleRecord.content)) failures.push('Published article contains placeholder link or image');
+for(const slug of ['ahrefs','helium-10']){
+ const html=JSON.parse(fs.readFileSync(path.join(root,'content/products',slug+'.json'),'utf8')).content;
+ if(/href=["']http:\/\/seotoolsgroupbuy\.us\/?["']/i.test(html)) failures.push(slug+': HTTP homepage link remains');
+}
+if(!sitemap.includes('postPageCount') || !sitemap.includes('category/seo-tools-blog/page/')) failures.push('Paginated blog archive missing from sitemap generator');
+
 const indexable = records.filter(x=>x.slug !== 'home' && !excluded.has(x.slug)).length + 2;
 console.log(JSON.stringify({published:records.length,expectedSitemapUrls:indexable,excludedFromIndex:[...excluded],issues:failures},null,2));
 if(failures.length) process.exitCode=1;
