@@ -38,6 +38,9 @@ export function decodeText(s='') {
  });
 }
 function resolvePath(path) {
+ // Normalize old product-tag links which otherwise trigger an avoidable 301.
+ const tag= /^\/product-tag\/(buy-cheap-ahrefs|moz-pro-group-buy)\/?(\?[^#]*)?(#.*)?$/i.exec(path);
+ if(tag)return (tag[1].toLowerCase()==='buy-cheap-ahrefs'?'/ahrefs/':'/moz/')+(tag[2]||'')+(tag[3]||'');
  let m=/^\/([^/?#]+)\/?(\?[^#]*)?(#.*)?$/.exec(path);
  if (!m) return path;
  const resolved=redirects[decodeURIComponent(m[1])];
@@ -61,7 +64,8 @@ export function fixInternalLinks(html='',paymentBaseUrl) {
    const memberAction=/^https?:\/\/(?:www\.)?(?:seogroupsbuy\.com|pay\.seotoolsgroupbuy\.us)\/users\/(?:login|signup|cart\/)/i.test(raw);
    const paid=memberAction&&!isContact?paymentLink(raw,paymentBaseUrl):raw;
    if(paid!==raw)return start+paid+end;
-   let val=raw.replace(/^https?:\/\/(?:www\.|app\.)?seotoolsgroupbuy\.us(?=\/)/i,'');
+   let val=raw.replace(/^https?:\\/\\/(?:www\\.|app\\.)?seotoolsgroupbuy\\.us(?=\\/|$)/i,'');
+   if(val==='')val='/';
    if (!val.startsWith('/')) return full;
    if(val==='/blog/'||val==='/blog')val='/category/seo-tools-blog/';
    return start+resolvePath(val)+end;
