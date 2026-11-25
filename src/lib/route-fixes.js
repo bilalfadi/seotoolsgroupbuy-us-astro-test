@@ -41,7 +41,11 @@ function resolvePath(path) {
  let m=/^\/([^/?#]+)\/?(\?[^#]*)?(#.*)?$/.exec(path);
  if (!m) return path;
  const resolved=redirects[decodeURIComponent(m[1])];
- return resolved?'/'+resolved+'/'+(m[2]||'')+(m[3]||''):path;
+ if(resolved)return '/'+resolved+'/'+(m[2]||'')+(m[3]||'');
+ // Internal published permalinks should use final slash URLs, not trigger Astro 307s.
+ const slug=decodeURIComponent(m[1]);
+ if(entries.has(slug) && !path.startsWith('/'+m[1]+'/'))return '/'+m[1]+'/'+(m[2]||'')+(m[3]||'');
+ return path;
 }
 // Pure URL helpers: this module is also imported by Node.js redirect generation.
 // Pages pass their CMS paymentBaseUrl explicitly, so no Vite-only import.meta.glob is used.
