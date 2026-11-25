@@ -19,7 +19,7 @@ for (const group of groups) {
   }
 }
 const layout=fs.readFileSync(path.join(root,'src/layouts/SiteLayout.astro'),'utf8');
-const sitemap=fs.readFileSync(path.join(root,'src/pages/sitemap.xml.ts'),'utf8');
+const sitemap=fs.readFileSync(path.join(root,'src/pages/sitemap.xml.js'),'utf8');
 const robots=fs.readFileSync(path.join(root,'public/robots.txt'),'utf8');
 if(!layout.includes('name="robots"') || !layout.includes("'index,follow'")) failures.push('Index/follow meta tag missing from layout');
 if(!layout.includes('rel="canonical"')) failures.push('Canonical tag missing');
