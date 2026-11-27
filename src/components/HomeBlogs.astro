@@ -2,17 +2,11 @@
 import {load,url} from '../lib/content.js';
 import {postCategoryName} from '../lib/catalog.js';
 const posts=[...load('posts')].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,4);
-const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
-const [featured,...others]=posts;
+const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/&(?:#\d+|[a-z]+);/gi,' ').replace(/\s+/g,' ').trim();
 ---
-{featured&&<div class="stgb-blogs__grid">
- <a class="stgb-blogs__featured" href={url(featured.slug)}>
- {featured.featuredImage?<img class="stgb-blogs__featured-img" src={featured.featuredImage} alt={featured.featuredAlt||featured.title} loading="lazy"/>:<span class="stgb-blogs__featured-placeholder"></span>}
- <div class="stgb-blogs__featured-overlay"></div><span class="stgb-blogs__featured-badge">Featured</span>
- <div class="stgb-blogs__featured-content"><span class="stgb-blogs__cat">{postCategoryName(featured)}</span><h3>{featured.title}</h3><p>{strip(featured.excerpt||featured.content).slice(0,150)}</p><span class="stgb-blogs__read">Read Article →</span></div>
- </a>
- <div class="stgb-blogs__list">{others.map((p,i)=><a class="stgb-blogs__item" href={url(p.slug)}>
- <div class="stgb-blogs__item-img">{p.featuredImage&&<img src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy"/>}<span class="stgb-blogs__item-num">{i+2}</span></div>
- <div class="stgb-blogs__item-body"><span class="stgb-blogs__item-cat">{postCategoryName(p)}</span><h3>{p.title}</h3><span class="stgb-blogs__item-more">Read Article →</span></div>
- </a>)}</div>
- </div>}
+{posts.length>0&&<div class="stgb-blogs__grid">
+ {posts.map(p=><a class="stgb-blogs__item" href={url(p.slug)}>
+   <div class="stgb-blogs__item-img">{p.featuredImage?<img src={p.featuredImage} alt={p.featuredAlt||p.title} loading="lazy" decoding="async"/>:<span class="stgb-blogs__featured-placeholder" aria-hidden="true"></span>}</div>
+   <div class="stgb-blogs__item-body"><span class="stgb-blogs__item-cat">{postCategoryName(p)}</span><h3>{p.title}</h3><p>{strip(p.excerpt||p.content).slice(0,155)}</p><span class="stgb-blogs__item-more">Read Article →</span></div>
+ </a>)}
+</div>}
