@@ -13,3 +13,12 @@
 @media(max-width:1050px){.us-s2-results{grid-template-columns:repeat(3,minmax(0,1fr))}.us-s2-card-shell{padding:20px}}
 @media(max-width:760px){.us-s2-store{padding:0 12px 52px}.us-s2-card-shell{padding:14px;border-radius:19px;margin:-20px auto 0}.us-s2-search{height:56px}.us-s2-search input{height:54px;font-size:15px}.us-s2-tabs button{font-size:12px;height:38px;min-height:38px;padding:0 12px}.us-s2-results{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.us-s2-card{min-height:176px;padding:11px;gap:10px;grid-template-rows:auto auto 36px}.us-s2-identity{grid-template-columns:38px minmax(0,1fr);gap:8px}.us-s2-logo{width:38px;height:38px;border-radius:10px}.us-s2-logo img{width:28px;height:28px}.us-s2-tool-name{font-size:12px}.us-s2-tool-cat{font-size:10px}.us-s2-price-row{gap:3px}.us-s2-lock{font-size:12px}.us-s2-price-row strong{font-size:11px}.us-s2-price-side{font-size:8px}.us-s2-tool-cta{font-size:10px;height:36px;min-height:36px}.us-s2-count{font-size:12px}.us-s2-count a{font-size:10px;padding:9px}.us-s2-bottom-copy{min-width:0}.us-s2-heading h2{font-size:15px}.us-s2-more{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.us-s2-card,.us-s2-tool-cta{transition:none}}
+
+/* CMS product prices — use salePrice/price and original regularPrice. */
+.us-s2-price-row{justify-content:space-between;gap:8px;min-height:51px}
+.us-s2-sell{display:flex;flex-direction:column;gap:2px}
+.us-s2-sell strong{color:#a54b2b;font-size:21px;line-height:1.08;font-weight:850}
+.us-s2-sell small,.us-s2-original small{font-size:10px;font-weight:650;color:#746c66;line-height:1.2}
+.us-s2-original{display:flex;flex-direction:column;gap:2px;align-items:flex-end;margin-left:auto;min-width:0}
+.us-s2-original del{color:#8b817b;font-size:14px;font-weight:700;line-height:1.2}
+@media(max-width:760px){.us-s2-price-row{min-height:47px}.us-s2-sell strong{font-size:18px}.us-s2-original del{font-size:12px}}
