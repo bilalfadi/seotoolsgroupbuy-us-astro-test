@@ -1,8 +1,9 @@
 ---
 import {load,url} from '../lib/content.js';
 import {postCategoryName} from '../lib/catalog.js';
+import {plainExcerpt} from '../lib/excerpt-text.js';
 const posts=[...load('posts')].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,4);
-const strip=(s='')=>String(s).replace(/<[^>]+>/g,' ').replace(/&(?:#\d+|[a-z]+);/gi,' ').replace(/\s+/g,' ').trim();
+const strip=plainExcerpt;
 ---
 {posts.length>0&&<div class="stgb-blogs__grid">
  {posts.map(p=><a class="stgb-blogs__item" href={url(p.slug)}>
