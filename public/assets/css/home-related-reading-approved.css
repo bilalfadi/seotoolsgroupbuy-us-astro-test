@@ -1,0 +1,33 @@
+/* Homepage Section 7: restrained Toolsurf-style related reading.
+   Presentation only: original CMS heading, blog data, images and URLs stay intact. */
+.home .stgb-blogs{background:#fff;padding:76px 0 86px;color:#1b1917;font-family:Inter,system-ui,Arial,sans-serif}
+.home .stgb-blogs::before{display:none}
+.home .stgb-blogs .stgb-container{max-width:1264px;padding-left:32px;padding-right:32px;margin:auto}
+.home .stgb-blogs__head{display:flex;flex-direction:row;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.home .stgb-blogs__label{margin-bottom:9px}
+.home .stgb-blogs__label-bar{display:none}
+.home .stgb-blogs__label span:last-child,.home .stgb-blogs__label{color:#9d5139;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:750}
+.home .stgb-blogs__head h2{font-size:clamp(27px,2.7vw,37px);line-height:1.15;letter-spacing:-.03em;font-weight:750;color:#1d1a18;margin:0}
+.home .stgb-blogs__view-all{color:#9d5139;font-weight:700;font-size:14px;white-space:nowrap}
+.home .stgb-blogs__view-all:hover{color:#723923}
+.home .stgb-blogs__view-all-icon{width:29px;height:29px;border-color:#e1d7ce}
+.home .stgb-blogs__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.home .stgb-blogs__featured,.home .stgb-blogs__item{height:auto;min-height:285px;display:flex;flex-direction:column;overflow:hidden;border-radius:15px;border:1px solid #e7e1d9;background:#fff;box-shadow:0 1px 3px rgba(35,24,15,.05);transition:transform .2s,box-shadow .2s,border-color .2s}
+.home .stgb-blogs__featured:hover,.home .stgb-blogs__item:hover{transform:translateY(-3px);box-shadow:0 9px 24px rgba(35,24,15,.08);border-color:#d6b6a1}
+.home .stgb-blogs__featured-img,.home .stgb-blogs__featured-placeholder{position:static;height:134px;width:100%;display:block;object-fit:cover;flex:none;transform:none!important}
+.home .stgb-blogs__featured-overlay{display:none}
+.home .stgb-blogs__featured-badge{top:10px;left:10px;background:#fff9f1;color:#8b4a32;border:1px solid #eddfd0;padding:4px 9px;font-size:10px;border-radius:7px;letter-spacing:.04em}
+.home .stgb-blogs__featured-content{position:static;display:flex;flex-direction:column;flex:1;min-width:0;padding:16px}
+.home .stgb-blogs__cat,.home .stgb-blogs__item-cat{display:block;align-self:start;background:none;backdrop-filter:none;padding:0;margin:0 0 8px;color:#a45a42;font-size:10px;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.home .stgb-blogs__featured-content h3,.home .stgb-blogs__item-body h3{font-size:16px;line-height:1.38;font-weight:720;letter-spacing:-.012em;color:#24201d;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.home .stgb-blogs__featured-content p{display:none}
+.home .stgb-blogs__read,.home .stgb-blogs__item-more{margin-top:auto;padding-top:9px;color:#9d5139;font-size:12px;font-weight:700}
+.home .stgb-blogs__list{display:contents}
+.home .stgb-blogs__item-img{height:134px;width:100%;flex:none}
+.home .stgb-blogs__item-img img{width:100%;height:100%;object-fit:cover}
+.home .stgb-blogs__item-num{display:none}
+.home .stgb-blogs__item-body{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;flex:1;padding:16px}
+@media(max-width:900px){.home .stgb-blogs__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.home .stgb-blogs{padding:52px 0 64px}.home .stgb-blogs .stgb-container{padding-left:18px;padding-right:18px}.home .stgb-blogs__head{align-items:flex-start;flex-direction:column;gap:14px}.home .stgb-blogs__grid{gap:12px}.home .stgb-blogs__featured,.home .stgb-blogs__item{min-height:245px}.home .stgb-blogs__featured-img,.home .stgb-blogs__featured-placeholder,.home .stgb-blogs__item-img{height:110px}.home .stgb-blogs__featured-content,.home .stgb-blogs__item-body{padding:12px}.home .stgb-blogs__featured-content h3,.home .stgb-blogs__item-body h3{font-size:14px}.home .stgb-blogs__head h2{font-size:28px}}
+@media(max-width:360px){.home .stgb-blogs__grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.home .stgb-blogs__featured,.home .stgb-blogs__item{transition:none}}
