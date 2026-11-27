@@ -3,16 +3,45 @@
 const labels={
   semrush:"SEO",ahrefs:"SEO",moz:"SEO",envato:"Design",canva:"Design",grammarly:"Writing",leonardo:"AI",wordai:"Writing",helium:"Amazon",spyfu:"SEO",chatgpt:"AI",ubersuggest:"SEO",surfer:"SEO",frase:"Writing",writesonic:"Writing",mangools:"SEO",serpstat:"SEO",majestic:"SEO",quillbot:"Writing",freepik:"Design",storyblocks:"Video",vyond:"Video",netflix:"Entertainment",skillshare:"Learning",coursera:"Learning",jungle:"Amazon",midjourney:"AI",gamma:"AI",elevenlabs:"AI",buzzsumo:"SEO",vidiq:"Video",copyai:"AI",kwfinder:"SEO",quetext:"Writing",wordhero:"Writing",udemy:"Learning"
 };
-const existingIcons={
-  semrush:"/assets/images/hero-logos/semrush.png",
-  ahrefs:"/assets/images/hero-logos/ahrefs.png",
-  moz:"/assets/images/hero-logos/moz.png",
-  envato:"/assets/images/hero-logos/envato-elements.png",
-  canva:"/assets/images/hero-logos/canva.png",
-  grammarly:"/assets/images/hero-logos/grammarly.png",
-  helium:"/assets/images/hero-logos/helium10.png",
-  chatgpt:"/assets/images/hero-logos/chatgpt.png"
+const existingProductImages={
+  "semrush-group-buy": "/media/wp-uploads/2026/08/semrush-247x296-4.jpg",
+  "ahrefs": "/media/wp-uploads/2026/08/Screenshot-2026-10-01-010329.png",
+  "moz": "/media/wp-uploads/2026/08/moz-247x296-3.jpg",
+  "envato-elements": "/media/wp-uploads/2026/08/Envato-Elements-Group-Buy-247x296-3.jpg",
+  "canva": "/media/wp-uploads/2026/08/Canva-247x296-4.jpg",
+  "grammarly": "/media/wp-uploads/2026/08/grammarly-group-buy-premium-writing-tool-logo-1.png",
+  "leonardo-ai": "/media/wp-uploads/2026/08/SEOPTIMER-36-5.jpg",
+  "wordai": "/media/wp-uploads/2026/08/Wordai-6.jpg",
+  "helium-10": "/media/wp-uploads/2026/08/Helium-10-Group-Buy-247x296-3.jpg",
+  "spyfu": "/media/wp-uploads/2026/08/Spyfu-6.jpg",
+  "chatgpt": "/media/wp-uploads/2026/08/ChatGpt-247x296-4.jpg",
+  "ubersuggest": "/media/wp-uploads/2026/08/Ubersuggest-Group-Buy-tools-247x296-3.jpg",
+  "surfer-seo": "/media/wp-uploads/2026/08/Surfer-SEO-6.jpg",
+  "frase": "/media/wp-uploads/2026/08/Frase_Logo-scaled-1-247x296-3.jpg",
+  "writesonic": "/media/wp-uploads/2026/08/writesonic-group-buy-get-professional-ai-logo-1.png",
+  "mangools": "/media/wp-uploads/2026/08/SEOPTIMER-12-10.jpg",
+  "serpstat": "/media/wp-uploads/2026/08/Heading-1-6.jpg",
+  "majestic": "/media/wp-uploads/2026/08/majestic-6.jpg",
+  "quillbot": "/media/wp-uploads/2026/08/quillbot-group-buy-logo-1.png",
+  "freepik": "/media/wp-uploads/2026/08/Freepik-Groupbuyseo-6.jpg",
+  "storyblocks": "/media/wp-uploads/2026/08/StoryBlocks-247x296-3.jpg",
+  "vyond": "/media/wp-uploads/2026/08/Vyond-6.jpg",
+  "netflix": "/media/wp-uploads/2026/08/Netflix-Group-Buy-6.jpg",
+  "skillshare": "/media/wp-uploads/2026/08/Skillshare-Group-Buy-6.jpg",
+  "coursera": "/media/wp-uploads/2026/08/Exploding-Topics-Group-Buy-6-6.jpg",
+  "jungle-scout": "/media/wp-uploads/2026/08/Jungle-Scout-247x296-3.jpg",
+  "midjourney-group-buy": "/media/wp-uploads/2026/08/WhatsApp-Image-2025-09-25-at-4.47.00-PM-3.jpg",
+  "gamma-ai-group-buy": "/media/wp-uploads/2026/08/WhatsApp-Image-2025-09-25-at-4.42.33-PM-3.jpg",
+  "elevenlabs-group-buy": "/media/wp-uploads/2026/09/elevenlabsss-1024x543-1.jpg",
+  "buzzsumo": "/media/wp-uploads/2026/08/BuzzSumo-6.jpg",
+  "vidiq-group-buy": "/media/wp-uploads/2026/08/Placeit-1-5.jpg",
+  "copyai": "/media/wp-uploads/2026/08/copy-ai-group-buy-unlock-creative-copywr-logo-1.png",
+  "kwfinder": "/media/wp-uploads/2026/08/KwFinder-6.jpg",
+  "quetext": "/media/wp-uploads/2026/08/Heading-5-1-6.jpg",
+  "wordhero": "/media/wp-uploads/2026/08/wordhero-group-buy-affordable-ai-writing-logo-1.png",
+  "udemy": "/media/wp-uploads/2026/08/Exploding-Topics-Group-Buy-4-6.jpg"
 };
+
 function norm(s){return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
 function classify(name,href){
  const id=norm(name+" "+href);
@@ -20,10 +49,10 @@ function classify(name,href){
  return "Other";
 }
 function logo(name,href){
- const id=norm(name+" "+href);
- for(const [needle,img] of Object.entries(existingIcons)){if(id.includes(needle))return img}
- return null;
+ const slug=String(href||"").split("?")[0].replace(/^\/+|\/+$/g,"").toLowerCase();
+ return existingProductImages[slug]||null;
 }
+
 const encode=s=>String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 export function upgradeCatalog(sourceMarkup){
  const start=sourceMarkup.indexOf('<section class="s2-tools" id="tools">');
