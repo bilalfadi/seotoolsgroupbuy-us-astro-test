@@ -1,0 +1,53 @@
+/* Section 3 pricing: Toolsurf-source card geometry; original six CMS plans, prices, included tool lists and flip retained. */
+body.home #pricing-plans.s3-pricing{padding:110px 20px 106px;background:#f3f1eb;color:#171412;font-family:Arial,Helvetica,sans-serif}
+body.home #pricing-plans .s3-container{max-width:1200px;margin:auto;padding:0}
+body.home #pricing-plans .s3-pricing__head{text-align:center;margin-bottom:48px}
+body.home #pricing-plans .s3-pricing__title{font-size:clamp(32px,4vw,50px);color:#171412;line-height:1.09;font-weight:800;letter-spacing:-.04em;margin:0 0 14px}
+body.home #pricing-plans .s3-pricing__sub{font-size:16px;color:#6f665f;line-height:1.5;margin:0}
+body.home #pricing-plans .s3-pricing__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+body.home #pricing-plans .s3-pricing__card-wrap{position:relative;min-width:0;height:490px;perspective:1400px;transform:none!important;overflow:visible}
+body.home #pricing-plans .s3-pricing__card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .68s cubic-bezier(.22,.61,.36,1)}
+body.home #pricing-plans .s3-pricing__card-wrap.is-flipped .s3-pricing__card-inner{transform:rotateY(180deg)}
+body.home #pricing-plans .s3-pricing__card,body.home #pricing-plans .s3-pricing__card-back{position:absolute;inset:0;height:100%;width:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-sizing:border-box}
+body.home #pricing-plans .s3-pricing__card{padding:14px;border-radius:23px;border:1px solid #e6e1d8;box-shadow:0 5px 15px rgba(21,17,12,.06),0 1px 2px #17141207;background:white;color:#171412;display:flex;flex-direction:column;text-align:left;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+body.home #pricing-plans .s3-pricing__card:before{display:none!important}
+body.home #pricing-plans .s3-pricing__card-wrap:not(.is-flipped):hover .s3-pricing__card{border-color:#d3bdac;box-shadow:0 14px 30px rgba(21,17,12,.12)}
+body.home #pricing-plans .us3-face{position:relative;isolation:isolate;flex:0 0 196px;min-height:196px;border-radius:16px;background:#efece7;color:#171412;display:flex;flex-direction:column;overflow:hidden;padding:18px 20px}
+body.home #pricing-plans .us3-face:after{content:'';position:absolute;z-index:-1;right:-65px;top:-65px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#fff9,transparent 70%)}
+body.home #pricing-plans .s3-pricing__card-wrap:nth-child(2) .us3-face,body.home #pricing-plans .s3-pricing__card-wrap:nth-child(5) .us3-face{background:#f8e9df}
+body.home #pricing-plans .s3-pricing__card-wrap:nth-child(3) .us3-face{background:#a65236;color:#fff}
+body.home #pricing-plans .s3-pricing__card-wrap:nth-child(6) .us3-face{background:#e7f4f0}
+body.home #pricing-plans .us3-face-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+body.home #pricing-plans .us3-issuer{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:-.018em;white-space:nowrap;flex-shrink:0}
+body.home #pricing-plans .us3-issuer-mark{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#f97316;color:white;font-size:12px}
+body.home #pricing-plans .s3-pricing__name{font-size:16px;text-transform:uppercase;letter-spacing:.008em;color:#132338;font-weight:900;line-height:1.17;max-width:57%;text-align:right;margin:0;background:rgba(255,255,255,.74);padding:7px 9px;border:1px solid rgba(255,255,255,.86);border-radius:9px;overflow-wrap:break-word}
+body.home #pricing-plans .s3-pricing__card-wrap:nth-child(3) .s3-pricing__name{color:#fff;background:rgba(46,20,10,.25);border-color:rgba(255,255,255,.27)}
+body.home #pricing-plans .us3-face-chip{width:36px;height:27px;flex-shrink:0;margin-top:13px;border-radius:6px;background:linear-gradient(90deg,transparent 47%,#b99138 47% 53%,transparent 53%),linear-gradient(180deg,transparent 31%,#b99138 31% 37%,transparent 37% 63%,#b99138 63% 69%,transparent 69%),linear-gradient(135deg,#f8edbd,#e2c06b 45%,#b5852f);box-shadow:inset 0 0 0 1px #b99138}
+body.home #pricing-plans .us3-face-bottom{margin-top:auto}
+body.home #pricing-plans .s3-pricing__price-wrap{display:flex;align-items:baseline;gap:6px;text-align:left;margin:0 0 5px;color:inherit}
+body.home #pricing-plans .s3-pricing__price{font-size:42px;line-height:1;letter-spacing:-.035em;color:inherit;font-weight:800}
+body.home #pricing-plans .s3-pricing__per{font-size:13px;font-weight:600;color:inherit;opacity:.75}
+body.home #pricing-plans .s3-pricing__desc{color:inherit;opacity:.77;font-size:12px;margin:0 0 5px;text-align:left;font-weight:600}
+body.home #pricing-plans .s3-pricing__tools{background:none;border:0;display:inline-block;padding:0;margin:0;text-align:left;font-size:12px;line-height:1.4;color:inherit;opacity:.8;font-weight:600}
+body.home #pricing-plans .s3-pricing__icon{display:none}
+body.home #pricing-plans .us3-body{display:flex;flex:1;flex-direction:column;min-height:0;padding:18px 8px 6px}
+body.home #pricing-plans .us3-body-chip{display:inline-block;align-self:flex-start;background:#fbeee6;color:#84412c;border:1px solid #ebc3ae;border-radius:999px;padding:6px 12px;margin:0 0 9px;font-size:11px;font-weight:700;max-width:100%}
+body.home #pricing-plans .s3-pricing__benefits{flex:0 0 auto;display:grid;gap:9px;list-style:none;margin:0 0 4px;padding:0;text-align:left}
+body.home #pricing-plans .s3-pricing__benefits li{position:relative;display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.48;color:#25211e;margin:0;padding:0;text-align:left}
+body.home #pricing-plans .s3-pricing__benefits li:before{content:'✓';font-size:14px;line-height:21px;color:#a65335;flex:none;font-weight:850}
+body.home #pricing-plans .s3-pricing__view{margin-top:7px;margin-bottom:10px;width:auto;text-align:left;background:transparent;color:#94503a;text-decoration:underline;text-underline-offset:3px;border:0;padding:5px 0;font-size:12px;font-weight:700;cursor:pointer}
+body.home #pricing-plans .s3-pricing__btn{display:flex;justify-content:center;align-items:center;min-height:45px;width:100%;margin:0;background:#fff;border:1px solid #d9d2c6;border-radius:999px;color:#28201c;font-size:13px;font-weight:800;text-decoration:none;transform:none;box-shadow:none}
+body.home #pricing-plans .s3-pricing__card-wrap:nth-child(3) .s3-pricing__btn,body.home #pricing-plans .s3-pricing__btn--red{background:#a65236;color:#fff;border-color:#a65236}
+body.home #pricing-plans .s3-pricing__btn:hover{background:#0d9488;border-color:#0d9488;color:#fff}
+body.home #pricing-plans .s3-pricing__badge{position:absolute;top:-11px;left:50%;right:auto;transform:translateX(-50%);z-index:7;background:#251d19;border:0;border-radius:999px;padding:6px 12px;color:#fff;box-shadow:0 2px 4px #0002;font-size:11px;white-space:nowrap;letter-spacing:0}
+body.home #pricing-plans .s3-pricing__card-back{transform:rotateY(180deg);padding:20px;border:1px solid #e6e1d8;border-radius:23px;background:#fff;display:flex;flex-direction:column;overflow:hidden;pointer-events:none;box-shadow:0 7px 18px #0001}
+body.home #pricing-plans .s3-pricing__card-wrap.is-flipped .s3-pricing__card-back{pointer-events:auto}
+body.home #pricing-plans .s3-pricing__card-wrap.is-flipped .s3-pricing__card{pointer-events:none}
+body.home #pricing-plans .s3-pricing__card-back-title{margin:0 0 12px;font-size:19px;font-weight:800;color:#171412}
+body.home #pricing-plans .s3-pricing__card-back-hint{font-size:12px;color:#6f665f;margin-bottom:14px}
+body.home #pricing-plans .s3-pricing__card-back-list{overflow-y:auto;overflow-x:hidden;min-height:0;max-height:none;flex:1;overscroll-behavior:contain;padding-right:6px}
+body.home #pricing-plans .s3-pricing__card-back-list-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+body.home #pricing-plans .s3-pricing__card-back-tool{font-size:12px;line-height:1.35}
+@media(max-width:980px){body.home #pricing-plans .s3-pricing__grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}body.home #pricing-plans .s3-pricing__card-wrap{height:480px}body.home #pricing-plans .us3-face{min-height:172px;flex-basis:172px}}
+@media(max-width:600px){body.home #pricing-plans.s3-pricing{padding:62px 12px 75px}body.home #pricing-plans .s3-pricing__head{margin-bottom:34px}body.home #pricing-plans .s3-pricing__title{font-size:32px}body.home #pricing-plans .s3-pricing__sub{font-size:14px}body.home #pricing-plans .s3-pricing__card-wrap{height:480px}body.home #pricing-plans .s3-pricing__card-back-list-inner{grid-template-columns:1fr 1fr}body.home #pricing-plans .s3-pricing__name{font-size:14px;max-width:54%;padding:6px}body.home #pricing-plans .us3-issuer{font-size:11px}body.home #pricing-plans .s3-pricing__benefits{gap:7px}}
+@media(prefers-reduced-motion:reduce){body.home #pricing-plans .s3-pricing__card-inner{transition:none}}
