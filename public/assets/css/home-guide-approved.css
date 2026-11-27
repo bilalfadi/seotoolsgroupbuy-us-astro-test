@@ -1,14 +1,14 @@
 /* Original Toolsurf Group Buy Guide geometry; scoped to home Section 6. */
-.us6-guide{--us6-surface:#fff;--us6-line:#e6e1d8;--us6-ink:#171412;--us6-muted:#6f665f;--us6-text:#4a423d;--us6-brand:#9f4f36;--us6-soft:#fbeee6;background:#f3f1eb;padding:80px 0 96px;color:var(--us6-ink);font-family:Inter,system-ui,Arial,sans-serif;font-size:16px}
+.us6-guide{--us6-surface:#fff;--us6-line:#d7e7e5;--us6-ink:#10233e;--us6-muted:#536277;--us6-text:#536277;--us6-brand:#0d9488;--us6-soft:#e4f6f3;background:#f2faf9;padding:80px 0 96px;color:var(--us6-ink);font-family:Inter,system-ui,Arial,sans-serif;font-size:16px}
 .us6-guide *{box-sizing:border-box}
 .us6-guide .us6-container{width:100%;max-width:1264px;margin:0 auto;padding:0 32px}
 .us6-guide-shell{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:start}
-.us6-guide-nav{position:sticky;top:100px;padding:18px;border-radius:18px;background:var(--us6-surface);border:1px solid var(--us6-line);box-shadow:0 1px 2px rgba(23,20,18,.06)}
+.us6-guide-nav{position:sticky;top:100px;padding:18px;border-radius:18px;background:var(--us6-surface);border:1px solid var(--us6-line);box-shadow:0 1px 2px rgba(16,35,62,.06)}
 .us6-guide-nav p{margin:0 0 8px;padding:0 10px;color:var(--us6-muted);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .us6-guide-nav ol{margin:0;padding:0;list-style:none;display:grid;gap:2px;counter-reset:guide}
 .us6-guide-nav a{display:flex;gap:10px;align-items:baseline;padding:8px 10px;border-radius:10px;color:var(--us6-text);font-size:14px;font-weight:600;line-height:1.35;text-decoration:none;transition:background-color .18s,color .18s}
 .us6-guide-nav a:before{counter-increment:guide;content:counter(guide,decimal-leading-zero);color:var(--us6-muted);font-size:12px;font-weight:650;font-variant-numeric:tabular-nums;flex:none}
-.us6-guide-nav a:hover{background:#faf8f5;color:var(--us6-ink)}
+.us6-guide-nav a:hover{background:#f8fdfc;color:var(--us6-ink)}
 .us6-guide-nav a[aria-current=true]{background:var(--us6-soft);color:var(--us6-brand)}
 .us6-guide-nav a[aria-current=true]:before{color:var(--us6-brand)}
 .us6-guide-main{min-width:0}
