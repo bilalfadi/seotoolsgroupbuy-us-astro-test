@@ -51,3 +51,30 @@ body.home #pricing-plans .s3-pricing__card-back-tool{font-size:12px;line-height:
 @media(max-width:980px){body.home #pricing-plans .s3-pricing__grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}body.home #pricing-plans .s3-pricing__card-wrap{height:480px}body.home #pricing-plans .us3-face{min-height:172px;flex-basis:172px}}
 @media(max-width:600px){body.home #pricing-plans.s3-pricing{padding:62px 12px 75px}body.home #pricing-plans .s3-pricing__head{margin-bottom:34px}body.home #pricing-plans .s3-pricing__title{font-size:32px}body.home #pricing-plans .s3-pricing__sub{font-size:14px}body.home #pricing-plans .s3-pricing__card-wrap{height:480px}body.home #pricing-plans .s3-pricing__card-back-list-inner{grid-template-columns:1fr 1fr}body.home #pricing-plans .s3-pricing__name{font-size:14px;max-width:54%;padding:6px}body.home #pricing-plans .us3-issuer{font-size:11px}body.home #pricing-plans .s3-pricing__benefits{gap:7px}}
 @media(prefers-reduced-motion:reduce){body.home #pricing-plans .s3-pricing__card-inner{transition:none}}
+
+/* 2026-11-27: keep AHREEF$ COMBO and DESIGNER PLAN legible on one line.
+   No plan content, prices, or 3D flip changes. */
+body.home #pricing-plans .us3-face-top{gap:6px;min-width:0}
+body.home #pricing-plans .us3-issuer{font-size:10px;gap:5px;letter-spacing:-.035em;flex:0 0 auto}
+body.home #pricing-plans .s3-pricing__name{
+  max-width:none;
+  width:auto;
+  flex:0 1 auto;
+  min-width:0;
+  white-space:nowrap;
+  overflow-wrap:normal;
+  word-break:normal;
+  font-size:14px;
+  line-height:1.15;
+  letter-spacing:-.025em;
+  padding:7px 8px;
+  text-align:center;
+}
+@media(max-width:600px){
+ body.home #pricing-plans .us3-issuer{font-size:9px;gap:4px}
+ body.home #pricing-plans .s3-pricing__name{font-size:12px;max-width:none;padding:6px 7px;white-space:nowrap}
+}
+@media(max-width:355px){
+ body.home #pricing-plans .us3-issuer{font-size:8px}
+ body.home #pricing-plans .s3-pricing__name{font-size:11px;padding:6px 5px}
+}
