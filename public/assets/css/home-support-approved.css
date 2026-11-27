@@ -1,0 +1,30 @@
+/* Approved Section 9 — Toolsurf measured CTA geometry, original US CMS text and brand colors. */
+body.home .s6-support{max-width:1200px;width:calc(100% - 40px);margin:12px auto 100px;position:relative;isolation:isolate;overflow:hidden;min-height:381px;padding:64px;border-radius:28px;border:1px solid #0c8a80;background:#0d9488;color:#fff;font-family:Inter,Arial,sans-serif;box-sizing:border-box}
+body.home .s6-support *{box-sizing:border-box}
+body.home .s6-support .s6-container{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,56px);align-items:center;position:relative;z-index:1;max-width:none;margin:0;padding:0;width:100%}
+body.home .s6-support__head{text-align:left;margin:0;min-width:0}
+body.home .s6-support__title{font-size:clamp(30px,1.2rem + 2.2vw,48px);letter-spacing:-.018em;line-height:1.06;max-width:475px;margin:0;font-weight:800;color:#fff}
+body.home .s6-support__sub{margin:14px 0 0;font-size:17px;line-height:1.6;max-width:52ch;color:#e3f8f4}
+body.home .s6-support__links{margin:26px 0 0;display:flex;align-items:flex-start;flex-direction:column;justify-content:flex-start;gap:11px}
+body.home .s6-support__links .s6-support__primary{background:#fff;color:#0b766d;border-radius:999px;min-height:54px;padding:0 27px;display:inline-flex;gap:13px;align-items:center;text-decoration:none;font-weight:750;font-size:16px;box-shadow:0 10px 30px -10px #10233e77}
+body.home .s6-support__more-links{display:flex;flex-wrap:wrap;gap:7px 16px}
+body.home .s6-support__more-links a{color:#f0fffc;text-decoration:underline;text-decoration-color:#ffffff50;text-underline-offset:4px;font-size:12px}
+body.home .s6-support__rays{position:absolute;right:-120px;top:-140px;width:520px;height:520px;color:#ffffff17;z-index:0;pointer-events:none}
+body.home .s6-support__card-shell{min-width:0;background:#fff;color:#10233e;padding:20px;border-radius:17px;box-shadow:0 14px 30px #10233e30;border:1px solid #e6f0ef}
+body.home .s6-support__card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 0 12px;border-bottom:1px dashed #d7e7e5}
+body.home .s6-support__card-head strong{font-size:15px}
+body.home .s6-support__deal{background:#e4f6f3;color:#0b766d;border-radius:99px;font-size:12px;font-weight:700;padding:4px 9px}
+body.home .s6-support__grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;padding:9px 0 6px;margin:0}
+body.home .s6-support__card{display:block;min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none;color:#34435a}
+body.home .s6-support__card:hover{background:transparent;border:0;transform:none}
+body.home .s6-support__card summary{display:flex;gap:8px;align-items:center;list-style:none;cursor:pointer;padding:7px 0;min-height:37px;font-size:12px;color:#34435a;font-weight:500}
+body.home .s6-support__card summary::-webkit-details-marker{display:none}
+body.home .s6-support__card summary:hover{color:#0d9488}
+body.home .s6-support__tick{color:#0d9488;font-size:13px;font-weight:800}
+body.home .s6-support__desc{font-size:11px;line-height:1.5;color:#536277;padding:0 0 8px 19px}
+body.home .s6-support__desc a{color:#0b766d}
+body.home .s6-support__foot{padding-top:12px;border-top:1px solid #d7e7e5;color:#536277;font-size:12px;line-height:1.4;margin:0;text-align:left}
+body.home .s6-support__card[open] summary{font-weight:700}
+body.home .s6-support__links a:focus-visible,body.home .s6-support__card summary:focus-visible{outline:2px solid #f97316;outline-offset:3px}
+@media(max-width:860px){body.home .s6-support{padding:38px}body.home .s6-support .s6-container{grid-template-columns:1fr;gap:30px}body.home .s6-support__title{max-width:none}body.home .s6-support__rays{top:0;right:-220px}}
+@media(max-width:550px){body.home .s6-support{width:calc(100% - 24px);margin:12px auto 60px;padding:30px 22px;border-radius:22px}body.home .s6-support__title{font-size:34px}body.home .s6-support__sub{font-size:15px}body.home .s6-support__grid{grid-template-columns:1fr}body.home .s6-support__card-shell{padding:16px}body.home .s6-support__more-links a{font-size:11px}}
