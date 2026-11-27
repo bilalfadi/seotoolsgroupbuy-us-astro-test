@@ -64,8 +64,8 @@ function priceFor(href,products){
  const normal=String(product.regularPrice||'').trim();
  const valid=v=>/^\d+(?:\.\d{1,2})?$/.test(v)&&Number(v)>0;
  if(!valid(offer))return null;
- const price='USD '+Number(offer).toFixed(2).replace(/\.00$/,'');
- const regular=valid(normal)&&Number(normal)>Number(offer)?'USD '+Number(normal).toFixed(2).replace(/\.00$/,''):null;
+ const price=String.fromCharCode(36)+Number(offer).toFixed(2).replace(/\.00$/,'');
+ const regular=valid(normal)&&Number(normal)>Number(offer)?String.fromCharCode(36)+Number(normal).toFixed(2).replace(/\.00$/,''):null;
  return {price,regular};
 }
 export function upgradeCatalog(sourceMarkup,products=[]){
