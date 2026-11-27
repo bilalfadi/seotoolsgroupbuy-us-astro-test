@@ -1,23 +1,23 @@
 /* Homepage Section 7 — approved Latest Insights 4-card layout. Original CMS content untouched. */
-.home .stgb-blogs{padding:76px 0 88px;background:#fffaf7;color:#1e2028;font-family:Arial,Helvetica,sans-serif}
+.home .stgb-blogs{padding:76px 0 88px;background:#f2faf9;color:#10233e;font-family:Arial,Helvetica,sans-serif}
 .home .stgb-blogs::before{display:none}
 .home .stgb-blogs .stgb-container{max-width:1300px;margin:auto;padding:0 28px}
 .home .stgb-blogs__head{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:0 0 45px}
-.home .stgb-blogs__label{display:flex;align-items:center;gap:14px;margin:0 0 10px;color:#892c16;font-size:12px;font-weight:800;letter-spacing:.15em}
-.home .stgb-blogs__label-bar{width:40px;height:2px;background:#922e19;border-radius:0}
-.home .stgb-blogs__head h2{font-family:Georgia,'Times New Roman',serif;color:#11121b;font-size:39px;line-height:1.15;font-weight:800;letter-spacing:-.035em;margin:0}
-.home .stgb-blogs__view-all{display:inline-flex;align-items:center;gap:12px;color:#8b2917;text-decoration:underline;text-underline-offset:5px;font-weight:750;font-size:15px;white-space:nowrap}
-.home .stgb-blogs__view-all-icon{display:inline;color:#8b2917;border:0;width:auto;height:auto}
+.home .stgb-blogs__label{display:flex;align-items:center;gap:14px;margin:0 0 10px;color:#0d9488;font-size:12px;font-weight:800;letter-spacing:.15em}
+.home .stgb-blogs__label-bar{width:40px;height:2px;background:#0d9488;border-radius:0}
+.home .stgb-blogs__head h2{font-family:Georgia,'Times New Roman',serif;color:#10233e;font-size:39px;line-height:1.15;font-weight:800;letter-spacing:-.035em;margin:0}
+.home .stgb-blogs__view-all{display:inline-flex;align-items:center;gap:12px;color:#0d9488;text-decoration:underline;text-underline-offset:5px;font-weight:750;font-size:15px;white-space:nowrap}
+.home .stgb-blogs__view-all-icon{display:inline;color:#0d9488;border:0;width:auto;height:auto}
 .home .stgb-blogs__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.home .stgb-blogs__featured,.home .stgb-blogs__item{display:flex;flex-direction:column;height:365px;min-width:0;border:1px solid #e8dfd9;border-radius:11px;overflow:hidden;background:#fff;box-shadow:none;text-decoration:none;transition:transform .2s,border-color .2s}
-.home .stgb-blogs__featured:hover,.home .stgb-blogs__item:hover{transform:translateY(-3px);border-color:#d6ac99}
+.home .stgb-blogs__featured,.home .stgb-blogs__item{display:flex;flex-direction:column;height:365px;min-width:0;border:1px solid #d7e7e5;border-radius:11px;overflow:hidden;background:#fff;box-shadow:none;text-decoration:none;transition:transform .2s,border-color .2s}
+.home .stgb-blogs__featured:hover,.home .stgb-blogs__item:hover{transform:translateY(-3px);border-color:#91cec7}
 .home .stgb-blogs__featured-img,.home .stgb-blogs__featured-placeholder{position:static;display:block;width:100%;height:140px;flex:none;object-fit:cover;transition:none}
 .home .stgb-blogs__featured-overlay,.home .stgb-blogs__featured-badge{display:none}
 .home .stgb-blogs__featured-content{position:static;flex:1;display:flex;flex-direction:column;padding:15px 17px 18px}
-.home .stgb-blogs__cat,.home .stgb-blogs__item-cat{display:block;background:transparent;color:#942c17;text-transform:uppercase;letter-spacing:.09em;font-size:10px;font-weight:800;padding:0;margin:0 0 8px}
-.home .stgb-blogs__featured-content h3,.home .stgb-blogs__item-body h3{font-family:Georgia,'Times New Roman',serif;color:#171720;font-size:20px;line-height:1.13;font-weight:750;margin:0 0 10px;letter-spacing:-.02em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.home .stgb-blogs__cat,.home .stgb-blogs__item-cat{display:block;background:transparent;color:#0d9488;text-transform:uppercase;letter-spacing:.09em;font-size:10px;font-weight:800;padding:0;margin:0 0 8px}
+.home .stgb-blogs__featured-content h3,.home .stgb-blogs__item-body h3{font-family:Georgia,'Times New Roman',serif;color:#10233e;font-size:20px;line-height:1.13;font-weight:750;margin:0 0 10px;letter-spacing:-.02em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .home .stgb-blogs__featured-content p,.home .stgb-blogs__item-body p{font-size:12px;line-height:1.45;color:#46434a;margin:0 0 12px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
-.home .stgb-blogs__read,.home .stgb-blogs__item-more{display:inline-block;margin-top:auto;color:#942c17;text-decoration:underline;text-underline-offset:3px;font-size:12px;font-weight:750}
+.home .stgb-blogs__read,.home .stgb-blogs__item-more{display:inline-block;margin-top:auto;color:#0d9488;text-decoration:underline;text-underline-offset:3px;font-size:12px;font-weight:750}
 .home .stgb-blogs__list{display:contents}
 .home .stgb-blogs__item-img{height:140px;width:100%;flex:none;position:relative;overflow:hidden}
 .home .stgb-blogs__item-img img{width:100%;height:100%;object-fit:cover}
