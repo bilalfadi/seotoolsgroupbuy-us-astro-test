@@ -1,17 +1,6 @@
 
 /* Approved cream-grid / floating tools / waves hero. Homepage only.
    Original CMS H1, copy, pricing labels, URLs and SEO markup remain unchanged. */
-body.home .stgb-header{background:rgba(255,253,250,.97);box-shadow:0 2px 20px rgba(15,23,42,.05)}
-body.home .stgb-header__topbar{display:none}
-body.home{--stgb-header-h:4rem}
-body.home .stgb-header__nav{max-width:1320px}
-body.home .stgb-header__nav-inner{height:68px}
-body.home .stgb-header__menu{background:transparent;border:0;box-shadow:none;gap:0}
-body.home .stgb-header__menu-link{font-size:12px;color:#13233b;padding:10px 11px;border-radius:9px;white-space:nowrap}
-body.home .stgb-header__menu-link.is-active{color:#0d9488;background:rgba(13,148,136,.08);box-shadow:none}
-body.home .stgb-header__logo img{height:43px;max-width:190px;object-fit:contain}
-body.home .stgb-header__actions .stgb-btn{border-radius:11px;font-size:12px;box-shadow:none}
-body.home .stgb-header-spacer{display:block!important;height:68px}
 body.home .stgb-home-main .s1-hero{
   position:relative;isolation:isolate;overflow:hidden;
   min-height:535px;height:auto;padding:34px 20px 156px!important;
@@ -57,10 +46,6 @@ body.home .s1-hero__waves svg{width:100%;height:100%;display:block}
  body.home .s1-hero__container{max-width:780px}
 }
 @media(max-width:760px){
- body.home .stgb-header__logo img{height:38px}
- body.home .stgb-header__nav-inner{height:64px}
- body.home{--stgb-header-h:4rem}
- body.home .stgb-header-spacer{height:64px}
  body.home .stgb-home-main .s1-hero{min-height:625px;padding:93px 12px 120px!important}
  body.home .s1-hero__title{font-size:clamp(29px,7.6vw,37px);margin:14px auto 11px}
  body.home .s1-hero__subtitle{font-size:14px}
