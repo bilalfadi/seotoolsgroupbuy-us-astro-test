@@ -1,0 +1,30 @@
+/* Original Toolsurf Group Buy Guide geometry; scoped to home Section 6. */
+.us6-guide{--us6-surface:#fff;--us6-line:#e6e1d8;--us6-ink:#171412;--us6-muted:#6f665f;--us6-text:#4a423d;--us6-brand:#9f4f36;--us6-soft:#fbeee6;background:#f3f1eb;padding:80px 0 96px;color:var(--us6-ink);font-family:Inter,system-ui,Arial,sans-serif;font-size:16px}
+.us6-guide *{box-sizing:border-box}
+.us6-guide .us6-container{width:100%;max-width:1264px;margin:0 auto;padding:0 32px}
+.us6-guide-shell{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:start}
+.us6-guide-nav{position:sticky;top:100px;padding:18px;border-radius:18px;background:var(--us6-surface);border:1px solid var(--us6-line);box-shadow:0 1px 2px rgba(23,20,18,.06)}
+.us6-guide-nav p{margin:0 0 8px;padding:0 10px;color:var(--us6-muted);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.us6-guide-nav ol{margin:0;padding:0;list-style:none;display:grid;gap:2px;counter-reset:guide}
+.us6-guide-nav a{display:flex;gap:10px;align-items:baseline;padding:8px 10px;border-radius:10px;color:var(--us6-text);font-size:14px;font-weight:600;line-height:1.35;text-decoration:none;transition:background-color .18s,color .18s}
+.us6-guide-nav a:before{counter-increment:guide;content:counter(guide,decimal-leading-zero);color:var(--us6-muted);font-size:12px;font-weight:650;font-variant-numeric:tabular-nums;flex:none}
+.us6-guide-nav a:hover{background:#faf8f5;color:var(--us6-ink)}
+.us6-guide-nav a[aria-current=true]{background:var(--us6-soft);color:var(--us6-brand)}
+.us6-guide-nav a[aria-current=true]:before{color:var(--us6-brand)}
+.us6-guide-main{min-width:0}
+.us6-guide-rail{display:none}
+.us6-guide-main>.us6-article{padding:clamp(40px,5vw,64px) 0;border-top:1px solid var(--us6-line);scroll-margin-top:110px}
+.us6-guide-main>.us6-article:first-of-type{padding-top:0;border-top:0}
+.us6-guide-main>.us6-article:last-child{padding-bottom:0}
+.us6-article .s4-content__pill{display:inline-block;background:var(--us6-soft);color:var(--us6-brand);font-weight:700;padding:5px 11px;border-radius:50px;font-size:12px;margin-bottom:14px}
+.us6-guide .us6-heading{font-size:clamp(26px,1.1rem + 1.6vw,38px);line-height:1.17;letter-spacing:-.025em;font-weight:760;color:var(--us6-ink);margin:0 0 16px}
+.us6-guide .us6-article h3{font-size:21px;line-height:1.3;color:var(--us6-ink);font-weight:720;margin:28px 0 10px;letter-spacing:-.015em}
+.us6-guide .s4-content__p,.us6-guide .us6-article p{font-size:17px;line-height:1.7;color:var(--us6-text);margin:0 0 17px;max-width:70ch}
+.us6-guide .us6-article strong{color:var(--us6-ink);font-weight:720}
+.us6-guide .s4-content__strong{color:var(--us6-brand);font-weight:700}
+.us6-guide .s4-content__ul,.us6-guide .s4-content__ol{margin:18px 0 23px;padding-left:24px;color:var(--us6-text);font-size:16px;line-height:1.7;max-width:70ch}
+.us6-guide .s4-content__ul li,.us6-guide .s4-content__ol li{margin:0 0 10px;padding:0;background:none;border:0;border-radius:0;display:list-item;color:var(--us6-text)}
+.us6-guide .s4-content__ol{list-style:decimal}.us6-guide .s4-content__ul{list-style:disc}
+@media(max-width:1023px){.us6-guide-shell{grid-template-columns:minmax(0,1fr)}.us6-guide-nav{display:none}.us6-guide-rail{display:block;position:relative;margin:0 -24px 28px}.us6-guide-rail ol{display:flex;gap:8px;overflow-x:auto;padding:4px 24px;list-style:none;margin:0;scrollbar-width:none}.us6-guide-rail ol::-webkit-scrollbar{display:none}.us6-guide-rail a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:100px;border:1px solid var(--us6-line);background:var(--us6-surface);color:var(--us6-text);font-size:13px;font-weight:650;white-space:nowrap;text-decoration:none}}
+@media(max-width:680px){.us6-guide{padding:54px 0 68px}.us6-guide .us6-container{padding:0 18px}.us6-guide-rail{margin:0 -18px 24px}.us6-guide-rail ol{padding:4px 18px}.us6-guide-main>.us6-article{padding:40px 0}.us6-guide .us6-heading{font-size:27px}.us6-guide .us6-article h3{font-size:20px}.us6-guide .s4-content__p,.us6-guide .us6-article p{font-size:16px;line-height:1.7}.us6-guide .s4-content__ul,.us6-guide .s4-content__ol{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.us6-guide-nav a{transition:none}}
