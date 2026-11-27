@@ -1,3 +1,4 @@
+import {plainExcerpt} from './excerpt-text.js';
 /** Preserve WordPress theme content rendering, without mutating imported records. */
 const textOnly = v => String(v??'')
   .replace(/<[^>]*>/g,' ')
@@ -19,7 +20,7 @@ export function prepareEditorContentHeadings(title, html) {
 
 /** WordPress wp_trim_words() equivalent for usual English excerpts. */
 export function trimWordExcerpt(raw,count=24) {
-  let plain=textOnly(raw).replace(/\[[^\]]+\]/g,'').trim();
+  let plain=plainExcerpt(raw).replace(/\[[^\]]+\]/g,'').trim();
   const words=plain.match(/\S+/g)||[];
   return words.length>count?words.slice(0,count).join(' ')+'…':plain;
 }
