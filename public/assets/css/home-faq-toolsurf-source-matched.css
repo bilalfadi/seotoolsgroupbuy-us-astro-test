@@ -1,8 +1,8 @@
 /* Section 8, SOURCE-MATCHED from toolsurf/css/inline-001.css (FAQ styles). Scope all selectors. */
-.s5-faq{--bg:#f2faf9;--surface:#fff;--line:#d7e7e5;--ink:#10233e;--ink-2:#536277;--brand:#0d9488;--brand-soft:#e4f6f3;--brand-line:#9bd9d2;box-sizing:border-box;background:var(--bg);padding:92px 0 100px;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.s5-faq{--bg:#f2faf9;--surface:#fff;--line:#d7e7e5;--ink:#10233e;--ink-2:#536277;--brand:#0d9488;--brand-soft:#e4f6f3;--brand-line:#9bd9d2;box-sizing:border-box;overflow:visible;background:var(--bg);padding:92px 0 100px;color:var(--ink);font-family:Inter,Arial,sans-serif}
 .s5-faq *{box-sizing:border-box}
 .s5-faq .s5-container{width:100%;max-width:1264px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:340px minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
-.s5-faq__head{position:sticky;top:96px;text-align:left;margin:0;max-width:340px}
+.s5-faq__head{position:sticky;top:calc(var(--stgb-header-h,112px) + 24px);text-align:left;margin:0;max-width:340px}
 .s5-faq__head:before{content:'▢  FAQ';display:table;font-size:13px;font-weight:700;color:var(--brand);background:var(--brand-soft);border-radius:100px;padding:6px 12px;margin:0 0 18px;letter-spacing:.01em}
 .s5-faq__title{font-size:clamp(30px,1.3rem + 1.4vw,40px);font-weight:780;line-height:1.08;letter-spacing:-.016em;color:var(--ink);margin:0 0 14px}
 .s5-faq__sub{font-size:18px;line-height:1.6;color:var(--ink-2);margin:0 0 22px}
