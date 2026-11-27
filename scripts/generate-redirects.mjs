@@ -79,6 +79,8 @@ for (const [oldSlug,targetSlug] of Object.entries(importantLegacySlugs)) {
 for (const prefix of ['/product', '/project', '/seo-tools', '/tools']) {
   add(prefix+'/screaming-frog-group-buy/', '/screaming-frog-group-buy/');
 }
+// Exact slashless historical Screaming Frog URL (live 404); retain trailing-slash rule from route-fixes.js.
+add('/screaming-frog','/screaming-frog-group-buy/');
 // Historical standalone article title changed to a shorter published URL.
 add('/ahrefs-review-the-best-seo-tool-for-2025/','/ahrefs-review/');
 // Historical WordPress archive/tag links (previously hardcoded in public/_redirects).
