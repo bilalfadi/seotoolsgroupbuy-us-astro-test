@@ -81,8 +81,10 @@ export function upgradeCatalog(sourceMarkup,products=[]){
     const n=m[2].match(/<span class="s2-tools__name">([\s\S]*?)<\/span>/);
     if(!n)return "";
     const name=n[1].replace(/<[^>]*>/g,"").trim(),href=m[1],cat=classify(name,href),img=logo(name,href);
+    const pricing=priceFor(href,products);
+    const priceBlock=pricing?'<span class="us-s2-sell"><strong>'+encode(pricing.price)+'</strong><small>Our price</small></span><span class="us-s2-original">'+(pricing.regular?'<small>Regular</small><del>'+encode(pricing.regular)+'</del>':'')+'</span>':'<strong>See price</strong>';
     const visual=img?'<img src="'+encode(img)+'" alt="" loading="lazy">':'<span class="us-s2-wordmark" aria-hidden="true">'+encode(name.split(" ")[0].slice(0,3))+'</span>';
-    return '<a class="us-s2-card" data-name="'+encode(name.toLowerCase())+'" data-cat="'+encode(cat)+'" href="'+encode(href)+'"><div class="us-s2-identity"><span class="us-s2-logo">'+visual+'</span><span class="us-s2-info"><span class="us-s2-tool-name">'+encode(name)+'</span><span class="us-s2-tool-cat">'+encode(cat)+' Tools</span></span></div><div class="us-s2-price-row"><span class="us-s2-lock" aria-hidden="true">◈</span><strong>Premium Access</strong><small class="us-s2-price-side">MEMBER ACCESS</small></div><span class="us-s2-tool-cta">Explore Tool <span aria-hidden="true"> ↗</span></span></a>';
+    return '<a class="us-s2-card" data-name="'+encode(name.toLowerCase())+'" data-cat="'+encode(cat)+'" href="'+encode(href)+'"><div class="us-s2-identity"><span class="us-s2-logo">'+visual+'</span><span class="us-s2-info"><span class="us-s2-tool-name">'+encode(name)+'</span><span class="us-s2-tool-cat">'+encode(cat)+' Tools</span></span></div><div class="us-s2-price-row">' + priceBlock + '</div><span class="us-s2-tool-cta">Explore Tool <span aria-hidden="true"> ↗</span></span></a>';
  });
  if(cards.filter(Boolean).length!==36)return sourceMarkup; // never silently lose product links
  const more=raw.match(/<a href="([^"]+)" class="s2-tools__card s2-tools__card--cta">([\s\S]*?)<\/a>/);
